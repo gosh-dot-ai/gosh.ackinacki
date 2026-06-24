@@ -1,0 +1,5736 @@
+.fragment _ensureBalance_47c5d07e_internal, {
+	.loc SwarmMultisigWallet.sol, 73
+	GETPARAM 7
+	FIRST
+	PUSHINT 1000000000
+	GREATER
+	IFRET
+	.loc SwarmMultisigWallet.sol, 74
+	PUSHINT 1000000000
+	MINTSHELLQ
+	.loc SwarmMultisigWallet.sol, 0
+}
+
+.fragment c7_to_c4, {
+	GETGLOB 20
+	GETGLOB 19
+	GETGLOB 18
+	GETGLOB 17
+	GETGLOB 16
+	GETGLOB 15
+	GETGLOB 14
+	GETGLOB 13
+	GETGLOB 12
+	GETGLOB 11
+	GETGLOB 10
+	GETGLOB 3
+	GETGLOB 2
+	NEWC
+	STU 256
+	STU 64
+	STONE
+	XCPU S1, S0
+	ISNULL
+	PUSHCONT {
+		DROP
+		STZERO
+	}
+	PUSHCONT {
+		SWAP
+		STONE
+		STU 256
+	}
+	IFELSE
+	ROLLREV 10
+	NEWC
+	XCPU S1, S0
+	ISNULL
+	PUSHCONT {
+		DROP
+		STZERO
+	}
+	PUSHCONT {
+		SWAP
+		STONE
+		STSLICE
+	}
+	IFELSE
+	STU 256
+	ROLLREV 8
+	NEWC
+	STU 256
+	STDICT
+	STDICT
+	STDICT
+	STU 8
+	STU 8
+	STU 8
+	STU 256
+	STBREFR
+	STBREFR
+	ENDC
+	POPROOT
+}
+
+.fragment c4_to_c7, {
+	PUSHROOT
+	CTOS
+	LDU 256 ; pubkey c4
+	LDU 64 ; pubkey timestamp c4
+	LDU 1 ; ctor flag
+	LDI 1
+	SWAP
+	NULLROTRIFNOT
+	PUSHCONT {
+		LDU 256
+	}
+	IF
+	LDREF
+	ENDS
+	CTOS
+	LDI 1
+	SWAP
+	NULLROTRIFNOT
+	PUSHCONT {
+		LDMSGADDR
+	}
+	IF
+	LDU 256
+	LDREF
+	ENDS
+	CTOS
+	LDU 256
+	LDDICT
+	LDDICT
+	LDDICT
+	LDU 8
+	LDU 8
+	LDU 8
+	LDU 256
+	ENDS
+	SETGLOB 20
+	SETGLOB 19
+	SETGLOB 18
+	SETGLOB 17
+	SETGLOB 16
+	SETGLOB 15
+	SETGLOB 14
+	SETGLOB 13
+	SETGLOB 12
+	SETGLOB 11
+	SETGLOB 10
+	SETGLOB 6
+	SETGLOB 3
+	SETGLOB 2
+}
+
+.fragment confirmDataUpdate_a05153cb_internal, {
+	.loc SwarmMultisigWallet.sol, 411
+	GETGLOB 5
+	DUP
+	ISNULL
+	PUSHCONT {
+		DROP
+		PUSHINT 0
+	}
+	IF
+	.loc SwarmMultisigWallet.sol, 263
+	NEWC
+	STU 256
+	.loc SwarmMultisigWallet.sol, 264
+	GETGLOB 9
+	STSLICER
+	.loc SwarmMultisigWallet.sol, 265
+	ENDC
+	HASHCU
+	.loc SwarmMultisigWallet.sol, 266
+	GETGLOB 16
+	PUSHPOW2 8
+	DICTUGETREF
+	NULLSWAPIFNOT
+	IFREF {
+		CTOS
+		CALLREF {
+			LDI 1
+			SWAP
+			NULLROTRIFNOT
+			PUSHCONT {
+				LDU 256
+			}
+			IF
+			LDI 1
+			SWAP
+			NULLROTRIFNOT
+			PUSHCONT {
+				LDMSGADDR
+			}
+			IF
+			LDU 8
+			ENDS
+			TRIPLE
+		}
+	}
+	.loc SwarmMultisigWallet.sol, 267
+	DUP
+	ISNULL
+	THROWIF 100
+	.loc SwarmMultisigWallet.sol, 268
+	DUP
+	ISNULL
+	THROWIF 63
+	.loc SwarmMultisigWallet.sol, 412
+	PUSHCONT {
+		.loc SwarmMultisigWallet.sol, 278
+		NOW
+		PUSHINT 3601
+		SUB
+		UFITS 64
+		PUSHINT 1000000000
+		SUB
+		UFITS 64
+		LSHIFT 32
+		UFITS 64
+		.loc SwarmMultisigWallet.sol, 493
+		GETGLOB 15
+		PUSHINT 64
+		DICTUMINREF
+		NULLSWAPIFNOT
+		IFREF {
+			SWAP
+			CTOS
+			CALLREF {
+				LDU 64
+				LDU 32
+				LDU 8
+				LDU 8
+				LDI 1
+				SWAP
+				NULLROTRIFNOT
+				PUSHCONT {
+					LDU 256
+				}
+				IF
+				LDI 1
+				SWAP
+				NULLROTRIFNOT
+				PUSHCONT {
+					LDMSGADDR
+				}
+				IF
+				LDU 8
+				ROLLREV 3
+				TRIPLE
+				SWAP
+				LDU 32
+				LDDICT
+				ROTREV
+				PAIR
+				SWAP
+				LDREF
+				ENDS
+				CTOS
+				LDU 32
+				LDDICT
+				ROTREV
+				PAIR
+				SWAP
+				LDU 8
+				LDU 8
+				ENDS
+				TUPLE 9
+			}
+			PAIR
+		}
+		.loc SwarmMultisigWallet.sol, 494
+		DUP
+		ISNULL
+		PUSHCONT {
+			.loc SwarmMultisigWallet.sol, 494
+			DROP2
+			.loc SwarmMultisigWallet.sol, 0
+		}
+		IFJMP
+		.loc SwarmMultisigWallet.sol, 495
+		BLKPUSH 2, 0
+		ISNULL
+		THROWIF 63
+		UNPAIR
+		.loc SwarmMultisigWallet.sol, 496
+		PUSH2 S1, S3
+		LEQ
+		.loc SwarmMultisigWallet.sol, 497
+		DUP
+		PUSHCONT {
+			.loc SwarmMultisigWallet.sol, 497
+			BLKDROP 5
+			.loc SwarmMultisigWallet.sol, 0
+		}
+		IFNOTJMP
+		.loc SwarmMultisigWallet.sol, 499
+		CALLREF {
+			.inline _ensureBalance_47c5d07e_internal
+		}
+		.loc SwarmMultisigWallet.sol, 500
+		ACCEPT
+		.loc SwarmMultisigWallet.sol, 501
+		PUSHINT 0
+		.loc SwarmMultisigWallet.sol, 502
+		PUSHCONT {
+			DUP2
+			GETGLOB 20
+			LESS
+			AND
+		}
+		PUSHCONT {
+			.loc SwarmMultisigWallet.sol, 504
+			INC
+			.loc SwarmMultisigWallet.sol, 505
+			PUSH S2
+			INDEX 4
+			THIRD
+			.loc SwarmMultisigWallet.sol, 241
+			GETGLOB 13
+			PUSHINT 8
+			ROT
+			MUL
+			POW2
+			SUB
+			UFITS 256
+			.loc SwarmMultisigWallet.sol, 0
+			SETGLOB 13
+			.loc SwarmMultisigWallet.sol, 506
+			PUSH S3
+			GETGLOB 15
+			PUSHINT 64
+			DICTUDEL
+			DROP
+			SETGLOB 15
+			.loc SwarmMultisigWallet.sol, 507
+			PUSH S3
+			GETGLOB 15
+			PUSHINT 64
+			DICTUGETNEXT
+			NULLSWAPIFNOT
+			IFREF {
+				SWAP
+				LDREFRTOS
+				NIP
+				CALLREF {
+					LDU 64
+					LDU 32
+					LDU 8
+					LDU 8
+					LDI 1
+					SWAP
+					NULLROTRIFNOT
+					PUSHCONT {
+						LDU 256
+					}
+					IF
+					LDI 1
+					SWAP
+					NULLROTRIFNOT
+					PUSHCONT {
+						LDMSGADDR
+					}
+					IF
+					LDU 8
+					ROLLREV 3
+					TRIPLE
+					SWAP
+					LDU 32
+					LDDICT
+					ROTREV
+					PAIR
+					SWAP
+					LDREF
+					ENDS
+					CTOS
+					LDU 32
+					LDDICT
+					ROTREV
+					PAIR
+					SWAP
+					LDU 8
+					LDU 8
+					ENDS
+					TUPLE 9
+				}
+				PAIR
+			}
+			POP S5
+			.loc SwarmMultisigWallet.sol, 508
+			PUSH S4
+			ISNULL
+			PUSHCONT {
+				.loc SwarmMultisigWallet.sol, 509
+				FALSE
+			}
+			PUSHCONT {
+				.loc SwarmMultisigWallet.sol, 511
+				PUSH2 S4, S4
+				ISNULL
+				THROWIF 63
+				UNPAIR
+				PUXC2 S1, S4, S5
+				DROP2
+				.loc SwarmMultisigWallet.sol, 512
+				PUSH S6
+				LEQ
+			}
+			IFELSE
+			POP S2
+			.loc SwarmMultisigWallet.sol, 0
+		}
+		WHILE
+		.loc SwarmMultisigWallet.sol, 515
+		BLKDROP 6
+		CALLREF {
+			.inline c7_to_c4
+		}
+		COMMIT
+		.loc SwarmMultisigWallet.sol, 491
+	}
+	CALLX
+	.loc SwarmMultisigWallet.sol, 413
+	OVER
+	GETGLOB 15
+	PUSHINT 64
+	DICTUGETREF
+	NULLSWAPIFNOT
+	IFREF {
+		CTOS
+		CALLREF {
+			LDU 64
+			LDU 32
+			LDU 8
+			LDU 8
+			LDI 1
+			SWAP
+			NULLROTRIFNOT
+			PUSHCONT {
+				LDU 256
+			}
+			IF
+			LDI 1
+			SWAP
+			NULLROTRIFNOT
+			PUSHCONT {
+				LDMSGADDR
+			}
+			IF
+			LDU 8
+			ROLLREV 3
+			TRIPLE
+			SWAP
+			LDU 32
+			LDDICT
+			ROTREV
+			PAIR
+			SWAP
+			LDREF
+			ENDS
+			CTOS
+			LDU 32
+			LDDICT
+			ROTREV
+			PAIR
+			SWAP
+			LDU 8
+			LDU 8
+			ENDS
+			TUPLE 9
+		}
+	}
+	.loc SwarmMultisigWallet.sol, 414
+	DUP
+	ISNULL
+	THROWIF 102
+	.loc SwarmMultisigWallet.sol, 415
+	DUP
+	ISNULL
+	THROWIF 63
+	.loc SwarmMultisigWallet.sol, 416
+	DUP
+	SECOND
+	PUSH S2
+	THIRD
+	.loc SwarmMultisigWallet.sol, 246
+	PUSHINT 1
+	SWAP
+	LSHIFT
+	UFITS 32
+	AND
+	THROWIF 103
+	.loc SwarmMultisigWallet.sol, 417
+	CALLREF {
+		.inline _ensureBalance_47c5d07e_internal
+	}
+	.loc SwarmMultisigWallet.sol, 418
+	ACCEPT
+	.loc SwarmMultisigWallet.sol, 278
+	NOW
+	PUSHINT 3601
+	SUB
+	UFITS 64
+	PUSHINT 1000000000
+	SUB
+	UFITS 64
+	LSHIFT 32
+	UFITS 64
+	.loc SwarmMultisigWallet.sol, 420
+	PUXC S3, S-1
+	LEQ
+	.loc SwarmMultisigWallet.sol, 421
+	PUSHCONT {
+		.loc SwarmMultisigWallet.sol, 422
+		PUSH S2
+		GETGLOB 15
+		PUSHINT 64
+		DICTUDEL
+		DROP
+		SETGLOB 15
+	}
+	PUSHCONT {
+		.loc SwarmMultisigWallet.sol, 424
+		PUSH3 S2, S0, S1
+		THIRD
+		.loc SwarmMultisigWallet.sol, 453
+		OVER
+		INDEX 3
+		INC
+		UFITS 8
+		PUSH S2
+		THIRD
+		GEQ
+		PUSHCONT {
+			.loc SwarmMultisigWallet.sol, 454
+			OVER
+			INDEX 5
+			PUSH S2
+			INDEX 6
+			PUSH S3
+			INDEX 7
+			PUSH S4
+			INDEX 8
+			.loc SwarmMultisigWallet.sol, 139
+			PUSHINT 0
+			SETGLOB 12
+			.loc SwarmMultisigWallet.sol, 140
+			PUSHINT 0
+			SETGLOB 13
+			.loc SwarmMultisigWallet.sol, 141
+			NULL
+			SETGLOB 14
+			.loc SwarmMultisigWallet.sol, 142
+			NULL
+			SETGLOB 15
+			.loc SwarmMultisigWallet.sol, 143
+			NULL
+			SETGLOB 16
+			.loc SwarmMultisigWallet.sol, 144
+			NULL
+			SETGLOB 10
+			.loc SwarmMultisigWallet.sol, 145
+			NULL
+			SETGLOB 11
+			.loc SwarmMultisigWallet.sol, 146
+			PUSHREFSLICE {
+				.blob x8000000000000000000000000000000000000000000000000000000000000000001_
+			}
+			.loc SwarmMultisigWallet.sol, 147
+			PUSH S4
+			FIRST
+			GTINT 0
+			PUSHCONT {
+				.loc SwarmMultisigWallet.sol, 148
+				PUSHINT 0
+				PUSH S5
+				SECOND
+				PUSHINT 32
+				DICTUGET
+				THROWIFNOT 50
+				PLDU 256
+				SETGLOB 10
+				.loc SwarmMultisigWallet.sol, 0
+			}
+			IF
+			.loc SwarmMultisigWallet.sol, 150
+			PUSH S3
+			FIRST
+			GTINT 0
+			PUSHCONT {
+				.loc SwarmMultisigWallet.sol, 151
+				PUSHINT 0
+				PUSH S4
+				SECOND
+				PUSHINT 32
+				DICTUGET
+				THROWIFNOT 50
+				SETGLOB 11
+				.loc SwarmMultisigWallet.sol, 0
+			}
+			IF
+			.loc SwarmMultisigWallet.sol, 153
+			PUSHINT 40
+			SETGLOB 20
+			.loc SwarmMultisigWallet.sol, 155
+			PUSHINT 0
+			.loc SwarmMultisigWallet.sol, 156
+			PUSH S5
+			FIRST
+			PUSH S5
+			FIRST
+			ADD
+			.loc SwarmMultisigWallet.sol, 157
+			DUP
+			GTINT 0
+			SWAP
+			LESSINT 33
+			AND
+			THROWIFNOT 117
+			.loc SwarmMultisigWallet.sol, 159
+			PUSH S5
+			FIRST
+			.loc SwarmMultisigWallet.sol, 160
+			PUSHINT 0
+			PUSHCONT {
+				PUSH2 S0, S1
+				LESS
+			}
+			PUSHCONT {
+				.loc SwarmMultisigWallet.sol, 161
+				PUSH2 S0, S7
+				SECOND
+				PUSHINT 32
+				DICTUGET
+				THROWIFNOT 50
+				PLDU 256
+				.loc SwarmMultisigWallet.sol, 162
+				DUP
+				THROWIFNOT 101
+				.loc SwarmMultisigWallet.sol, 164
+				DUP
+				NEWC
+				STU 256
+				.loc SwarmMultisigWallet.sol, 165
+				PUSH S5
+				STSLICER
+				.loc SwarmMultisigWallet.sol, 166
+				ENDC
+				HASHCU
+				.loc SwarmMultisigWallet.sol, 167
+				DUP
+				GETGLOB 16
+				PUSHPOW2 8
+				DICTUGET
+				NULLSWAPIFNOT
+				NIP
+				PUSHCONT {
+					.loc SwarmMultisigWallet.sol, 168
+					OVER
+					NULL
+					PUSH2 S6, S6
+					INC
+					UFITS 8
+					POP S8
+					TRIPLE
+					OVER
+					GETGLOB 16
+					ROT
+					CALLREF {
+						UNTRIPLE
+						XCHG S2
+						NEWC
+						XCPU S1, S0
+						ISNULL
+						PUSHCONT {
+							DROP
+							STZERO
+						}
+						PUSHCONT {
+							SWAP
+							STONE
+							STU 256
+						}
+						IFELSE
+						XCPU S1, S0
+						ISNULL
+						PUSHCONT {
+							DROP
+							STZERO
+						}
+						PUSHCONT {
+							SWAP
+							STONE
+							STSLICE
+						}
+						IFELSE
+						STU 8
+					}
+					ENDC
+					ROTREV
+					PUSHPOW2 8
+					DICTUSETREF
+					SETGLOB 16
+					.loc SwarmMultisigWallet.sol, 0
+				}
+				IFNOT
+				.loc SwarmMultisigWallet.sol, 0
+				DROP2
+				.loc SwarmMultisigWallet.sol, 160
+				INC
+				.loc SwarmMultisigWallet.sol, 0
+			}
+			WHILE
+			DROP2
+			.loc SwarmMultisigWallet.sol, 172
+			PUSH S4
+			FIRST
+			.loc SwarmMultisigWallet.sol, 173
+			PUSHINT 0
+			PUSHCONT {
+				PUSH2 S0, S1
+				LESS
+			}
+			PUSHCONT {
+				.loc SwarmMultisigWallet.sol, 174
+				PUSH2 S0, S6
+				SECOND
+				PUSHINT 32
+				DICTUGET
+				THROWIFNOT 50
+				.loc SwarmMultisigWallet.sol, 175
+				PUSH2 S0, S4
+				SDEQ
+				THROWIF 101
+				.loc SwarmMultisigWallet.sol, 177
+				NEWC
+				PUSHPOW2 8
+				STZEROES
+				.loc SwarmMultisigWallet.sol, 178
+				OVER
+				STSLICER
+				.loc SwarmMultisigWallet.sol, 179
+				ENDC
+				HASHCU
+				.loc SwarmMultisigWallet.sol, 180
+				DUP
+				GETGLOB 16
+				PUSHPOW2 8
+				DICTUGET
+				NULLSWAPIFNOT
+				NIP
+				PUSHCONT {
+					.loc SwarmMultisigWallet.sol, 181
+					NULL
+					PUSH3 S2, S5, S5
+					INC
+					UFITS 8
+					POP S8
+					TRIPLE
+					OVER
+					GETGLOB 16
+					ROT
+					CALLREF {
+						UNTRIPLE
+						XCHG S2
+						NEWC
+						XCPU S1, S0
+						ISNULL
+						PUSHCONT {
+							DROP
+							STZERO
+						}
+						PUSHCONT {
+							SWAP
+							STONE
+							STU 256
+						}
+						IFELSE
+						XCPU S1, S0
+						ISNULL
+						PUSHCONT {
+							DROP
+							STZERO
+						}
+						PUSHCONT {
+							SWAP
+							STONE
+							STSLICE
+						}
+						IFELSE
+						STU 8
+					}
+					ENDC
+					ROTREV
+					PUSHPOW2 8
+					DICTUSETREF
+					SETGLOB 16
+					.loc SwarmMultisigWallet.sol, 0
+				}
+				IFNOT
+				.loc SwarmMultisigWallet.sol, 0
+				DROP2
+				.loc SwarmMultisigWallet.sol, 173
+				INC
+				.loc SwarmMultisigWallet.sol, 0
+			}
+			WHILE
+			DROP2
+			.loc SwarmMultisigWallet.sol, 185
+			DUP
+			GTINT 0
+			THROWIFNOT 101
+			.loc SwarmMultisigWallet.sol, 186
+			PUSH2 S0, S3
+			LEQ
+			OVER
+			ROLL 5
+			CONDSEL
+			SETGLOB 18
+			.loc SwarmMultisigWallet.sol, 187
+			PUSH2 S0, S2
+			LEQ
+			OVER
+			ROLL 4
+			CONDSEL
+			DUP
+			SETGLOB 19
+			.loc SwarmMultisigWallet.sol, 188
+			GETGLOB 18
+			LEQ
+			GETGLOB 18
+			GETGLOB 19
+			CONDSEL
+			SETGLOB 19
+			.loc SwarmMultisigWallet.sol, 189
+			SETGLOB 17
+			.loc SwarmMultisigWallet.sol, 0
+			BLKDROP 3
+		}
+		PUSHCONT {
+			.loc SwarmMultisigWallet.sol, 456
+			OVER
+			SECOND
+			PUSHINT 1
+			PUSH S2
+			.loc SwarmMultisigWallet.sol, 256
+			LSHIFT
+			UFITS 32
+			OR
+			.loc SwarmMultisigWallet.sol, 0
+			PUXC S2, S-1
+			SETINDEX 1
+			.loc SwarmMultisigWallet.sol, 457
+			DUP
+			INDEX 3
+			INC
+			UFITS 8
+			SETINDEX 3
+			POP S2
+			.loc SwarmMultisigWallet.sol, 458
+			PUSH S2
+			GETGLOB 15
+			PUSH S3
+			CALLREF {
+				UNTUPLE 9
+				REVERSE 9, 0
+				NEWC
+				STU 64
+				STU 32
+				STU 8
+				STU 8
+				SWAP
+				UNTRIPLE
+				XCHG3 S1, S3, S3
+				DUP
+				ISNULL
+				PUSHCONT {
+					DROP
+					STZERO
+				}
+				PUSHCONT {
+					SWAP
+					STONE
+					STU 256
+				}
+				IFELSE
+				XCPU S1, S0
+				ISNULL
+				PUSHCONT {
+					DROP
+					STZERO
+				}
+				PUSHCONT {
+					SWAP
+					STONE
+					STSLICE
+				}
+				IFELSE
+				STU 8
+				SWAP
+				UNPAIR
+				XCHG S2
+				STU 32
+				STDICT
+				ROLLREV 3
+				NEWC
+				SWAP
+				UNPAIR
+				XCHG S2
+				STU 32
+				STDICT
+				STU 8
+				STU 8
+				STBREFR
+			}
+			ENDC
+			ROTREV
+			PUSHINT 64
+			DICTUSETREF
+			SETGLOB 15
+			.loc SwarmMultisigWallet.sol, 0
+		}
+		IFELSE
+		BLKDROP 3
+	}
+	IFELSE
+	.loc SwarmMultisigWallet.sol, 0
+	BLKDROP 3
+}
+
+.fragment confirmDataUpdate, {
+	DROP
+	GETGLOB 6
+	THROWIFNOT 76
+	GETGLOB 2
+	ISNULL
+	IFREF {
+		.inline c4_to_c7
+	}
+	.loc SwarmMultisigWallet.sol, 410
+	OVER
+	PUSHCONT {
+		LDREF
+		ENDS
+		CTOS
+	}
+	IF
+	LDU 64
+	ENDS
+	.loc SwarmMultisigWallet.sol, 0
+	CALLREF {
+		.inline confirmDataUpdate_a05153cb_internal
+	}
+	CALLREF {
+		.inline c7_to_c4
+	}
+	THROW 0
+}
+
+.fragment confirmTransaction_5798d056_internal, {
+	.loc SwarmMultisigWallet.sol, 356
+	GETGLOB 5
+	DUP
+	ISNULL
+	PUSHCONT {
+		DROP
+		PUSHINT 0
+	}
+	IF
+	.loc SwarmMultisigWallet.sol, 263
+	NEWC
+	STU 256
+	.loc SwarmMultisigWallet.sol, 264
+	GETGLOB 9
+	STSLICER
+	.loc SwarmMultisigWallet.sol, 265
+	ENDC
+	HASHCU
+	.loc SwarmMultisigWallet.sol, 266
+	GETGLOB 16
+	PUSHPOW2 8
+	DICTUGETREF
+	NULLSWAPIFNOT
+	IFREF {
+		CTOS
+		CALLREF {
+			LDI 1
+			SWAP
+			NULLROTRIFNOT
+			PUSHCONT {
+				LDU 256
+			}
+			IF
+			LDI 1
+			SWAP
+			NULLROTRIFNOT
+			PUSHCONT {
+				LDMSGADDR
+			}
+			IF
+			LDU 8
+			ENDS
+			TRIPLE
+		}
+	}
+	.loc SwarmMultisigWallet.sol, 267
+	DUP
+	ISNULL
+	THROWIF 100
+	.loc SwarmMultisigWallet.sol, 268
+	DUP
+	ISNULL
+	THROWIF 63
+	.loc SwarmMultisigWallet.sol, 357
+	PUSHCONT {
+		.loc SwarmMultisigWallet.sol, 278
+		NOW
+		PUSHINT 3601
+		SUB
+		UFITS 64
+		PUSHINT 1000000000
+		SUB
+		UFITS 64
+		LSHIFT 32
+		UFITS 64
+		.loc SwarmMultisigWallet.sol, 465
+		GETGLOB 14
+		PUSHINT 64
+		DICTUMINREF
+		NULLSWAPIFNOT
+		IFREF {
+			SWAP
+			CTOS
+			CALLREF {
+				LDU 64
+				LDU 32
+				LDU 8
+				LDU 8
+				LDI 1
+				SWAP
+				NULLROTRIFNOT
+				PUSHCONT {
+					LDU 256
+				}
+				IF
+				LDI 1
+				SWAP
+				NULLROTRIFNOT
+				PUSHCONT {
+					LDMSGADDR
+				}
+				IF
+				LDU 8
+				ROLLREV 3
+				TRIPLE
+				SWAP
+				LDREF
+				ENDS
+				CTOS
+				LDMSGADDR
+				LDU 128
+				LDDICT
+				LDU 16
+				LDREF
+				LDI 1
+				ENDS
+				TUPLE 11
+			}
+			PAIR
+		}
+		.loc SwarmMultisigWallet.sol, 466
+		DUP
+		ISNULL
+		PUSHCONT {
+			.loc SwarmMultisigWallet.sol, 466
+			DROP2
+			.loc SwarmMultisigWallet.sol, 0
+		}
+		IFJMP
+		.loc SwarmMultisigWallet.sol, 467
+		BLKPUSH 2, 0
+		ISNULL
+		THROWIF 63
+		UNPAIR
+		.loc SwarmMultisigWallet.sol, 468
+		PUSH2 S1, S3
+		LEQ
+		.loc SwarmMultisigWallet.sol, 469
+		DUP
+		PUSHCONT {
+			.loc SwarmMultisigWallet.sol, 469
+			BLKDROP 5
+			.loc SwarmMultisigWallet.sol, 0
+		}
+		IFNOTJMP
+		.loc SwarmMultisigWallet.sol, 471
+		CALLREF {
+			.inline _ensureBalance_47c5d07e_internal
+		}
+		.loc SwarmMultisigWallet.sol, 472
+		ACCEPT
+		.loc SwarmMultisigWallet.sol, 473
+		PUSHINT 0
+		.loc SwarmMultisigWallet.sol, 474
+		PUSHCONT {
+			DUP2
+			GETGLOB 20
+			LESS
+			AND
+		}
+		PUSHCONT {
+			.loc SwarmMultisigWallet.sol, 476
+			INC
+			.loc SwarmMultisigWallet.sol, 477
+			PUSH S2
+			INDEX 4
+			THIRD
+			.loc SwarmMultisigWallet.sol, 241
+			GETGLOB 12
+			PUSHINT 8
+			ROT
+			MUL
+			POW2
+			SUB
+			UFITS 256
+			.loc SwarmMultisigWallet.sol, 0
+			SETGLOB 12
+			.loc SwarmMultisigWallet.sol, 478
+			PUSH S3
+			GETGLOB 14
+			PUSHINT 64
+			DICTUDEL
+			DROP
+			SETGLOB 14
+			.loc SwarmMultisigWallet.sol, 479
+			PUSH S3
+			GETGLOB 14
+			PUSHINT 64
+			DICTUGETNEXT
+			NULLSWAPIFNOT
+			IFREF {
+				SWAP
+				LDREFRTOS
+				NIP
+				CALLREF {
+					LDU 64
+					LDU 32
+					LDU 8
+					LDU 8
+					LDI 1
+					SWAP
+					NULLROTRIFNOT
+					PUSHCONT {
+						LDU 256
+					}
+					IF
+					LDI 1
+					SWAP
+					NULLROTRIFNOT
+					PUSHCONT {
+						LDMSGADDR
+					}
+					IF
+					LDU 8
+					ROLLREV 3
+					TRIPLE
+					SWAP
+					LDREF
+					ENDS
+					CTOS
+					LDMSGADDR
+					LDU 128
+					LDDICT
+					LDU 16
+					LDREF
+					LDI 1
+					ENDS
+					TUPLE 11
+				}
+				PAIR
+			}
+			POP S5
+			.loc SwarmMultisigWallet.sol, 480
+			PUSH S4
+			ISNULL
+			PUSHCONT {
+				.loc SwarmMultisigWallet.sol, 481
+				FALSE
+			}
+			PUSHCONT {
+				.loc SwarmMultisigWallet.sol, 483
+				PUSH2 S4, S4
+				ISNULL
+				THROWIF 63
+				UNPAIR
+				PUXC2 S1, S4, S5
+				DROP2
+				.loc SwarmMultisigWallet.sol, 484
+				PUSH S6
+				LEQ
+			}
+			IFELSE
+			POP S2
+			.loc SwarmMultisigWallet.sol, 0
+		}
+		WHILE
+		.loc SwarmMultisigWallet.sol, 487
+		BLKDROP 6
+		CALLREF {
+			.inline c7_to_c4
+		}
+		COMMIT
+		.loc SwarmMultisigWallet.sol, 463
+	}
+	CALLX
+	.loc SwarmMultisigWallet.sol, 358
+	OVER
+	GETGLOB 14
+	PUSHINT 64
+	DICTUGETREF
+	NULLSWAPIFNOT
+	IFREF {
+		CTOS
+		CALLREF {
+			LDU 64
+			LDU 32
+			LDU 8
+			LDU 8
+			LDI 1
+			SWAP
+			NULLROTRIFNOT
+			PUSHCONT {
+				LDU 256
+			}
+			IF
+			LDI 1
+			SWAP
+			NULLROTRIFNOT
+			PUSHCONT {
+				LDMSGADDR
+			}
+			IF
+			LDU 8
+			ROLLREV 3
+			TRIPLE
+			SWAP
+			LDREF
+			ENDS
+			CTOS
+			LDMSGADDR
+			LDU 128
+			LDDICT
+			LDU 16
+			LDREF
+			LDI 1
+			ENDS
+			TUPLE 11
+		}
+	}
+	.loc SwarmMultisigWallet.sol, 359
+	DUP
+	ISNULL
+	THROWIF 102
+	.loc SwarmMultisigWallet.sol, 360
+	DUP
+	ISNULL
+	THROWIF 63
+	.loc SwarmMultisigWallet.sol, 361
+	DUP
+	SECOND
+	PUSH S2
+	THIRD
+	.loc SwarmMultisigWallet.sol, 246
+	PUSHINT 1
+	SWAP
+	LSHIFT
+	UFITS 32
+	AND
+	THROWIF 103
+	.loc SwarmMultisigWallet.sol, 362
+	CALLREF {
+		.inline _ensureBalance_47c5d07e_internal
+	}
+	.loc SwarmMultisigWallet.sol, 363
+	ACCEPT
+	.loc SwarmMultisigWallet.sol, 278
+	NOW
+	PUSHINT 3601
+	SUB
+	UFITS 64
+	PUSHINT 1000000000
+	SUB
+	UFITS 64
+	LSHIFT 32
+	UFITS 64
+	.loc SwarmMultisigWallet.sol, 365
+	PUXC S3, S-1
+	LEQ
+	.loc SwarmMultisigWallet.sol, 366
+	PUSHCONT {
+		.loc SwarmMultisigWallet.sol, 367
+		PUSH S2
+		GETGLOB 14
+		PUSHINT 64
+		DICTUDEL
+		DROP
+		SETGLOB 14
+	}
+	PUSHCONT {
+		.loc SwarmMultisigWallet.sol, 369
+		PUSH3 S2, S0, S1
+		THIRD
+		.loc SwarmMultisigWallet.sol, 437
+		OVER
+		INDEX 3
+		INC
+		UFITS 8
+		PUSH S2
+		THIRD
+		GEQ
+		PUSHCONT {
+			.loc SwarmMultisigWallet.sol, 438
+			OVER
+			INDEX 7
+			PUSH S2
+			INDEX 6
+			UFITS 120
+			PUSH S3
+			INDEX 5
+			PUSH S4
+			INDEX 10
+			NEWC
+			STSLICECONST x6_
+			STI 1
+			STSLICECONST x1_
+			STSLICE
+			SWAP
+			STGRAMS
+			STDICT
+			PUSHINT 1
+			STUR 110
+			PUSH S2
+			INDEX 9
+			STREFR
+			ENDC
+			PUSH S2
+			INDEX 8
+			SENDRAWMSG
+			.loc SwarmMultisigWallet.sol, 439
+			OVER
+			INDEX 4
+			THIRD
+			.loc SwarmMultisigWallet.sol, 241
+			GETGLOB 12
+			PUSHINT 8
+			ROT
+			MUL
+			POW2
+			SUB
+			UFITS 256
+			.loc SwarmMultisigWallet.sol, 0
+			SETGLOB 12
+			.loc SwarmMultisigWallet.sol, 440
+			PUSH S2
+			GETGLOB 14
+			PUSHINT 64
+			DICTUDEL
+			DROP
+		}
+		PUSHCONT {
+			.loc SwarmMultisigWallet.sol, 442
+			OVER
+			SECOND
+			PUSHINT 1
+			PUSH S2
+			.loc SwarmMultisigWallet.sol, 256
+			LSHIFT
+			UFITS 32
+			OR
+			.loc SwarmMultisigWallet.sol, 0
+			PUXC S2, S-1
+			SETINDEX 1
+			.loc SwarmMultisigWallet.sol, 443
+			DUP
+			INDEX 3
+			INC
+			UFITS 8
+			SETINDEX 3
+			POP S2
+			.loc SwarmMultisigWallet.sol, 444
+			PUSH S2
+			GETGLOB 14
+			PUSH S3
+			CALLREF {
+				UNTUPLE 11
+				REVERSE 11, 0
+				NEWC
+				STU 64
+				STU 32
+				STU 8
+				STU 8
+				SWAP
+				UNTRIPLE
+				XCHG3 S1, S3, S3
+				DUP
+				ISNULL
+				PUSHCONT {
+					DROP
+					STZERO
+				}
+				PUSHCONT {
+					SWAP
+					STONE
+					STU 256
+				}
+				IFELSE
+				XCPU S1, S0
+				ISNULL
+				PUSHCONT {
+					DROP
+					STZERO
+				}
+				PUSHCONT {
+					SWAP
+					STONE
+					STSLICE
+				}
+				IFELSE
+				STU 8
+				ROLLREV 6
+				NEWC
+				STSLICE
+				STU 128
+				STDICT
+				STU 16
+				STREF
+				STI 1
+				STBREFR
+			}
+			ENDC
+			ROTREV
+			PUSHINT 64
+			DICTUSETREF
+		}
+		IFELSE
+		SETGLOB 14
+		.loc SwarmMultisigWallet.sol, 0
+		BLKDROP 3
+	}
+	IFELSE
+	.loc SwarmMultisigWallet.sol, 0
+	BLKDROP 3
+}
+
+.fragment confirmTransaction, {
+	DROP
+	GETGLOB 6
+	THROWIFNOT 76
+	GETGLOB 2
+	ISNULL
+	IFREF {
+		.inline c4_to_c7
+	}
+	.loc SwarmMultisigWallet.sol, 355
+	OVER
+	PUSHCONT {
+		LDREF
+		ENDS
+		CTOS
+	}
+	IF
+	LDU 64
+	ENDS
+	.loc SwarmMultisigWallet.sol, 0
+	CALLREF {
+		.inline confirmTransaction_5798d056_internal
+	}
+	CALLREF {
+		.inline c7_to_c4
+	}
+	THROW 0
+}
+
+.fragment constructor, {
+	DROP
+	GETGLOB 2
+	ISNULL
+	IFREF {
+		.inline c4_to_c7
+	}
+	PUSHINT 40
+	SETGLOB 20
+	GETGLOB 6
+	THROWIF 51
+	OVER
+	PUSHCONT {
+		LDU 32
+		LDDICT
+		ROTREV
+		PAIR
+		SWAP
+		LDREF
+		ENDS
+		CTOS
+	}
+	PUSHCONT {
+		LDU 32
+		LDDICT
+		ROTREV
+		PAIR
+		SWAP
+	}
+	IFELSE
+	LDU 32
+	LDDICT
+	ROTREV
+	PAIR
+	SWAP
+	LDU 8
+	LDU 8
+	LDU 64
+	ENDS
+	.loc SwarmMultisigWallet.sol, 197
+	CNVRTSHELLQ
+	.loc SwarmMultisigWallet.sol, 199
+	GETGLOB 9
+	PUSHREFSLICE {
+		.blob x8000000000000000000000000000000000000000000000000000000000000000001_
+	}
+	SDEQ
+	PUSHCONT {
+		.loc SwarmMultisigWallet.sol, 201
+		GETGLOB 5
+		DUP
+		ISNULL
+		PUSHCONT {
+			DROP
+			PUSHINT 0
+		}
+		IF
+		GETGLOB 2
+		EQUAL
+	}
+	PUSHCONT {
+		.loc SwarmMultisigWallet.sol, 204
+		MYCODE
+		
+		CALLREF {
+			CTOS
+			PUSH S0
+			PUSHSLICE x8adb35
+			SDEQ
+			PUSHREFCONT {
+				PLDREFIDX 1
+				CTOS
+				CALLREF {
+					
+					PLDREF
+					CTOS
+		
+					PUSHSLICE xF4A4_
+					SDBEGINSX
+		
+					LDDICT
+					NIP
+		
+					LDU 10
+					NIP
+		
+					PUSHSLICE xF4BDF2C04E
+					SDBEGINSX
+		
+					DUP
+					SREFS
+					GTINT 1
+					PUSHCONT {
+						PLDREFIDX 1
+					}
+					PUSHCONT {
+						DROP
+						NULL
+					}
+					IFELSE
+		
+				}
+			}
+			PUSHREFCONT {
+				
+					PLDREF
+					CTOS
+		
+					PUSHSLICE xF4A4_
+					SDBEGINSX
+		
+					LDDICT
+					NIP
+		
+					LDU 10
+					NIP
+		
+					PUSHSLICE xF4BDF2C04E
+					SDBEGINSX
+		
+					DUP
+					SREFS
+					GTINT 1
+					PUSHCONT {
+						PLDREFIDX 1
+					}
+					PUSHCONT {
+						DROP
+						NULL
+					}
+					IFELSE
+		
+			}
+			IFELSE
+		}
+		.loc SwarmMultisigWallet.sol, 205
+		DUP
+		ISNULL
+		THROWIF 100
+		.loc SwarmMultisigWallet.sol, 206
+		DUP
+		ISNULL
+		THROWIF 63
+		CTOS
+		LDREF
+		LDMSGADDR
+		LDU 64
+		ENDS
+		DROP
+		NIP
+		.loc SwarmMultisigWallet.sol, 208
+		GETGLOB 9
+		SDEQ
+	}
+	IFELSE
+	THROWIFNOT 100
+	.loc SwarmMultisigWallet.sol, 210
+	OVER
+	GTINT 0
+	THROWIFNOT 123
+	.loc SwarmMultisigWallet.sol, 211
+	DUP
+	GTINT 0
+	THROWIFNOT 123
+	.loc SwarmMultisigWallet.sol, 212
+	CALLREF {
+		.inline _ensureBalance_47c5d07e_internal
+	}
+	.loc SwarmMultisigWallet.sol, 213
+	ACCEPT
+	.loc SwarmMultisigWallet.sol, 139
+	PUSHINT 0
+	SETGLOB 12
+	.loc SwarmMultisigWallet.sol, 140
+	PUSHINT 0
+	SETGLOB 13
+	.loc SwarmMultisigWallet.sol, 141
+	NULL
+	SETGLOB 14
+	.loc SwarmMultisigWallet.sol, 142
+	NULL
+	SETGLOB 15
+	.loc SwarmMultisigWallet.sol, 143
+	NULL
+	SETGLOB 16
+	.loc SwarmMultisigWallet.sol, 144
+	NULL
+	SETGLOB 10
+	.loc SwarmMultisigWallet.sol, 145
+	NULL
+	SETGLOB 11
+	.loc SwarmMultisigWallet.sol, 146
+	PUSHREFSLICE {
+		.blob x8000000000000000000000000000000000000000000000000000000000000000001_
+	}
+	.loc SwarmMultisigWallet.sol, 147
+	PUSH S4
+	FIRST
+	GTINT 0
+	PUSHCONT {
+		.loc SwarmMultisigWallet.sol, 148
+		PUSHINT 0
+		PUSH S5
+		SECOND
+		PUSHINT 32
+		DICTUGET
+		THROWIFNOT 50
+		PLDU 256
+		SETGLOB 10
+		.loc SwarmMultisigWallet.sol, 0
+	}
+	IF
+	.loc SwarmMultisigWallet.sol, 150
+	PUSH S3
+	FIRST
+	GTINT 0
+	PUSHCONT {
+		.loc SwarmMultisigWallet.sol, 151
+		PUSHINT 0
+		PUSH S4
+		SECOND
+		PUSHINT 32
+		DICTUGET
+		THROWIFNOT 50
+		SETGLOB 11
+		.loc SwarmMultisigWallet.sol, 0
+	}
+	IF
+	.loc SwarmMultisigWallet.sol, 153
+	PUSHINT 40
+	SETGLOB 20
+	.loc SwarmMultisigWallet.sol, 155
+	PUSHINT 0
+	.loc SwarmMultisigWallet.sol, 156
+	PUSH S5
+	FIRST
+	PUSH S5
+	FIRST
+	ADD
+	.loc SwarmMultisigWallet.sol, 157
+	DUP
+	GTINT 0
+	SWAP
+	LESSINT 33
+	AND
+	THROWIFNOT 117
+	.loc SwarmMultisigWallet.sol, 159
+	PUSH S5
+	FIRST
+	.loc SwarmMultisigWallet.sol, 160
+	PUSHINT 0
+	PUSHCONT {
+		PUSH2 S0, S1
+		LESS
+	}
+	PUSHCONT {
+		.loc SwarmMultisigWallet.sol, 161
+		PUSH2 S0, S7
+		SECOND
+		PUSHINT 32
+		DICTUGET
+		THROWIFNOT 50
+		PLDU 256
+		.loc SwarmMultisigWallet.sol, 162
+		DUP
+		THROWIFNOT 101
+		.loc SwarmMultisigWallet.sol, 164
+		DUP
+		NEWC
+		STU 256
+		.loc SwarmMultisigWallet.sol, 165
+		PUSH S5
+		STSLICER
+		.loc SwarmMultisigWallet.sol, 166
+		ENDC
+		HASHCU
+		.loc SwarmMultisigWallet.sol, 167
+		DUP
+		GETGLOB 16
+		PUSHPOW2 8
+		DICTUGET
+		NULLSWAPIFNOT
+		NIP
+		PUSHCONT {
+			.loc SwarmMultisigWallet.sol, 168
+			OVER
+			NULL
+			PUSH2 S6, S6
+			INC
+			UFITS 8
+			POP S8
+			TRIPLE
+			OVER
+			GETGLOB 16
+			ROT
+			CALLREF {
+				UNTRIPLE
+				XCHG S2
+				NEWC
+				XCPU S1, S0
+				ISNULL
+				PUSHCONT {
+					DROP
+					STZERO
+				}
+				PUSHCONT {
+					SWAP
+					STONE
+					STU 256
+				}
+				IFELSE
+				XCPU S1, S0
+				ISNULL
+				PUSHCONT {
+					DROP
+					STZERO
+				}
+				PUSHCONT {
+					SWAP
+					STONE
+					STSLICE
+				}
+				IFELSE
+				STU 8
+			}
+			ENDC
+			ROTREV
+			PUSHPOW2 8
+			DICTUSETREF
+			SETGLOB 16
+			.loc SwarmMultisigWallet.sol, 0
+		}
+		IFNOT
+		.loc SwarmMultisigWallet.sol, 0
+		DROP2
+		.loc SwarmMultisigWallet.sol, 160
+		INC
+		.loc SwarmMultisigWallet.sol, 0
+	}
+	WHILE
+	DROP2
+	.loc SwarmMultisigWallet.sol, 172
+	PUSH S4
+	FIRST
+	.loc SwarmMultisigWallet.sol, 173
+	PUSHINT 0
+	PUSHCONT {
+		PUSH2 S0, S1
+		LESS
+	}
+	PUSHCONT {
+		.loc SwarmMultisigWallet.sol, 174
+		PUSH2 S0, S6
+		SECOND
+		PUSHINT 32
+		DICTUGET
+		THROWIFNOT 50
+		.loc SwarmMultisigWallet.sol, 175
+		PUSH2 S0, S4
+		SDEQ
+		THROWIF 101
+		.loc SwarmMultisigWallet.sol, 177
+		NEWC
+		PUSHPOW2 8
+		STZEROES
+		.loc SwarmMultisigWallet.sol, 178
+		OVER
+		STSLICER
+		.loc SwarmMultisigWallet.sol, 179
+		ENDC
+		HASHCU
+		.loc SwarmMultisigWallet.sol, 180
+		DUP
+		GETGLOB 16
+		PUSHPOW2 8
+		DICTUGET
+		NULLSWAPIFNOT
+		NIP
+		PUSHCONT {
+			.loc SwarmMultisigWallet.sol, 181
+			NULL
+			PUSH3 S2, S5, S5
+			INC
+			UFITS 8
+			POP S8
+			TRIPLE
+			OVER
+			GETGLOB 16
+			ROT
+			CALLREF {
+				UNTRIPLE
+				XCHG S2
+				NEWC
+				XCPU S1, S0
+				ISNULL
+				PUSHCONT {
+					DROP
+					STZERO
+				}
+				PUSHCONT {
+					SWAP
+					STONE
+					STU 256
+				}
+				IFELSE
+				XCPU S1, S0
+				ISNULL
+				PUSHCONT {
+					DROP
+					STZERO
+				}
+				PUSHCONT {
+					SWAP
+					STONE
+					STSLICE
+				}
+				IFELSE
+				STU 8
+			}
+			ENDC
+			ROTREV
+			PUSHPOW2 8
+			DICTUSETREF
+			SETGLOB 16
+			.loc SwarmMultisigWallet.sol, 0
+		}
+		IFNOT
+		.loc SwarmMultisigWallet.sol, 0
+		DROP2
+		.loc SwarmMultisigWallet.sol, 173
+		INC
+		.loc SwarmMultisigWallet.sol, 0
+	}
+	WHILE
+	DROP2
+	.loc SwarmMultisigWallet.sol, 185
+	DUP
+	GTINT 0
+	THROWIFNOT 101
+	.loc SwarmMultisigWallet.sol, 186
+	PUSH2 S0, S3
+	LEQ
+	OVER
+	ROLL 5
+	CONDSEL
+	SETGLOB 18
+	.loc SwarmMultisigWallet.sol, 187
+	PUSH2 S0, S2
+	LEQ
+	OVER
+	ROLL 4
+	CONDSEL
+	DUP
+	SETGLOB 19
+	.loc SwarmMultisigWallet.sol, 188
+	GETGLOB 18
+	LEQ
+	GETGLOB 18
+	GETGLOB 19
+	CONDSEL
+	SETGLOB 19
+	.loc SwarmMultisigWallet.sol, 189
+	SETGLOB 17
+	.loc SwarmMultisigWallet.sol, 0
+	BLKDROP 3
+	CALLREF {
+		.inline c7_to_c4
+	}
+	THROW 0
+}
+
+.fragment fallback, {
+	GETGLOB 6
+	THROWIFNOT 76
+	GETGLOB 2
+	ISNULL
+	IFREF {
+		.inline c4_to_c7
+	}
+	.loc SwarmMultisigWallet.sol, 0
+	CALLREF {
+		.inline c7_to_c4
+	}
+}
+
+.fragment getCustodians_f3f1e6bf_internal, {
+	.loc SwarmMultisigWallet.sol, 624
+	PUSHINT 0
+	NULL
+	PAIR
+	.loc SwarmMultisigWallet.sol, 625
+	GETGLOB 16
+	PUSHPOW2 8
+	DICTUMINREF
+	NULLSWAPIFNOT
+	IFREF {
+		SWAP
+		CTOS
+		CALLREF {
+			LDI 1
+			SWAP
+			NULLROTRIFNOT
+			PUSHCONT {
+				LDU 256
+			}
+			IF
+			LDI 1
+			SWAP
+			NULLROTRIFNOT
+			PUSHCONT {
+				LDMSGADDR
+			}
+			IF
+			LDU 8
+			ENDS
+			TRIPLE
+		}
+		PAIR
+	}
+	.loc SwarmMultisigWallet.sol, 626
+	PUSHCONT {
+		DUP
+		ISNULL
+		NOT
+	}
+	PUSHCONT {
+		.loc SwarmMultisigWallet.sol, 627
+		DUP
+		ISNULL
+		THROWIF 63
+		UNPAIR
+		.loc SwarmMultisigWallet.sol, 628
+		PUXC S2, S-1
+		CALLREF {
+			UNTRIPLE
+			XCHG S2
+			NEWC
+			XCPU S1, S0
+			ISNULL
+			PUSHCONT {
+				DROP
+				STZERO
+			}
+			PUSHCONT {
+				SWAP
+				STONE
+				STU 256
+			}
+			IFELSE
+			XCPU S1, S0
+			ISNULL
+			PUSHCONT {
+				DROP
+				STZERO
+			}
+			PUSHCONT {
+				SWAP
+				STONE
+				STSLICE
+			}
+			IFELSE
+			STU 8
+		}
+		SWAP
+		UNPAIR
+		OVER
+		INC
+		ROLLREV 3
+		PUSHINT 32
+		DICTUSETB
+		PAIR
+		POP S2
+		.loc SwarmMultisigWallet.sol, 629
+		GETGLOB 16
+		PUSHPOW2 8
+		DICTUGETNEXT
+		NULLSWAPIFNOT
+		IFREF {
+			SWAP
+			LDREFRTOS
+			NIP
+			CALLREF {
+				LDI 1
+				SWAP
+				NULLROTRIFNOT
+				PUSHCONT {
+					LDU 256
+				}
+				IF
+				LDI 1
+				SWAP
+				NULLROTRIFNOT
+				PUSHCONT {
+					LDMSGADDR
+				}
+				IF
+				LDU 8
+				ENDS
+				TRIPLE
+			}
+			PAIR
+		}
+		.loc SwarmMultisigWallet.sol, 0
+	}
+	WHILE
+	DROP
+	.loc SwarmMultisigWallet.sol, 0
+}
+
+.fragment upd_only_time_in_c4, {
+	PUSHROOT
+	CTOS
+	LDU 256
+	LDU 64
+	NIP
+	GETGLOB 3
+	ROT
+	NEWC
+	STU 256
+	STU 64
+	STSLICE
+	ENDC
+	POPROOT
+}
+
+.fragment getCustodians, {
+	DROP
+	GETGLOB 6
+	THROWIFNOT 76
+	GETGLOB 2
+	ISNULL
+	IFREF {
+		.inline c4_to_c7
+	}
+	.loc SwarmMultisigWallet.sol, 624
+	ENDS
+	.loc SwarmMultisigWallet.sol, 0
+	CALLREF {
+		.inline getCustodians_f3f1e6bf_internal
+	}
+	OVER
+	PUSHCONT {
+		PUSH S3
+		CTOS
+		LDU 2
+		LDMSGADDR
+		DROP
+		NIP
+		NEWC
+		STSLICECONST xc
+		STSLICE
+		PUSHINT 3067987644
+		STUR 130
+		SWAP
+		UNPAIR
+		XCHG S2
+		STU 32
+		STDICT
+		ENDC
+		PUSHINT 0
+		SENDRAWMSG
+	}
+	PUSHCONT {
+		DROP
+	}
+	IFELSE
+	IFREF {
+		.inline upd_only_time_in_c4
+	}
+	THROW 0
+}
+
+.fragment getParameters_a5ea11da_internal, {
+	.loc SwarmMultisigWallet.sol, 539
+	PUSHINT 5
+	.loc SwarmMultisigWallet.sol, 540
+	PUSHINT 32
+	.loc SwarmMultisigWallet.sol, 541
+	PUSHINT 3601
+	.loc SwarmMultisigWallet.sol, 542
+	GETGLOB 18
+	.loc SwarmMultisigWallet.sol, 543
+	GETGLOB 19
+	.loc SwarmMultisigWallet.sol, 0
+}
+
+.fragment getParameters, {
+	DROP
+	GETGLOB 6
+	THROWIFNOT 76
+	GETGLOB 2
+	ISNULL
+	IFREF {
+		.inline c4_to_c7
+	}
+	.loc SwarmMultisigWallet.sol, 531
+	ENDS
+	.loc SwarmMultisigWallet.sol, 0
+	CALLREF {
+		.inline getParameters_a5ea11da_internal
+	}
+	PUSH S5
+	PUSHCONT {
+		PUSH S7
+		CTOS
+		LDU 2
+		LDMSGADDR
+		DROP
+		NIP
+		NEWC
+		STSLICECONST xc
+		STSLICE
+		PUSHINT 98
+		STZEROES
+		REVERSE 5, 1
+		STSLICECONST xa681132c
+		STU 8
+		STU 8
+		STU 64
+		STU 8
+		STU 8
+		ENDC
+		PUSHINT 0
+		SENDRAWMSG
+	}
+	PUSHCONT {
+		BLKDROP 5
+	}
+	IFELSE
+	IFREF {
+		.inline upd_only_time_in_c4
+	}
+	THROW 0
+}
+
+.fragment getTransaction_b07e2a3a_internal, {
+	.loc SwarmMultisigWallet.sol, 551
+	GETGLOB 14
+	PUSHINT 64
+	DICTUGETREF
+	NULLSWAPIFNOT
+	IFREF {
+		CTOS
+		CALLREF {
+			LDU 64
+			LDU 32
+			LDU 8
+			LDU 8
+			LDI 1
+			SWAP
+			NULLROTRIFNOT
+			PUSHCONT {
+				LDU 256
+			}
+			IF
+			LDI 1
+			SWAP
+			NULLROTRIFNOT
+			PUSHCONT {
+				LDMSGADDR
+			}
+			IF
+			LDU 8
+			ROLLREV 3
+			TRIPLE
+			SWAP
+			LDREF
+			ENDS
+			CTOS
+			LDMSGADDR
+			LDU 128
+			LDDICT
+			LDU 16
+			LDREF
+			LDI 1
+			ENDS
+			TUPLE 11
+		}
+	}
+	.loc SwarmMultisigWallet.sol, 552
+	DUP
+	ISNULL
+	THROWIF 102
+	.loc SwarmMultisigWallet.sol, 553
+	DUP
+	ISNULL
+	THROWIF 63
+	.loc SwarmMultisigWallet.sol, 0
+}
+
+.fragment getTransaction, {
+	DROP
+	GETGLOB 6
+	THROWIFNOT 76
+	GETGLOB 2
+	ISNULL
+	IFREF {
+		.inline c4_to_c7
+	}
+	.loc SwarmMultisigWallet.sol, 549
+	OVER
+	PUSHCONT {
+		LDREF
+		ENDS
+		CTOS
+	}
+	IF
+	LDU 64
+	ENDS
+	.loc SwarmMultisigWallet.sol, 0
+	CALLREF {
+		.inline getTransaction_b07e2a3a_internal
+	}
+	OVER
+	PUSHCONT {
+		PUSH S3
+		CTOS
+		LDU 2
+		LDMSGADDR
+		DROP
+		NIP
+		NEWC
+		STSLICECONST xc
+		STSLICE
+		PUSHINT 1
+		STUR 98
+		SWAP
+		NEWC
+		STSLICECONST x9eb719e7
+		SWAP
+		UNTUPLE 11
+		REVERSE 12, 0
+		STU 64
+		STU 32
+		STU 8
+		STU 8
+		SWAP
+		UNTRIPLE
+		XCHG3 S1, S3, S3
+		DUP
+		ISNULL
+		PUSHCONT {
+			DROP
+			STZERO
+		}
+		PUSHCONT {
+			SWAP
+			STONE
+			STU 256
+		}
+		IFELSE
+		XCPU S1, S0
+		ISNULL
+		PUSHCONT {
+			DROP
+			STZERO
+		}
+		PUSHCONT {
+			SWAP
+			STONE
+			STSLICE
+		}
+		IFELSE
+		STU 8
+		ROLLREV 6
+		NEWC
+		STSLICE
+		STU 128
+		STDICT
+		STU 16
+		STREF
+		STI 1
+		STBREFR
+		STBREFR
+		ENDC
+		PUSHINT 0
+		SENDRAWMSG
+	}
+	PUSHCONT {
+		DROP
+	}
+	IFELSE
+	IFREF {
+		.inline upd_only_time_in_c4
+	}
+	THROW 0
+}
+
+.fragment getTransactionIds_a2e38b54_internal, {
+	.loc SwarmMultisigWallet.sol, 600
+	PUSHINT 0
+	NULL
+	PAIR
+	.loc SwarmMultisigWallet.sol, 601
+	PUSHINT 0
+	.loc SwarmMultisigWallet.sol, 602
+	GETGLOB 14
+	PUSHINT 64
+	DICTUMINREF
+	NULLSWAPIFNOT
+	IFREF {
+		SWAP
+		CTOS
+		CALLREF {
+			LDU 64
+			LDU 32
+			LDU 8
+			LDU 8
+			LDI 1
+			SWAP
+			NULLROTRIFNOT
+			PUSHCONT {
+				LDU 256
+			}
+			IF
+			LDI 1
+			SWAP
+			NULLROTRIFNOT
+			PUSHCONT {
+				LDMSGADDR
+			}
+			IF
+			LDU 8
+			ROLLREV 3
+			TRIPLE
+			SWAP
+			LDREF
+			ENDS
+			CTOS
+			LDMSGADDR
+			LDU 128
+			LDDICT
+			LDU 16
+			LDREF
+			LDI 1
+			ENDS
+			TUPLE 11
+		}
+		PAIR
+	}
+	.loc SwarmMultisigWallet.sol, 603
+	PUSHCONT {
+		DUP
+		ISNULL
+		NOT
+	}
+	PUSHCONT {
+		.loc SwarmMultisigWallet.sol, 604
+		DUP
+		ISNULL
+		THROWIF 63
+		UNPAIR
+		XCPU2 S1, S3, S0
+		BLKDROP2 2, 3
+		.loc SwarmMultisigWallet.sol, 605
+		NEWC
+		STU 64
+		SWAP
+		UNPAIR
+		OVER
+		INC
+		ROLLREV 3
+		PUSHINT 32
+		DICTUSETB
+		PAIR
+		POP S2
+		.loc SwarmMultisigWallet.sol, 606
+		DUP
+		GETGLOB 14
+		PUSHINT 64
+		DICTUGETNEXT
+		NULLSWAPIFNOT
+		IFREF {
+			SWAP
+			LDREFRTOS
+			NIP
+			CALLREF {
+				LDU 64
+				LDU 32
+				LDU 8
+				LDU 8
+				LDI 1
+				SWAP
+				NULLROTRIFNOT
+				PUSHCONT {
+					LDU 256
+				}
+				IF
+				LDI 1
+				SWAP
+				NULLROTRIFNOT
+				PUSHCONT {
+					LDMSGADDR
+				}
+				IF
+				LDU 8
+				ROLLREV 3
+				TRIPLE
+				SWAP
+				LDREF
+				ENDS
+				CTOS
+				LDMSGADDR
+				LDU 128
+				LDDICT
+				LDU 16
+				LDREF
+				LDI 1
+				ENDS
+				TUPLE 11
+			}
+			PAIR
+		}
+		.loc SwarmMultisigWallet.sol, 0
+	}
+	WHILE
+	DROP2
+	.loc SwarmMultisigWallet.sol, 0
+}
+
+.fragment getTransactionIds, {
+	DROP
+	GETGLOB 6
+	THROWIFNOT 76
+	GETGLOB 2
+	ISNULL
+	IFREF {
+		.inline c4_to_c7
+	}
+	.loc SwarmMultisigWallet.sol, 600
+	ENDS
+	.loc SwarmMultisigWallet.sol, 0
+	CALLREF {
+		.inline getTransactionIds_a2e38b54_internal
+	}
+	OVER
+	PUSHCONT {
+		PUSH S3
+		CTOS
+		LDU 2
+		LDMSGADDR
+		DROP
+		NIP
+		NEWC
+		STSLICECONST xc
+		STSLICE
+		PUSHINT 3499887885
+		STUR 130
+		SWAP
+		UNPAIR
+		XCHG S2
+		STU 32
+		STDICT
+		ENDC
+		PUSHINT 0
+		SENDRAWMSG
+	}
+	PUSHCONT {
+		DROP
+	}
+	IFELSE
+	IFREF {
+		.inline upd_only_time_in_c4
+	}
+	THROW 0
+}
+
+.fragment getTransactions_83920e90_internal, {
+	.loc SwarmMultisigWallet.sol, 569
+	PUSHINT 0
+	NULL
+	PAIR
+	.loc SwarmMultisigWallet.sol, 278
+	NOW
+	PUSHINT 3601
+	SUB
+	UFITS 64
+	PUSHINT 1000000000
+	SUB
+	UFITS 64
+	LSHIFT 32
+	UFITS 64
+	.loc SwarmMultisigWallet.sol, 571
+	GETGLOB 14
+	PUSHINT 64
+	DICTUMINREF
+	NULLSWAPIFNOT
+	IFREF {
+		SWAP
+		CTOS
+		CALLREF {
+			LDU 64
+			LDU 32
+			LDU 8
+			LDU 8
+			LDI 1
+			SWAP
+			NULLROTRIFNOT
+			PUSHCONT {
+				LDU 256
+			}
+			IF
+			LDI 1
+			SWAP
+			NULLROTRIFNOT
+			PUSHCONT {
+				LDMSGADDR
+			}
+			IF
+			LDU 8
+			ROLLREV 3
+			TRIPLE
+			SWAP
+			LDREF
+			ENDS
+			CTOS
+			LDMSGADDR
+			LDU 128
+			LDDICT
+			LDU 16
+			LDREF
+			LDI 1
+			ENDS
+			TUPLE 11
+		}
+		PAIR
+	}
+	.loc SwarmMultisigWallet.sol, 572
+	PUSHCONT {
+		DUP
+		ISNULL
+		NOT
+	}
+	PUSHCONT {
+		.loc SwarmMultisigWallet.sol, 574
+		DUP
+		ISNULL
+		THROWIF 63
+		UNPAIR
+		.loc SwarmMultisigWallet.sol, 575
+		PUSH2 S1, S2
+		GREATER
+		PUSHCONT {
+			.loc SwarmMultisigWallet.sol, 576
+			PUSH2 S3, S0
+			CALLREF {
+				UNTUPLE 11
+				REVERSE 11, 0
+				NEWC
+				STU 64
+				STU 32
+				STU 8
+				STU 8
+				SWAP
+				UNTRIPLE
+				XCHG3 S1, S3, S3
+				DUP
+				ISNULL
+				PUSHCONT {
+					DROP
+					STZERO
+				}
+				PUSHCONT {
+					SWAP
+					STONE
+					STU 256
+				}
+				IFELSE
+				XCPU S1, S0
+				ISNULL
+				PUSHCONT {
+					DROP
+					STZERO
+				}
+				PUSHCONT {
+					SWAP
+					STONE
+					STSLICE
+				}
+				IFELSE
+				STU 8
+				ROLLREV 6
+				NEWC
+				STSLICE
+				STU 128
+				STDICT
+				STU 16
+				STREF
+				STI 1
+				STBREFR
+			}
+			ENDC
+			SWAP
+			UNPAIR
+			OVER
+			INC
+			ROLLREV 3
+			PUSHINT 32
+			DICTUSETREF
+			PAIR
+			POP S4
+			.loc SwarmMultisigWallet.sol, 0
+		}
+		IF
+		.loc SwarmMultisigWallet.sol, 578
+		DROP
+		GETGLOB 14
+		PUSHINT 64
+		DICTUGETNEXT
+		NULLSWAPIFNOT
+		IFREF {
+			SWAP
+			LDREFRTOS
+			NIP
+			CALLREF {
+				LDU 64
+				LDU 32
+				LDU 8
+				LDU 8
+				LDI 1
+				SWAP
+				NULLROTRIFNOT
+				PUSHCONT {
+					LDU 256
+				}
+				IF
+				LDI 1
+				SWAP
+				NULLROTRIFNOT
+				PUSHCONT {
+					LDMSGADDR
+				}
+				IF
+				LDU 8
+				ROLLREV 3
+				TRIPLE
+				SWAP
+				LDREF
+				ENDS
+				CTOS
+				LDMSGADDR
+				LDU 128
+				LDDICT
+				LDU 16
+				LDREF
+				LDI 1
+				ENDS
+				TUPLE 11
+			}
+			PAIR
+		}
+		.loc SwarmMultisigWallet.sol, 0
+	}
+	WHILE
+	DROP2
+	.loc SwarmMultisigWallet.sol, 0
+}
+
+.fragment getTransactions, {
+	DROP
+	GETGLOB 6
+	THROWIFNOT 76
+	GETGLOB 2
+	ISNULL
+	IFREF {
+		.inline c4_to_c7
+	}
+	.loc SwarmMultisigWallet.sol, 569
+	ENDS
+	.loc SwarmMultisigWallet.sol, 0
+	CALLREF {
+		.inline getTransactions_83920e90_internal
+	}
+	OVER
+	PUSHCONT {
+		PUSH S3
+		CTOS
+		LDU 2
+		LDMSGADDR
+		DROP
+		NIP
+		NEWC
+		STSLICECONST xc
+		STSLICE
+		PUSHINT 2359774513
+		STUR 130
+		SWAP
+		UNPAIR
+		XCHG S2
+		STU 32
+		STDICT
+		ENDC
+		PUSHINT 0
+		SENDRAWMSG
+	}
+	PUSHCONT {
+		DROP
+	}
+	IFELSE
+	IFREF {
+		.inline upd_only_time_in_c4
+	}
+	THROW 0
+}
+
+.fragment getUpdateCodeIds_a2afd1fb_internal, {
+	.loc SwarmMultisigWallet.sol, 612
+	PUSHINT 0
+	NULL
+	PAIR
+	.loc SwarmMultisigWallet.sol, 613
+	PUSHINT 0
+	.loc SwarmMultisigWallet.sol, 614
+	GETGLOB 15
+	PUSHINT 64
+	DICTUMINREF
+	NULLSWAPIFNOT
+	IFREF {
+		SWAP
+		CTOS
+		CALLREF {
+			LDU 64
+			LDU 32
+			LDU 8
+			LDU 8
+			LDI 1
+			SWAP
+			NULLROTRIFNOT
+			PUSHCONT {
+				LDU 256
+			}
+			IF
+			LDI 1
+			SWAP
+			NULLROTRIFNOT
+			PUSHCONT {
+				LDMSGADDR
+			}
+			IF
+			LDU 8
+			ROLLREV 3
+			TRIPLE
+			SWAP
+			LDU 32
+			LDDICT
+			ROTREV
+			PAIR
+			SWAP
+			LDREF
+			ENDS
+			CTOS
+			LDU 32
+			LDDICT
+			ROTREV
+			PAIR
+			SWAP
+			LDU 8
+			LDU 8
+			ENDS
+			TUPLE 9
+		}
+		PAIR
+	}
+	.loc SwarmMultisigWallet.sol, 615
+	PUSHCONT {
+		DUP
+		ISNULL
+		NOT
+	}
+	PUSHCONT {
+		.loc SwarmMultisigWallet.sol, 616
+		DUP
+		ISNULL
+		THROWIF 63
+		UNPAIR
+		XCPU2 S1, S3, S0
+		BLKDROP2 2, 3
+		.loc SwarmMultisigWallet.sol, 617
+		NEWC
+		STU 64
+		SWAP
+		UNPAIR
+		OVER
+		INC
+		ROLLREV 3
+		PUSHINT 32
+		DICTUSETB
+		PAIR
+		POP S2
+		.loc SwarmMultisigWallet.sol, 618
+		DUP
+		GETGLOB 15
+		PUSHINT 64
+		DICTUGETNEXT
+		NULLSWAPIFNOT
+		IFREF {
+			SWAP
+			LDREFRTOS
+			NIP
+			CALLREF {
+				LDU 64
+				LDU 32
+				LDU 8
+				LDU 8
+				LDI 1
+				SWAP
+				NULLROTRIFNOT
+				PUSHCONT {
+					LDU 256
+				}
+				IF
+				LDI 1
+				SWAP
+				NULLROTRIFNOT
+				PUSHCONT {
+					LDMSGADDR
+				}
+				IF
+				LDU 8
+				ROLLREV 3
+				TRIPLE
+				SWAP
+				LDU 32
+				LDDICT
+				ROTREV
+				PAIR
+				SWAP
+				LDREF
+				ENDS
+				CTOS
+				LDU 32
+				LDDICT
+				ROTREV
+				PAIR
+				SWAP
+				LDU 8
+				LDU 8
+				ENDS
+				TUPLE 9
+			}
+			PAIR
+		}
+		.loc SwarmMultisigWallet.sol, 0
+	}
+	WHILE
+	DROP2
+	.loc SwarmMultisigWallet.sol, 0
+}
+
+.fragment getUpdateCodeIds, {
+	DROP
+	GETGLOB 6
+	THROWIFNOT 76
+	GETGLOB 2
+	ISNULL
+	IFREF {
+		.inline c4_to_c7
+	}
+	.loc SwarmMultisigWallet.sol, 612
+	ENDS
+	.loc SwarmMultisigWallet.sol, 0
+	CALLREF {
+		.inline getUpdateCodeIds_a2afd1fb_internal
+	}
+	OVER
+	PUSHCONT {
+		PUSH S3
+		CTOS
+		LDU 2
+		LDMSGADDR
+		DROP
+		NIP
+		NEWC
+		STSLICECONST xc
+		STSLICE
+		PUSHINT 4039148317
+		STUR 130
+		SWAP
+		UNPAIR
+		XCHG S2
+		STU 32
+		STDICT
+		ENDC
+		PUSHINT 0
+		SENDRAWMSG
+	}
+	PUSHCONT {
+		DROP
+	}
+	IFELSE
+	IFREF {
+		.inline upd_only_time_in_c4
+	}
+	THROW 0
+}
+
+.fragment getUpdateData_671a9de2_internal, {
+	.loc SwarmMultisigWallet.sol, 561
+	GETGLOB 15
+	PUSHINT 64
+	DICTUGETREF
+	NULLSWAPIFNOT
+	IFREF {
+		CTOS
+		CALLREF {
+			LDU 64
+			LDU 32
+			LDU 8
+			LDU 8
+			LDI 1
+			SWAP
+			NULLROTRIFNOT
+			PUSHCONT {
+				LDU 256
+			}
+			IF
+			LDI 1
+			SWAP
+			NULLROTRIFNOT
+			PUSHCONT {
+				LDMSGADDR
+			}
+			IF
+			LDU 8
+			ROLLREV 3
+			TRIPLE
+			SWAP
+			LDU 32
+			LDDICT
+			ROTREV
+			PAIR
+			SWAP
+			LDREF
+			ENDS
+			CTOS
+			LDU 32
+			LDDICT
+			ROTREV
+			PAIR
+			SWAP
+			LDU 8
+			LDU 8
+			ENDS
+			TUPLE 9
+		}
+	}
+	.loc SwarmMultisigWallet.sol, 562
+	DUP
+	ISNULL
+	THROWIF 102
+	.loc SwarmMultisigWallet.sol, 563
+	DUP
+	ISNULL
+	THROWIF 63
+	.loc SwarmMultisigWallet.sol, 0
+}
+
+.fragment getUpdateData, {
+	DROP
+	GETGLOB 6
+	THROWIFNOT 76
+	GETGLOB 2
+	ISNULL
+	IFREF {
+		.inline c4_to_c7
+	}
+	.loc SwarmMultisigWallet.sol, 559
+	OVER
+	PUSHCONT {
+		LDREF
+		ENDS
+		CTOS
+	}
+	IF
+	LDU 64
+	ENDS
+	.loc SwarmMultisigWallet.sol, 0
+	CALLREF {
+		.inline getUpdateData_671a9de2_internal
+	}
+	OVER
+	PUSHCONT {
+		PUSH S3
+		CTOS
+		LDU 2
+		LDMSGADDR
+		DROP
+		NIP
+		NEWC
+		STSLICECONST xc
+		STSLICE
+		PUSHINT 1
+		STUR 98
+		SWAP
+		NEWC
+		STSLICECONST x92c0cf3d
+		SWAP
+		UNTUPLE 9
+		REVERSE 10, 0
+		STU 64
+		STU 32
+		STU 8
+		STU 8
+		SWAP
+		UNTRIPLE
+		XCHG3 S1, S3, S3
+		DUP
+		ISNULL
+		PUSHCONT {
+			DROP
+			STZERO
+		}
+		PUSHCONT {
+			SWAP
+			STONE
+			STU 256
+		}
+		IFELSE
+		XCPU S1, S0
+		ISNULL
+		PUSHCONT {
+			DROP
+			STZERO
+		}
+		PUSHCONT {
+			SWAP
+			STONE
+			STSLICE
+		}
+		IFELSE
+		STU 8
+		ROLLREV 4
+		NEWC
+		SWAP
+		UNPAIR
+		XCHG S2
+		STU 32
+		STDICT
+		SWAP
+		UNPAIR
+		XCHG S2
+		STU 32
+		STDICT
+		STU 8
+		STU 8
+		STBREFR
+		STBREFR
+		ENDC
+		PUSHINT 0
+		SENDRAWMSG
+	}
+	PUSHCONT {
+		DROP
+	}
+	IFELSE
+	IFREF {
+		.inline upd_only_time_in_c4
+	}
+	THROW 0
+}
+
+.fragment getUpdateDatas_84557b69_internal, {
+	.loc SwarmMultisigWallet.sol, 585
+	PUSHINT 0
+	NULL
+	PAIR
+	.loc SwarmMultisigWallet.sol, 278
+	NOW
+	PUSHINT 3601
+	SUB
+	UFITS 64
+	PUSHINT 1000000000
+	SUB
+	UFITS 64
+	LSHIFT 32
+	UFITS 64
+	.loc SwarmMultisigWallet.sol, 587
+	GETGLOB 15
+	PUSHINT 64
+	DICTUMINREF
+	NULLSWAPIFNOT
+	IFREF {
+		SWAP
+		CTOS
+		CALLREF {
+			LDU 64
+			LDU 32
+			LDU 8
+			LDU 8
+			LDI 1
+			SWAP
+			NULLROTRIFNOT
+			PUSHCONT {
+				LDU 256
+			}
+			IF
+			LDI 1
+			SWAP
+			NULLROTRIFNOT
+			PUSHCONT {
+				LDMSGADDR
+			}
+			IF
+			LDU 8
+			ROLLREV 3
+			TRIPLE
+			SWAP
+			LDU 32
+			LDDICT
+			ROTREV
+			PAIR
+			SWAP
+			LDREF
+			ENDS
+			CTOS
+			LDU 32
+			LDDICT
+			ROTREV
+			PAIR
+			SWAP
+			LDU 8
+			LDU 8
+			ENDS
+			TUPLE 9
+		}
+		PAIR
+	}
+	.loc SwarmMultisigWallet.sol, 588
+	PUSHCONT {
+		DUP
+		ISNULL
+		NOT
+	}
+	PUSHCONT {
+		.loc SwarmMultisigWallet.sol, 590
+		DUP
+		ISNULL
+		THROWIF 63
+		UNPAIR
+		.loc SwarmMultisigWallet.sol, 591
+		PUSH2 S1, S2
+		GREATER
+		PUSHCONT {
+			.loc SwarmMultisigWallet.sol, 592
+			PUSH2 S3, S0
+			CALLREF {
+				UNTUPLE 9
+				REVERSE 9, 0
+				NEWC
+				STU 64
+				STU 32
+				STU 8
+				STU 8
+				SWAP
+				UNTRIPLE
+				XCHG3 S1, S3, S3
+				DUP
+				ISNULL
+				PUSHCONT {
+					DROP
+					STZERO
+				}
+				PUSHCONT {
+					SWAP
+					STONE
+					STU 256
+				}
+				IFELSE
+				XCPU S1, S0
+				ISNULL
+				PUSHCONT {
+					DROP
+					STZERO
+				}
+				PUSHCONT {
+					SWAP
+					STONE
+					STSLICE
+				}
+				IFELSE
+				STU 8
+				SWAP
+				UNPAIR
+				XCHG S2
+				STU 32
+				STDICT
+				ROLLREV 3
+				NEWC
+				SWAP
+				UNPAIR
+				XCHG S2
+				STU 32
+				STDICT
+				STU 8
+				STU 8
+				STBREFR
+			}
+			ENDC
+			SWAP
+			UNPAIR
+			OVER
+			INC
+			ROLLREV 3
+			PUSHINT 32
+			DICTUSETREF
+			PAIR
+			POP S4
+			.loc SwarmMultisigWallet.sol, 0
+		}
+		IF
+		.loc SwarmMultisigWallet.sol, 594
+		DROP
+		GETGLOB 15
+		PUSHINT 64
+		DICTUGETNEXT
+		NULLSWAPIFNOT
+		IFREF {
+			SWAP
+			LDREFRTOS
+			NIP
+			CALLREF {
+				LDU 64
+				LDU 32
+				LDU 8
+				LDU 8
+				LDI 1
+				SWAP
+				NULLROTRIFNOT
+				PUSHCONT {
+					LDU 256
+				}
+				IF
+				LDI 1
+				SWAP
+				NULLROTRIFNOT
+				PUSHCONT {
+					LDMSGADDR
+				}
+				IF
+				LDU 8
+				ROLLREV 3
+				TRIPLE
+				SWAP
+				LDU 32
+				LDDICT
+				ROTREV
+				PAIR
+				SWAP
+				LDREF
+				ENDS
+				CTOS
+				LDU 32
+				LDDICT
+				ROTREV
+				PAIR
+				SWAP
+				LDU 8
+				LDU 8
+				ENDS
+				TUPLE 9
+			}
+			PAIR
+		}
+		.loc SwarmMultisigWallet.sol, 0
+	}
+	WHILE
+	DROP2
+	.loc SwarmMultisigWallet.sol, 0
+}
+
+.fragment getUpdateDatas, {
+	DROP
+	GETGLOB 6
+	THROWIFNOT 76
+	GETGLOB 2
+	ISNULL
+	IFREF {
+		.inline c4_to_c7
+	}
+	.loc SwarmMultisigWallet.sol, 585
+	ENDS
+	.loc SwarmMultisigWallet.sol, 0
+	CALLREF {
+		.inline getUpdateDatas_84557b69_internal
+	}
+	OVER
+	PUSHCONT {
+		PUSH S3
+		CTOS
+		LDU 2
+		LDMSGADDR
+		DROP
+		NIP
+		NEWC
+		STSLICECONST xc
+		STSLICE
+		PUSHINT 3108168682
+		STUR 130
+		SWAP
+		UNPAIR
+		XCHG S2
+		STU 32
+		STDICT
+		ENDC
+		PUSHINT 0
+		SENDRAWMSG
+	}
+	PUSHCONT {
+		DROP
+	}
+	IFELSE
+	IFREF {
+		.inline upd_only_time_in_c4
+	}
+	THROW 0
+}
+
+.fragment getVersion_0d8e6e2c_internal, {
+	.loc SwarmMultisigWallet.sol, 646
+	PUSHREF {
+		.blob x312e302e30
+	}
+	PUSHREF {
+		.blob x557064617465437573746f6469616e4d756c746973696757616c6c6574
+	}
+	.loc SwarmMultisigWallet.sol, 0
+}
+
+.fragment getVersion, {
+	DROP
+	GETGLOB 6
+	THROWIFNOT 76
+	.loc SwarmMultisigWallet.sol, 645
+	ENDS
+	.loc SwarmMultisigWallet.sol, 0
+	CALLREF {
+		.inline getVersion_0d8e6e2c_internal
+	}
+	PUSH S2
+	PUSHCONT {
+		PUSH S4
+		CTOS
+		LDU 2
+		LDMSGADDR
+		DROP
+		NIP
+		NEWC
+		STSLICECONST xc
+		STSLICE
+		PUSHINT 98
+		STZEROES
+		XCHG S1, S2
+		STSLICECONST xbfd85655
+		STREF
+		STREF
+		ENDC
+		PUSHINT 0
+		SENDRAWMSG
+	}
+	PUSHCONT {
+		DROP2
+	}
+	IFELSE
+	IFREF {
+		.inline upd_only_time_in_c4
+	}
+	THROW 0
+}
+
+.fragment isConfirmed_add86222_internal, {
+	.loc SwarmMultisigWallet.sol, 246
+	PUSHINT 1
+	SWAP
+	LSHIFT
+	UFITS 32
+	AND
+	NEQINT 0
+	.loc SwarmMultisigWallet.sol, 0
+}
+
+.fragment isConfirmed, {
+	DROP
+	GETGLOB 6
+	THROWIFNOT 76
+	.loc SwarmMultisigWallet.sol, 521
+	LDU 32
+	LDU 8
+	ENDS
+	.loc SwarmMultisigWallet.sol, 0
+	CALLREF {
+		.inline isConfirmed_add86222_internal
+	}
+	OVER
+	PUSHCONT {
+		PUSH S3
+		CTOS
+		LDU 2
+		LDMSGADDR
+		DROP
+		NIP
+		NEWC
+		STSLICECONST xc
+		STSLICE
+		PUSHINT 2682278115
+		STUR 130
+		STI 1
+		ENDC
+		PUSHINT 0
+		SENDRAWMSG
+	}
+	PUSHCONT {
+		DROP
+	}
+	IFELSE
+	IFREF {
+		.inline upd_only_time_in_c4
+	}
+	THROW 0
+}
+
+.fragment sendTransaction_b5fb0cc7_internal, {
+	.loc SwarmMultisigWallet.sol, 300
+	GETGLOB 17
+	EQINT 1
+	THROWIFNOT 108
+	.loc SwarmMultisigWallet.sol, 301
+	GETGLOB 11
+	ISNULL
+	PUSHCONT {
+		.loc SwarmMultisigWallet.sol, 302
+		GETGLOB 9
+		GETGLOB 11
+		DUP
+		ISNULL
+		THROWIF 63
+		SDEQ
+		THROWIFNOT 100
+		.loc SwarmMultisigWallet.sol, 0
+	}
+	IFNOT
+	.loc SwarmMultisigWallet.sol, 304
+	GETGLOB 10
+	ISNULL
+	PUSHCONT {
+		.loc SwarmMultisigWallet.sol, 305
+		GETGLOB 5
+		DUP
+		ISNULL
+		PUSHCONT {
+			DROP
+			PUSHINT 0
+		}
+		IF
+		GETGLOB 10
+		DUP
+		ISNULL
+		THROWIF 63
+		EQUAL
+		THROWIFNOT 100
+		.loc SwarmMultisigWallet.sol, 0
+	}
+	IFNOT
+	.loc SwarmMultisigWallet.sol, 307
+	CALLREF {
+		.inline _ensureBalance_47c5d07e_internal
+	}
+	.loc SwarmMultisigWallet.sol, 308
+	ACCEPT
+	.loc SwarmMultisigWallet.sol, 309
+	XCHG3 S0, S3, S4
+	UFITS 120
+	PUSH S5
+	ROLL 5
+	NEWC
+	STSLICECONST x6_
+	STI 1
+	STSLICECONST x1_
+	STSLICE
+	SWAP
+	STGRAMS
+	STDICT
+	PUSHINT 1
+	STUR 110
+	STREF
+	ENDC
+	SWAP
+	SENDRAWMSG
+	.loc SwarmMultisigWallet.sol, 0
+}
+
+.fragment sendTransaction, {
+	DROP
+	GETGLOB 6
+	THROWIFNOT 76
+	GETGLOB 2
+	ISNULL
+	IFREF {
+		.inline c4_to_c7
+	}
+	.loc SwarmMultisigWallet.sol, 292
+	OVER
+	PUSHCONT {
+		LDREF
+		ENDS
+		CTOS
+	}
+	IF
+	LDMSGADDR
+	LDU 128
+	LDDICT
+	LDI 1
+	LDU 8
+	LDREF
+	ENDS
+	.loc SwarmMultisigWallet.sol, 0
+	CALLREF {
+		.inline sendTransaction_b5fb0cc7_internal
+	}
+	OVER
+	PUSHCONT {
+		PUSH S3
+		CTOS
+		LDU 2
+		LDMSGADDR
+		DROP
+		NIP
+		NEWC
+		STSLICECONST xc
+		STSLICE
+		PUSHINT 1
+		STUR 98
+		SWAP
+		NEWC
+		STSLICECONST xfe08ff65
+		STSLICE
+		STBREFR
+		ENDC
+		PUSHINT 0
+		SENDRAWMSG
+	}
+	PUSHCONT {
+		DROP
+	}
+	IFELSE
+	IFREF {
+		.inline upd_only_time_in_c4
+	}
+	THROW 0
+}
+
+.fragment setMaxCleanupOperations_95be722f_internal, {
+	.loc SwarmMultisigWallet.sol, 218
+	GETGLOB 5
+	DUP
+	ISNULL
+	PUSHCONT {
+		DROP
+		PUSHINT 0
+	}
+	IF
+	.loc SwarmMultisigWallet.sol, 263
+	NEWC
+	STU 256
+	.loc SwarmMultisigWallet.sol, 264
+	GETGLOB 9
+	STSLICER
+	.loc SwarmMultisigWallet.sol, 265
+	ENDC
+	HASHCU
+	.loc SwarmMultisigWallet.sol, 266
+	GETGLOB 16
+	PUSHPOW2 8
+	DICTUGETREF
+	NULLSWAPIFNOT
+	IFREF {
+		CTOS
+		CALLREF {
+			LDI 1
+			SWAP
+			NULLROTRIFNOT
+			PUSHCONT {
+				LDU 256
+			}
+			IF
+			LDI 1
+			SWAP
+			NULLROTRIFNOT
+			PUSHCONT {
+				LDMSGADDR
+			}
+			IF
+			LDU 8
+			ENDS
+			TRIPLE
+		}
+	}
+	.loc SwarmMultisigWallet.sol, 267
+	DUP
+	ISNULL
+	THROWIF 100
+	.loc SwarmMultisigWallet.sol, 268
+	ISNULL
+	THROWIF 63
+	.loc SwarmMultisigWallet.sol, 220
+	CALLREF {
+		.inline _ensureBalance_47c5d07e_internal
+	}
+	.loc SwarmMultisigWallet.sol, 221
+	ACCEPT
+	.loc SwarmMultisigWallet.sol, 222
+	SETGLOB 20
+	.loc SwarmMultisigWallet.sol, 0
+}
+
+.fragment setMaxCleanupOperations, {
+	DROP
+	GETGLOB 6
+	THROWIFNOT 76
+	GETGLOB 2
+	ISNULL
+	IFREF {
+		.inline c4_to_c7
+	}
+	.loc SwarmMultisigWallet.sol, 217
+	OVER
+	PUSHCONT {
+		LDREF
+		ENDS
+		CTOS
+	}
+	IF
+	LDU 256
+	ENDS
+	.loc SwarmMultisigWallet.sol, 0
+	CALLREF {
+		.inline setMaxCleanupOperations_95be722f_internal
+	}
+	CALLREF {
+		.inline c7_to_c4
+	}
+	THROW 0
+}
+
+.fragment submitDataUpdate_8c967a3a_internal, {
+	.loc SwarmMultisigWallet.sol, 377
+	PUSHINT 0
+	.loc SwarmMultisigWallet.sol, 384
+	PUSH S2
+	GTINT 0
+	THROWIFNOT 123
+	.loc SwarmMultisigWallet.sol, 385
+	OVER
+	GTINT 0
+	THROWIFNOT 123
+	.loc SwarmMultisigWallet.sol, 386
+	GETGLOB 5
+	DUP
+	ISNULL
+	PUSHCONT {
+		DROP
+		PUSHINT 0
+	}
+	IF
+	.loc SwarmMultisigWallet.sol, 263
+	NEWC
+	STU 256
+	.loc SwarmMultisigWallet.sol, 264
+	GETGLOB 9
+	STSLICER
+	.loc SwarmMultisigWallet.sol, 265
+	ENDC
+	HASHCU
+	.loc SwarmMultisigWallet.sol, 266
+	GETGLOB 16
+	PUSHPOW2 8
+	DICTUGETREF
+	NULLSWAPIFNOT
+	IFREF {
+		CTOS
+		CALLREF {
+			LDI 1
+			SWAP
+			NULLROTRIFNOT
+			PUSHCONT {
+				LDU 256
+			}
+			IF
+			LDI 1
+			SWAP
+			NULLROTRIFNOT
+			PUSHCONT {
+				LDMSGADDR
+			}
+			IF
+			LDU 8
+			ENDS
+			TRIPLE
+		}
+	}
+	.loc SwarmMultisigWallet.sol, 267
+	DUP
+	ISNULL
+	THROWIF 100
+	.loc SwarmMultisigWallet.sol, 268
+	DUP
+	ISNULL
+	THROWIF 63
+	.loc SwarmMultisigWallet.sol, 387
+	PUSHCONT {
+		.loc SwarmMultisigWallet.sol, 278
+		NOW
+		PUSHINT 3601
+		SUB
+		UFITS 64
+		PUSHINT 1000000000
+		SUB
+		UFITS 64
+		LSHIFT 32
+		UFITS 64
+		.loc SwarmMultisigWallet.sol, 493
+		GETGLOB 15
+		PUSHINT 64
+		DICTUMINREF
+		NULLSWAPIFNOT
+		IFREF {
+			SWAP
+			CTOS
+			CALLREF {
+				LDU 64
+				LDU 32
+				LDU 8
+				LDU 8
+				LDI 1
+				SWAP
+				NULLROTRIFNOT
+				PUSHCONT {
+					LDU 256
+				}
+				IF
+				LDI 1
+				SWAP
+				NULLROTRIFNOT
+				PUSHCONT {
+					LDMSGADDR
+				}
+				IF
+				LDU 8
+				ROLLREV 3
+				TRIPLE
+				SWAP
+				LDU 32
+				LDDICT
+				ROTREV
+				PAIR
+				SWAP
+				LDREF
+				ENDS
+				CTOS
+				LDU 32
+				LDDICT
+				ROTREV
+				PAIR
+				SWAP
+				LDU 8
+				LDU 8
+				ENDS
+				TUPLE 9
+			}
+			PAIR
+		}
+		.loc SwarmMultisigWallet.sol, 494
+		DUP
+		ISNULL
+		PUSHCONT {
+			.loc SwarmMultisigWallet.sol, 494
+			DROP2
+			.loc SwarmMultisigWallet.sol, 0
+		}
+		IFJMP
+		.loc SwarmMultisigWallet.sol, 495
+		BLKPUSH 2, 0
+		ISNULL
+		THROWIF 63
+		UNPAIR
+		.loc SwarmMultisigWallet.sol, 496
+		PUSH2 S1, S3
+		LEQ
+		.loc SwarmMultisigWallet.sol, 497
+		DUP
+		PUSHCONT {
+			.loc SwarmMultisigWallet.sol, 497
+			BLKDROP 5
+			.loc SwarmMultisigWallet.sol, 0
+		}
+		IFNOTJMP
+		.loc SwarmMultisigWallet.sol, 499
+		CALLREF {
+			.inline _ensureBalance_47c5d07e_internal
+		}
+		.loc SwarmMultisigWallet.sol, 500
+		ACCEPT
+		.loc SwarmMultisigWallet.sol, 501
+		PUSHINT 0
+		.loc SwarmMultisigWallet.sol, 502
+		PUSHCONT {
+			DUP2
+			GETGLOB 20
+			LESS
+			AND
+		}
+		PUSHCONT {
+			.loc SwarmMultisigWallet.sol, 504
+			INC
+			.loc SwarmMultisigWallet.sol, 505
+			PUSH S2
+			INDEX 4
+			THIRD
+			.loc SwarmMultisigWallet.sol, 241
+			GETGLOB 13
+			PUSHINT 8
+			ROT
+			MUL
+			POW2
+			SUB
+			UFITS 256
+			.loc SwarmMultisigWallet.sol, 0
+			SETGLOB 13
+			.loc SwarmMultisigWallet.sol, 506
+			PUSH S3
+			GETGLOB 15
+			PUSHINT 64
+			DICTUDEL
+			DROP
+			SETGLOB 15
+			.loc SwarmMultisigWallet.sol, 507
+			PUSH S3
+			GETGLOB 15
+			PUSHINT 64
+			DICTUGETNEXT
+			NULLSWAPIFNOT
+			IFREF {
+				SWAP
+				LDREFRTOS
+				NIP
+				CALLREF {
+					LDU 64
+					LDU 32
+					LDU 8
+					LDU 8
+					LDI 1
+					SWAP
+					NULLROTRIFNOT
+					PUSHCONT {
+						LDU 256
+					}
+					IF
+					LDI 1
+					SWAP
+					NULLROTRIFNOT
+					PUSHCONT {
+						LDMSGADDR
+					}
+					IF
+					LDU 8
+					ROLLREV 3
+					TRIPLE
+					SWAP
+					LDU 32
+					LDDICT
+					ROTREV
+					PAIR
+					SWAP
+					LDREF
+					ENDS
+					CTOS
+					LDU 32
+					LDDICT
+					ROTREV
+					PAIR
+					SWAP
+					LDU 8
+					LDU 8
+					ENDS
+					TUPLE 9
+				}
+				PAIR
+			}
+			POP S5
+			.loc SwarmMultisigWallet.sol, 508
+			PUSH S4
+			ISNULL
+			PUSHCONT {
+				.loc SwarmMultisigWallet.sol, 509
+				FALSE
+			}
+			PUSHCONT {
+				.loc SwarmMultisigWallet.sol, 511
+				PUSH2 S4, S4
+				ISNULL
+				THROWIF 63
+				UNPAIR
+				PUXC2 S1, S4, S5
+				DROP2
+				.loc SwarmMultisigWallet.sol, 512
+				PUSH S6
+				LEQ
+			}
+			IFELSE
+			POP S2
+			.loc SwarmMultisigWallet.sol, 0
+		}
+		WHILE
+		.loc SwarmMultisigWallet.sol, 515
+		BLKDROP 6
+		CALLREF {
+			.inline c7_to_c4
+		}
+		COMMIT
+		.loc SwarmMultisigWallet.sol, 491
+	}
+	CALLX
+	.loc SwarmMultisigWallet.sol, 388
+	DUP
+	THIRD
+	.loc SwarmMultisigWallet.sol, 231
+	GETGLOB 13
+	PUSHINT 8
+	ROT
+	MUL
+	RSHIFT
+	MODPOW2 8
+	UFITS 8
+	.loc SwarmMultisigWallet.sol, 0
+	LESSINT 5
+	THROWIFNOT 113
+	.loc SwarmMultisigWallet.sol, 389
+	CALLREF {
+		.inline _ensureBalance_47c5d07e_internal
+	}
+	.loc SwarmMultisigWallet.sol, 390
+	ACCEPT
+	.loc SwarmMultisigWallet.sol, 391
+	GETGLOB 19
+	.loc SwarmMultisigWallet.sol, 393
+	DUP
+	EQINT 1
+	PUSHCONT {
+		.loc SwarmMultisigWallet.sol, 394
+		BLKSWAP 4, 3
+		.loc SwarmMultisigWallet.sol, 139
+		PUSHINT 0
+		SETGLOB 12
+		.loc SwarmMultisigWallet.sol, 140
+		PUSHINT 0
+		SETGLOB 13
+		.loc SwarmMultisigWallet.sol, 141
+		NULL
+		SETGLOB 14
+		.loc SwarmMultisigWallet.sol, 142
+		NULL
+		SETGLOB 15
+		.loc SwarmMultisigWallet.sol, 143
+		NULL
+		SETGLOB 16
+		.loc SwarmMultisigWallet.sol, 144
+		NULL
+		SETGLOB 10
+		.loc SwarmMultisigWallet.sol, 145
+		NULL
+		SETGLOB 11
+		.loc SwarmMultisigWallet.sol, 146
+		PUSHREFSLICE {
+			.blob x8000000000000000000000000000000000000000000000000000000000000000001_
+		}
+		.loc SwarmMultisigWallet.sol, 147
+		PUSH S4
+		FIRST
+		GTINT 0
+		PUSHCONT {
+			.loc SwarmMultisigWallet.sol, 148
+			PUSHINT 0
+			PUSH S5
+			SECOND
+			PUSHINT 32
+			DICTUGET
+			THROWIFNOT 50
+			PLDU 256
+			SETGLOB 10
+			.loc SwarmMultisigWallet.sol, 0
+		}
+		IF
+		.loc SwarmMultisigWallet.sol, 150
+		PUSH S3
+		FIRST
+		GTINT 0
+		PUSHCONT {
+			.loc SwarmMultisigWallet.sol, 151
+			PUSHINT 0
+			PUSH S4
+			SECOND
+			PUSHINT 32
+			DICTUGET
+			THROWIFNOT 50
+			SETGLOB 11
+			.loc SwarmMultisigWallet.sol, 0
+		}
+		IF
+		.loc SwarmMultisigWallet.sol, 153
+		PUSHINT 40
+		SETGLOB 20
+		.loc SwarmMultisigWallet.sol, 155
+		PUSHINT 0
+		.loc SwarmMultisigWallet.sol, 156
+		PUSH S5
+		FIRST
+		PUSH S5
+		FIRST
+		ADD
+		.loc SwarmMultisigWallet.sol, 157
+		DUP
+		GTINT 0
+		SWAP
+		LESSINT 33
+		AND
+		THROWIFNOT 117
+		.loc SwarmMultisigWallet.sol, 159
+		PUSH S5
+		FIRST
+		.loc SwarmMultisigWallet.sol, 160
+		PUSHINT 0
+		PUSHCONT {
+			PUSH2 S0, S1
+			LESS
+		}
+		PUSHCONT {
+			.loc SwarmMultisigWallet.sol, 161
+			PUSH2 S0, S7
+			SECOND
+			PUSHINT 32
+			DICTUGET
+			THROWIFNOT 50
+			PLDU 256
+			.loc SwarmMultisigWallet.sol, 162
+			DUP
+			THROWIFNOT 101
+			.loc SwarmMultisigWallet.sol, 164
+			DUP
+			NEWC
+			STU 256
+			.loc SwarmMultisigWallet.sol, 165
+			PUSH S5
+			STSLICER
+			.loc SwarmMultisigWallet.sol, 166
+			ENDC
+			HASHCU
+			.loc SwarmMultisigWallet.sol, 167
+			DUP
+			GETGLOB 16
+			PUSHPOW2 8
+			DICTUGET
+			NULLSWAPIFNOT
+			NIP
+			PUSHCONT {
+				.loc SwarmMultisigWallet.sol, 168
+				OVER
+				NULL
+				PUSH2 S6, S6
+				INC
+				UFITS 8
+				POP S8
+				TRIPLE
+				OVER
+				GETGLOB 16
+				ROT
+				CALLREF {
+					UNTRIPLE
+					XCHG S2
+					NEWC
+					XCPU S1, S0
+					ISNULL
+					PUSHCONT {
+						DROP
+						STZERO
+					}
+					PUSHCONT {
+						SWAP
+						STONE
+						STU 256
+					}
+					IFELSE
+					XCPU S1, S0
+					ISNULL
+					PUSHCONT {
+						DROP
+						STZERO
+					}
+					PUSHCONT {
+						SWAP
+						STONE
+						STSLICE
+					}
+					IFELSE
+					STU 8
+				}
+				ENDC
+				ROTREV
+				PUSHPOW2 8
+				DICTUSETREF
+				SETGLOB 16
+				.loc SwarmMultisigWallet.sol, 0
+			}
+			IFNOT
+			.loc SwarmMultisigWallet.sol, 0
+			DROP2
+			.loc SwarmMultisigWallet.sol, 160
+			INC
+			.loc SwarmMultisigWallet.sol, 0
+		}
+		WHILE
+		DROP2
+		.loc SwarmMultisigWallet.sol, 172
+		PUSH S4
+		FIRST
+		.loc SwarmMultisigWallet.sol, 173
+		PUSHINT 0
+		PUSHCONT {
+			PUSH2 S0, S1
+			LESS
+		}
+		PUSHCONT {
+			.loc SwarmMultisigWallet.sol, 174
+			PUSH2 S0, S6
+			SECOND
+			PUSHINT 32
+			DICTUGET
+			THROWIFNOT 50
+			.loc SwarmMultisigWallet.sol, 175
+			PUSH2 S0, S4
+			SDEQ
+			THROWIF 101
+			.loc SwarmMultisigWallet.sol, 177
+			NEWC
+			PUSHPOW2 8
+			STZEROES
+			.loc SwarmMultisigWallet.sol, 178
+			OVER
+			STSLICER
+			.loc SwarmMultisigWallet.sol, 179
+			ENDC
+			HASHCU
+			.loc SwarmMultisigWallet.sol, 180
+			DUP
+			GETGLOB 16
+			PUSHPOW2 8
+			DICTUGET
+			NULLSWAPIFNOT
+			NIP
+			PUSHCONT {
+				.loc SwarmMultisigWallet.sol, 181
+				NULL
+				PUSH3 S2, S5, S5
+				INC
+				UFITS 8
+				POP S8
+				TRIPLE
+				OVER
+				GETGLOB 16
+				ROT
+				CALLREF {
+					UNTRIPLE
+					XCHG S2
+					NEWC
+					XCPU S1, S0
+					ISNULL
+					PUSHCONT {
+						DROP
+						STZERO
+					}
+					PUSHCONT {
+						SWAP
+						STONE
+						STU 256
+					}
+					IFELSE
+					XCPU S1, S0
+					ISNULL
+					PUSHCONT {
+						DROP
+						STZERO
+					}
+					PUSHCONT {
+						SWAP
+						STONE
+						STSLICE
+					}
+					IFELSE
+					STU 8
+				}
+				ENDC
+				ROTREV
+				PUSHPOW2 8
+				DICTUSETREF
+				SETGLOB 16
+				.loc SwarmMultisigWallet.sol, 0
+			}
+			IFNOT
+			.loc SwarmMultisigWallet.sol, 0
+			DROP2
+			.loc SwarmMultisigWallet.sol, 173
+			INC
+			.loc SwarmMultisigWallet.sol, 0
+		}
+		WHILE
+		DROP2
+		.loc SwarmMultisigWallet.sol, 185
+		DUP
+		GTINT 0
+		THROWIFNOT 101
+		.loc SwarmMultisigWallet.sol, 186
+		PUSH2 S0, S3
+		LEQ
+		OVER
+		ROLL 5
+		CONDSEL
+		SETGLOB 18
+		.loc SwarmMultisigWallet.sol, 187
+		PUSH2 S0, S2
+		LEQ
+		OVER
+		ROLL 4
+		CONDSEL
+		DUP
+		SETGLOB 19
+		.loc SwarmMultisigWallet.sol, 188
+		GETGLOB 18
+		LEQ
+		GETGLOB 18
+		GETGLOB 19
+		CONDSEL
+		SETGLOB 19
+		.loc SwarmMultisigWallet.sol, 189
+		SETGLOB 17
+		.loc SwarmMultisigWallet.sol, 0
+		BLKDROP 6
+		.loc SwarmMultisigWallet.sol, 395
+		PUSHINT 0
+		.loc SwarmMultisigWallet.sol, 0
+	}
+	PUSHCONT {
+		.loc SwarmMultisigWallet.sol, 397
+		OVER
+		THIRD
+		.loc SwarmMultisigWallet.sol, 236
+		GETGLOB 13
+		PUSHINT 8
+		ROT
+		MUL
+		POW2
+		ADD
+		.loc SwarmMultisigWallet.sol, 0
+		SETGLOB 13
+		.loc SwarmMultisigWallet.sol, 273
+		NOW
+		PUSHINT 1000000000
+		SUB
+		UFITS 32
+		LSHIFT 32
+		UFITS 64
+		LTIME
+		MODPOW2 32
+		OR
+		.loc SwarmMultisigWallet.sol, 400
+		DUP
+		PUSHINT 0
+		ROLL 3
+		PUSHINT 0
+		PUSH S5
+		BLKSWAP 4, 8
+		TUPLE 9
+		.loc SwarmMultisigWallet.sol, 403
+		PUXC2 S1, S0, S2
+		THIRD
+		.loc SwarmMultisigWallet.sol, 453
+		OVER
+		INDEX 3
+		INC
+		UFITS 8
+		PUSH S2
+		THIRD
+		GEQ
+		PUSHCONT {
+			.loc SwarmMultisigWallet.sol, 454
+			OVER
+			INDEX 5
+			PUSH S2
+			INDEX 6
+			PUSH S3
+			INDEX 7
+			PUSH S4
+			INDEX 8
+			.loc SwarmMultisigWallet.sol, 139
+			PUSHINT 0
+			SETGLOB 12
+			.loc SwarmMultisigWallet.sol, 140
+			PUSHINT 0
+			SETGLOB 13
+			.loc SwarmMultisigWallet.sol, 141
+			NULL
+			SETGLOB 14
+			.loc SwarmMultisigWallet.sol, 142
+			NULL
+			SETGLOB 15
+			.loc SwarmMultisigWallet.sol, 143
+			NULL
+			SETGLOB 16
+			.loc SwarmMultisigWallet.sol, 144
+			NULL
+			SETGLOB 10
+			.loc SwarmMultisigWallet.sol, 145
+			NULL
+			SETGLOB 11
+			.loc SwarmMultisigWallet.sol, 146
+			PUSHREFSLICE {
+				.blob x8000000000000000000000000000000000000000000000000000000000000000001_
+			}
+			.loc SwarmMultisigWallet.sol, 147
+			PUSH S4
+			FIRST
+			GTINT 0
+			PUSHCONT {
+				.loc SwarmMultisigWallet.sol, 148
+				PUSHINT 0
+				PUSH S5
+				SECOND
+				PUSHINT 32
+				DICTUGET
+				THROWIFNOT 50
+				PLDU 256
+				SETGLOB 10
+				.loc SwarmMultisigWallet.sol, 0
+			}
+			IF
+			.loc SwarmMultisigWallet.sol, 150
+			PUSH S3
+			FIRST
+			GTINT 0
+			PUSHCONT {
+				.loc SwarmMultisigWallet.sol, 151
+				PUSHINT 0
+				PUSH S4
+				SECOND
+				PUSHINT 32
+				DICTUGET
+				THROWIFNOT 50
+				SETGLOB 11
+				.loc SwarmMultisigWallet.sol, 0
+			}
+			IF
+			.loc SwarmMultisigWallet.sol, 153
+			PUSHINT 40
+			SETGLOB 20
+			.loc SwarmMultisigWallet.sol, 155
+			PUSHINT 0
+			.loc SwarmMultisigWallet.sol, 156
+			PUSH S5
+			FIRST
+			PUSH S5
+			FIRST
+			ADD
+			.loc SwarmMultisigWallet.sol, 157
+			DUP
+			GTINT 0
+			SWAP
+			LESSINT 33
+			AND
+			THROWIFNOT 117
+			.loc SwarmMultisigWallet.sol, 159
+			PUSH S5
+			FIRST
+			.loc SwarmMultisigWallet.sol, 160
+			PUSHINT 0
+			PUSHCONT {
+				PUSH2 S0, S1
+				LESS
+			}
+			PUSHCONT {
+				.loc SwarmMultisigWallet.sol, 161
+				PUSH2 S0, S7
+				SECOND
+				PUSHINT 32
+				DICTUGET
+				THROWIFNOT 50
+				PLDU 256
+				.loc SwarmMultisigWallet.sol, 162
+				DUP
+				THROWIFNOT 101
+				.loc SwarmMultisigWallet.sol, 164
+				DUP
+				NEWC
+				STU 256
+				.loc SwarmMultisigWallet.sol, 165
+				PUSH S5
+				STSLICER
+				.loc SwarmMultisigWallet.sol, 166
+				ENDC
+				HASHCU
+				.loc SwarmMultisigWallet.sol, 167
+				DUP
+				GETGLOB 16
+				PUSHPOW2 8
+				DICTUGET
+				NULLSWAPIFNOT
+				NIP
+				PUSHCONT {
+					.loc SwarmMultisigWallet.sol, 168
+					OVER
+					NULL
+					PUSH2 S6, S6
+					INC
+					UFITS 8
+					POP S8
+					TRIPLE
+					OVER
+					GETGLOB 16
+					ROT
+					CALLREF {
+						UNTRIPLE
+						XCHG S2
+						NEWC
+						XCPU S1, S0
+						ISNULL
+						PUSHCONT {
+							DROP
+							STZERO
+						}
+						PUSHCONT {
+							SWAP
+							STONE
+							STU 256
+						}
+						IFELSE
+						XCPU S1, S0
+						ISNULL
+						PUSHCONT {
+							DROP
+							STZERO
+						}
+						PUSHCONT {
+							SWAP
+							STONE
+							STSLICE
+						}
+						IFELSE
+						STU 8
+					}
+					ENDC
+					ROTREV
+					PUSHPOW2 8
+					DICTUSETREF
+					SETGLOB 16
+					.loc SwarmMultisigWallet.sol, 0
+				}
+				IFNOT
+				.loc SwarmMultisigWallet.sol, 0
+				DROP2
+				.loc SwarmMultisigWallet.sol, 160
+				INC
+				.loc SwarmMultisigWallet.sol, 0
+			}
+			WHILE
+			DROP2
+			.loc SwarmMultisigWallet.sol, 172
+			PUSH S4
+			FIRST
+			.loc SwarmMultisigWallet.sol, 173
+			PUSHINT 0
+			PUSHCONT {
+				PUSH2 S0, S1
+				LESS
+			}
+			PUSHCONT {
+				.loc SwarmMultisigWallet.sol, 174
+				PUSH2 S0, S6
+				SECOND
+				PUSHINT 32
+				DICTUGET
+				THROWIFNOT 50
+				.loc SwarmMultisigWallet.sol, 175
+				PUSH2 S0, S4
+				SDEQ
+				THROWIF 101
+				.loc SwarmMultisigWallet.sol, 177
+				NEWC
+				PUSHPOW2 8
+				STZEROES
+				.loc SwarmMultisigWallet.sol, 178
+				OVER
+				STSLICER
+				.loc SwarmMultisigWallet.sol, 179
+				ENDC
+				HASHCU
+				.loc SwarmMultisigWallet.sol, 180
+				DUP
+				GETGLOB 16
+				PUSHPOW2 8
+				DICTUGET
+				NULLSWAPIFNOT
+				NIP
+				PUSHCONT {
+					.loc SwarmMultisigWallet.sol, 181
+					NULL
+					PUSH3 S2, S5, S5
+					INC
+					UFITS 8
+					POP S8
+					TRIPLE
+					OVER
+					GETGLOB 16
+					ROT
+					CALLREF {
+						UNTRIPLE
+						XCHG S2
+						NEWC
+						XCPU S1, S0
+						ISNULL
+						PUSHCONT {
+							DROP
+							STZERO
+						}
+						PUSHCONT {
+							SWAP
+							STONE
+							STU 256
+						}
+						IFELSE
+						XCPU S1, S0
+						ISNULL
+						PUSHCONT {
+							DROP
+							STZERO
+						}
+						PUSHCONT {
+							SWAP
+							STONE
+							STSLICE
+						}
+						IFELSE
+						STU 8
+					}
+					ENDC
+					ROTREV
+					PUSHPOW2 8
+					DICTUSETREF
+					SETGLOB 16
+					.loc SwarmMultisigWallet.sol, 0
+				}
+				IFNOT
+				.loc SwarmMultisigWallet.sol, 0
+				DROP2
+				.loc SwarmMultisigWallet.sol, 173
+				INC
+				.loc SwarmMultisigWallet.sol, 0
+			}
+			WHILE
+			DROP2
+			.loc SwarmMultisigWallet.sol, 185
+			DUP
+			GTINT 0
+			THROWIFNOT 101
+			.loc SwarmMultisigWallet.sol, 186
+			PUSH2 S0, S3
+			LEQ
+			OVER
+			ROLL 5
+			CONDSEL
+			SETGLOB 18
+			.loc SwarmMultisigWallet.sol, 187
+			PUSH2 S0, S2
+			LEQ
+			OVER
+			ROLL 4
+			CONDSEL
+			DUP
+			SETGLOB 19
+			.loc SwarmMultisigWallet.sol, 188
+			GETGLOB 18
+			LEQ
+			GETGLOB 18
+			GETGLOB 19
+			CONDSEL
+			SETGLOB 19
+			.loc SwarmMultisigWallet.sol, 189
+			SETGLOB 17
+			.loc SwarmMultisigWallet.sol, 0
+			BLKDROP 3
+		}
+		PUSHCONT {
+			.loc SwarmMultisigWallet.sol, 456
+			OVER
+			SECOND
+			PUSHINT 1
+			PUSH S2
+			.loc SwarmMultisigWallet.sol, 256
+			LSHIFT
+			UFITS 32
+			OR
+			.loc SwarmMultisigWallet.sol, 0
+			PUXC S2, S-1
+			SETINDEX 1
+			.loc SwarmMultisigWallet.sol, 457
+			DUP
+			INDEX 3
+			INC
+			UFITS 8
+			SETINDEX 3
+			POP S2
+			.loc SwarmMultisigWallet.sol, 458
+			PUSH S2
+			GETGLOB 15
+			PUSH S3
+			CALLREF {
+				UNTUPLE 9
+				REVERSE 9, 0
+				NEWC
+				STU 64
+				STU 32
+				STU 8
+				STU 8
+				SWAP
+				UNTRIPLE
+				XCHG3 S1, S3, S3
+				DUP
+				ISNULL
+				PUSHCONT {
+					DROP
+					STZERO
+				}
+				PUSHCONT {
+					SWAP
+					STONE
+					STU 256
+				}
+				IFELSE
+				XCPU S1, S0
+				ISNULL
+				PUSHCONT {
+					DROP
+					STZERO
+				}
+				PUSHCONT {
+					SWAP
+					STONE
+					STSLICE
+				}
+				IFELSE
+				STU 8
+				SWAP
+				UNPAIR
+				XCHG S2
+				STU 32
+				STDICT
+				ROLLREV 3
+				NEWC
+				SWAP
+				UNPAIR
+				XCHG S2
+				STU 32
+				STDICT
+				STU 8
+				STU 8
+				STBREFR
+			}
+			ENDC
+			ROTREV
+			PUSHINT 64
+			DICTUSETREF
+			SETGLOB 15
+			.loc SwarmMultisigWallet.sol, 0
+		}
+		IFELSE
+		BLKDROP 3
+		.loc SwarmMultisigWallet.sol, 404
+		NIP
+		.loc SwarmMultisigWallet.sol, 0
+	}
+	IFELSE
+	.loc SwarmMultisigWallet.sol, 0
+}
+
+.fragment submitDataUpdate, {
+	DROP
+	GETGLOB 6
+	THROWIFNOT 76
+	GETGLOB 2
+	ISNULL
+	IFREF {
+		.inline c4_to_c7
+	}
+	.loc SwarmMultisigWallet.sol, 377
+	OVER
+	PUSHCONT {
+		LDU 32
+		LDDICT
+		ROTREV
+		PAIR
+		SWAP
+		LDREF
+		ENDS
+		CTOS
+	}
+	PUSHCONT {
+		LDU 32
+		LDDICT
+		ROTREV
+		PAIR
+		SWAP
+	}
+	IFELSE
+	LDU 32
+	LDDICT
+	ROTREV
+	PAIR
+	SWAP
+	LDU 8
+	LDU 8
+	ENDS
+	.loc SwarmMultisigWallet.sol, 0
+	CALLREF {
+		.inline submitDataUpdate_8c967a3a_internal
+	}
+	OVER
+	PUSHCONT {
+		PUSH S3
+		CTOS
+		LDU 2
+		LDMSGADDR
+		DROP
+		NIP
+		NEWC
+		STSLICECONST xc
+		STSLICE
+		PUSHINT 3733746570
+		STUR 130
+		STU 64
+		ENDC
+		PUSHINT 0
+		SENDRAWMSG
+	}
+	PUSHCONT {
+		DROP
+	}
+	IFELSE
+	CALLREF {
+		.inline c7_to_c4
+	}
+	THROW 0
+}
+
+.fragment submitTransaction_8872de7f_internal, {
+	.loc SwarmMultisigWallet.sol, 320
+	PUSHINT 0
+	.loc SwarmMultisigWallet.sol, 329
+	GETGLOB 5
+	DUP
+	ISNULL
+	PUSHCONT {
+		DROP
+		PUSHINT 0
+	}
+	IF
+	.loc SwarmMultisigWallet.sol, 263
+	NEWC
+	STU 256
+	.loc SwarmMultisigWallet.sol, 264
+	GETGLOB 9
+	STSLICER
+	.loc SwarmMultisigWallet.sol, 265
+	ENDC
+	HASHCU
+	.loc SwarmMultisigWallet.sol, 266
+	GETGLOB 16
+	PUSHPOW2 8
+	DICTUGETREF
+	NULLSWAPIFNOT
+	IFREF {
+		CTOS
+		CALLREF {
+			LDI 1
+			SWAP
+			NULLROTRIFNOT
+			PUSHCONT {
+				LDU 256
+			}
+			IF
+			LDI 1
+			SWAP
+			NULLROTRIFNOT
+			PUSHCONT {
+				LDMSGADDR
+			}
+			IF
+			LDU 8
+			ENDS
+			TRIPLE
+		}
+	}
+	.loc SwarmMultisigWallet.sol, 267
+	DUP
+	ISNULL
+	THROWIF 100
+	.loc SwarmMultisigWallet.sol, 268
+	DUP
+	ISNULL
+	THROWIF 63
+	.loc SwarmMultisigWallet.sol, 330
+	PUSHCONT {
+		.loc SwarmMultisigWallet.sol, 278
+		NOW
+		PUSHINT 3601
+		SUB
+		UFITS 64
+		PUSHINT 1000000000
+		SUB
+		UFITS 64
+		LSHIFT 32
+		UFITS 64
+		.loc SwarmMultisigWallet.sol, 465
+		GETGLOB 14
+		PUSHINT 64
+		DICTUMINREF
+		NULLSWAPIFNOT
+		IFREF {
+			SWAP
+			CTOS
+			CALLREF {
+				LDU 64
+				LDU 32
+				LDU 8
+				LDU 8
+				LDI 1
+				SWAP
+				NULLROTRIFNOT
+				PUSHCONT {
+					LDU 256
+				}
+				IF
+				LDI 1
+				SWAP
+				NULLROTRIFNOT
+				PUSHCONT {
+					LDMSGADDR
+				}
+				IF
+				LDU 8
+				ROLLREV 3
+				TRIPLE
+				SWAP
+				LDREF
+				ENDS
+				CTOS
+				LDMSGADDR
+				LDU 128
+				LDDICT
+				LDU 16
+				LDREF
+				LDI 1
+				ENDS
+				TUPLE 11
+			}
+			PAIR
+		}
+		.loc SwarmMultisigWallet.sol, 466
+		DUP
+		ISNULL
+		PUSHCONT {
+			.loc SwarmMultisigWallet.sol, 466
+			DROP2
+			.loc SwarmMultisigWallet.sol, 0
+		}
+		IFJMP
+		.loc SwarmMultisigWallet.sol, 467
+		BLKPUSH 2, 0
+		ISNULL
+		THROWIF 63
+		UNPAIR
+		.loc SwarmMultisigWallet.sol, 468
+		PUSH2 S1, S3
+		LEQ
+		.loc SwarmMultisigWallet.sol, 469
+		DUP
+		PUSHCONT {
+			.loc SwarmMultisigWallet.sol, 469
+			BLKDROP 5
+			.loc SwarmMultisigWallet.sol, 0
+		}
+		IFNOTJMP
+		.loc SwarmMultisigWallet.sol, 471
+		CALLREF {
+			.inline _ensureBalance_47c5d07e_internal
+		}
+		.loc SwarmMultisigWallet.sol, 472
+		ACCEPT
+		.loc SwarmMultisigWallet.sol, 473
+		PUSHINT 0
+		.loc SwarmMultisigWallet.sol, 474
+		PUSHCONT {
+			DUP2
+			GETGLOB 20
+			LESS
+			AND
+		}
+		PUSHCONT {
+			.loc SwarmMultisigWallet.sol, 476
+			INC
+			.loc SwarmMultisigWallet.sol, 477
+			PUSH S2
+			INDEX 4
+			THIRD
+			.loc SwarmMultisigWallet.sol, 241
+			GETGLOB 12
+			PUSHINT 8
+			ROT
+			MUL
+			POW2
+			SUB
+			UFITS 256
+			.loc SwarmMultisigWallet.sol, 0
+			SETGLOB 12
+			.loc SwarmMultisigWallet.sol, 478
+			PUSH S3
+			GETGLOB 14
+			PUSHINT 64
+			DICTUDEL
+			DROP
+			SETGLOB 14
+			.loc SwarmMultisigWallet.sol, 479
+			PUSH S3
+			GETGLOB 14
+			PUSHINT 64
+			DICTUGETNEXT
+			NULLSWAPIFNOT
+			IFREF {
+				SWAP
+				LDREFRTOS
+				NIP
+				CALLREF {
+					LDU 64
+					LDU 32
+					LDU 8
+					LDU 8
+					LDI 1
+					SWAP
+					NULLROTRIFNOT
+					PUSHCONT {
+						LDU 256
+					}
+					IF
+					LDI 1
+					SWAP
+					NULLROTRIFNOT
+					PUSHCONT {
+						LDMSGADDR
+					}
+					IF
+					LDU 8
+					ROLLREV 3
+					TRIPLE
+					SWAP
+					LDREF
+					ENDS
+					CTOS
+					LDMSGADDR
+					LDU 128
+					LDDICT
+					LDU 16
+					LDREF
+					LDI 1
+					ENDS
+					TUPLE 11
+				}
+				PAIR
+			}
+			POP S5
+			.loc SwarmMultisigWallet.sol, 480
+			PUSH S4
+			ISNULL
+			PUSHCONT {
+				.loc SwarmMultisigWallet.sol, 481
+				FALSE
+			}
+			PUSHCONT {
+				.loc SwarmMultisigWallet.sol, 483
+				PUSH2 S4, S4
+				ISNULL
+				THROWIF 63
+				UNPAIR
+				PUXC2 S1, S4, S5
+				DROP2
+				.loc SwarmMultisigWallet.sol, 484
+				PUSH S6
+				LEQ
+			}
+			IFELSE
+			POP S2
+			.loc SwarmMultisigWallet.sol, 0
+		}
+		WHILE
+		.loc SwarmMultisigWallet.sol, 487
+		BLKDROP 6
+		CALLREF {
+			.inline c7_to_c4
+		}
+		COMMIT
+		.loc SwarmMultisigWallet.sol, 463
+	}
+	CALLX
+	.loc SwarmMultisigWallet.sol, 331
+	DUP
+	THIRD
+	.loc SwarmMultisigWallet.sol, 231
+	GETGLOB 12
+	PUSHINT 8
+	ROT
+	MUL
+	RSHIFT
+	MODPOW2 8
+	UFITS 8
+	.loc SwarmMultisigWallet.sol, 0
+	LESSINT 5
+	THROWIFNOT 113
+	.loc SwarmMultisigWallet.sol, 332
+	CALLREF {
+		.inline _ensureBalance_47c5d07e_internal
+	}
+	.loc SwarmMultisigWallet.sol, 333
+	ACCEPT
+	.loc SwarmMultisigWallet.sol, 335
+	GETGLOB 18
+	.loc SwarmMultisigWallet.sol, 336
+	PUSH S4
+	PUSHPOW2 7
+	AND
+	PUSHCONT {
+		.loc SwarmMultisigWallet.sol, 337
+		PUSHINT 0
+		POP S8
+		.loc SwarmMultisigWallet.sol, 0
+	}
+	IF
+	.loc SwarmMultisigWallet.sol, 339
+	DUP
+	EQINT 1
+	PUSHCONT {
+		.loc SwarmMultisigWallet.sol, 340
+		BLKSWAP 2, 6
+		SWAP
+		UFITS 120
+		BLKSWAP 2, 7
+		NEWC
+		STSLICECONST x6_
+		STI 1
+		STSLICECONST x1_
+		STSLICE
+		SWAP
+		STGRAMS
+		STDICT
+		PUSHINT 1
+		STUR 110
+		ROLL 4
+		STREFR
+		ENDC
+		ROLL 4
+		SENDRAWMSG
+		.loc SwarmMultisigWallet.sol, 341
+		BLKDROP 3
+		PUSHINT 0
+		.loc SwarmMultisigWallet.sol, 0
+	}
+	PUSHCONT {
+		.loc SwarmMultisigWallet.sol, 343
+		OVER
+		THIRD
+		.loc SwarmMultisigWallet.sol, 236
+		GETGLOB 12
+		PUSHINT 8
+		ROT
+		MUL
+		POW2
+		ADD
+		.loc SwarmMultisigWallet.sol, 0
+		SETGLOB 12
+		.loc SwarmMultisigWallet.sol, 273
+		NOW
+		PUSHINT 1000000000
+		SUB
+		UFITS 32
+		LSHIFT 32
+		UFITS 64
+		LTIME
+		MODPOW2 32
+		OR
+		.loc SwarmMultisigWallet.sol, 345
+		DUP
+		PUSHINT 0
+		ROLL 3
+		PUSHINT 0
+		PUSH S5
+		BLKSWAP 3, 11
+		BLKSWAP 2, 11
+		ROLL 13
+		TUPLE 11
+		.loc SwarmMultisigWallet.sol, 348
+		PUXC2 S1, S0, S2
+		THIRD
+		.loc SwarmMultisigWallet.sol, 437
+		OVER
+		INDEX 3
+		INC
+		UFITS 8
+		PUSH S2
+		THIRD
+		GEQ
+		PUSHCONT {
+			.loc SwarmMultisigWallet.sol, 438
+			OVER
+			INDEX 7
+			PUSH S2
+			INDEX 6
+			UFITS 120
+			PUSH S3
+			INDEX 5
+			PUSH S4
+			INDEX 10
+			NEWC
+			STSLICECONST x6_
+			STI 1
+			STSLICECONST x1_
+			STSLICE
+			SWAP
+			STGRAMS
+			STDICT
+			PUSHINT 1
+			STUR 110
+			PUSH S2
+			INDEX 9
+			STREFR
+			ENDC
+			PUSH S2
+			INDEX 8
+			SENDRAWMSG
+			.loc SwarmMultisigWallet.sol, 439
+			OVER
+			INDEX 4
+			THIRD
+			.loc SwarmMultisigWallet.sol, 241
+			GETGLOB 12
+			PUSHINT 8
+			ROT
+			MUL
+			POW2
+			SUB
+			UFITS 256
+			.loc SwarmMultisigWallet.sol, 0
+			SETGLOB 12
+			.loc SwarmMultisigWallet.sol, 440
+			PUSH S2
+			GETGLOB 14
+			PUSHINT 64
+			DICTUDEL
+			DROP
+		}
+		PUSHCONT {
+			.loc SwarmMultisigWallet.sol, 442
+			OVER
+			SECOND
+			PUSHINT 1
+			PUSH S2
+			.loc SwarmMultisigWallet.sol, 256
+			LSHIFT
+			UFITS 32
+			OR
+			.loc SwarmMultisigWallet.sol, 0
+			PUXC S2, S-1
+			SETINDEX 1
+			.loc SwarmMultisigWallet.sol, 443
+			DUP
+			INDEX 3
+			INC
+			UFITS 8
+			SETINDEX 3
+			POP S2
+			.loc SwarmMultisigWallet.sol, 444
+			PUSH S2
+			GETGLOB 14
+			PUSH S3
+			CALLREF {
+				UNTUPLE 11
+				REVERSE 11, 0
+				NEWC
+				STU 64
+				STU 32
+				STU 8
+				STU 8
+				SWAP
+				UNTRIPLE
+				XCHG3 S1, S3, S3
+				DUP
+				ISNULL
+				PUSHCONT {
+					DROP
+					STZERO
+				}
+				PUSHCONT {
+					SWAP
+					STONE
+					STU 256
+				}
+				IFELSE
+				XCPU S1, S0
+				ISNULL
+				PUSHCONT {
+					DROP
+					STZERO
+				}
+				PUSHCONT {
+					SWAP
+					STONE
+					STSLICE
+				}
+				IFELSE
+				STU 8
+				ROLLREV 6
+				NEWC
+				STSLICE
+				STU 128
+				STDICT
+				STU 16
+				STREF
+				STI 1
+				STBREFR
+			}
+			ENDC
+			ROTREV
+			PUSHINT 64
+			DICTUSETREF
+		}
+		IFELSE
+		SETGLOB 14
+		.loc SwarmMultisigWallet.sol, 0
+		BLKDROP 3
+		.loc SwarmMultisigWallet.sol, 349
+		NIP
+		.loc SwarmMultisigWallet.sol, 0
+	}
+	IFELSE
+	.loc SwarmMultisigWallet.sol, 0
+}
+
+.fragment submitTransaction, {
+	DROP
+	GETGLOB 6
+	THROWIFNOT 76
+	GETGLOB 2
+	ISNULL
+	IFREF {
+		.inline c4_to_c7
+	}
+	.loc SwarmMultisigWallet.sol, 320
+	OVER
+	PUSHCONT {
+		LDREF
+		ENDS
+		CTOS
+	}
+	IF
+	LDMSGADDR
+	LDU 128
+	LDDICT
+	LDI 1
+	LDU 8
+	LDREF
+	ENDS
+	.loc SwarmMultisigWallet.sol, 0
+	CALLREF {
+		.inline submitTransaction_8872de7f_internal
+	}
+	OVER
+	PUSHCONT {
+		PUSH S3
+		CTOS
+		LDU 2
+		LDMSGADDR
+		DROP
+		NIP
+		NEWC
+		STSLICECONST xc
+		STSLICE
+		PUSHINT 2603388624
+		STUR 130
+		STU 64
+		ENDC
+		PUSHINT 0
+		SENDRAWMSG
+	}
+	PUSHCONT {
+		DROP
+	}
+	IFELSE
+	CALLREF {
+		.inline c7_to_c4
+	}
+	THROW 0
+}
+
+.fragment public_function_selector, {
+	DUP
+	PUSHINT 534794467
+	LEQ
+	IFJMPREF {
+		DUP
+		PUSHINT 314625853
+		LEQ
+		IFJMPREF {
+			DUP
+			EQINT 1
+			IFJMPREF {
+				.inline constructor
+			}
+			DUP
+			PUSHINT 212290865
+			EQUAL
+			IFJMPREF {
+				.inline getTransactions
+			}
+			DUP
+			PUSHINT 314625853
+			EQUAL
+			IFJMPREF {
+				.inline getUpdateData
+			}
+		}
+		DUP
+		PUSHINT 455904976
+		LEQ
+		IFJMPREF {
+			DUP
+			PUSHINT 447168749
+			EQUAL
+			IFJMPREF {
+				.inline confirmTransaction
+			}
+			DUP
+			PUSHINT 455904976
+			EQUAL
+			IFJMPREF {
+				.inline submitTransaction
+			}
+		}
+		DUP
+		PUSHINT 515316199
+		EQUAL
+		IFJMPREF {
+			.inline getTransaction
+		}
+		DUP
+		PUSHINT 534794467
+		EQUAL
+		IFJMPREF {
+			.inline isConfirmed
+		}
+	}
+	DUP
+	PUSHINT 1295341857
+	LEQ
+	IFJMPREF {
+		DUP
+		PUSHINT 920503996
+		LEQ
+		IFJMPREF {
+			DUP
+			PUSHINT 645993260
+			EQUAL
+			IFJMPREF {
+				.inline getParameters
+			}
+			DUP
+			PUSHINT 920503996
+			EQUAL
+			IFJMPREF {
+				.inline getCustodians
+			}
+		}
+		DUP
+		PUSHINT 960685034
+		EQUAL
+		IFJMPREF {
+			.inline getUpdateDatas
+		}
+		DUP
+		PUSHINT 1071142485
+		EQUAL
+		IFJMPREF {
+			.inline getVersion
+		}
+		DUP
+		PUSHINT 1295341857
+		EQUAL
+		IFJMPREF {
+			.inline confirmDataUpdate
+		}
+	}
+	DUP
+	PUSHINT 1711592459
+	LEQ
+	IFJMPREF {
+		DUP
+		PUSHINT 1352404237
+		EQUAL
+		IFJMPREF {
+			.inline getTransactionIds
+		}
+		DUP
+		PUSHINT 1586262922
+		EQUAL
+		IFJMPREF {
+			.inline submitDataUpdate
+		}
+		DUP
+		PUSHINT 1711592459
+		EQUAL
+		IFJMPREF {
+			.inline setMaxCleanupOperations
+		}
+	}
+	DUP
+	PUSHINT 2114518885
+	LEQ
+	IFJMPREF {
+		DUP
+		PUSHINT 1891664669
+		EQUAL
+		IFJMPREF {
+			.inline getUpdateCodeIds
+		}
+		DUP
+		PUSHINT 2114518885
+		EQUAL
+		IFJMPREF {
+			.inline sendTransaction
+		}
+	}
+}
+
+.fragment main_external, {
+	PUSHREFSLICE {
+		.blob x8000000000000000000000000000000000000000000000000000000000000000001_
+	}
+	SETGLOB 9
+	OVER
+	CALLREF {
+		.inline c4_to_c7
+	}
+	LDU 1 ; haveSign msgSlice
+	SWAP
+	PUSHCONT {
+		PUSHPOW2 9
+		LDSLICEX
+		DUP
+		MYADDR
+		NEWC
+		STSLICE
+		STSLICE
+		ENDC
+		HASHCU
+		SWAP
+		LDU 1 ; signatureSlice hashMsgSlice hasPubkey msgSlice
+		SWAP
+		PUSHCONT {
+			LDU 256 ; signatureSlice hashMsgSlice pubkey msgSlice
+			XCHG2 S3, S3
+		}
+		PUSHCONT {
+			XCHG S2
+			GETGLOB 2
+		}
+		IFELSE
+		DUP
+		SETGLOB 5
+		CHKSIGNU
+		THROWIFNOT 40
+	}
+	PUSHCONT {
+		LDU 1 ; hasPubkey msgSlice
+		SWAP
+		THROWIF 58
+	}
+	IFELSE
+	LDU 64 ; timestamp msgSlice
+	SWAP
+	.inline __replayProtection
+	LDU 32 ; expireAt msgSlice
+	SWAP
+	NOW ; msgSlice expireAt now
+	GREATER ; msgSlice expireAt>now
+	THROWIFNOT 57
+	LDU 32 ; funcId body
+	SWAP
+	CALLREF {
+		.inline public_function_selector
+	}
+	DROP2
+	CALLREF {
+		.inline fallback
+	}
+}
+
+.fragment main_internal, {
+	PUSHROOT
+	CTOS
+	PUSHINT 320
+	SDSKIPFIRST
+	PLDI 1
+	SETGLOB 6
+	PUSH S2
+	CTOS
+	LDU 4 ; bounced tail
+	LDMSGADDR ; bounced src tail
+	DROP
+	SETGLOB 9
+	MODPOW2 1
+	IFRET
+	OVER
+	SEMPTY ; isEmpty
+	IFJMPREF {
+		GETGLOB 6
+		THROWIFNOT 76
+	}
+	OVER
+	LDUQ 32  ; [funcId] body' ok
+	PUSHCONT {
+		DROP
+		CALLREF {
+			.inline fallback
+		}
+		THROW 0
+	}
+	IFNOT
+	OVER
+	IFNOTJMPREF {
+		GETGLOB 6
+		THROWIFNOT 76
+	}
+	SWAP
+	CALLREF {
+		.inline public_function_selector
+	}
+	DROP2
+	CALLREF {
+		.inline fallback
+	}
+}
+
+.fragment onCodeUpgrade_0e89a1b9_internal, {
+	DROP
+	.loc SwarmMultisigWallet.sol, 0
+	CALLREF {
+		.inline c7_to_c4
+	}
+	COMMIT
+	THROW 0
+}
+
+.fragment receive, {
+	GETGLOB 6
+	THROWIFNOT 76
+	GETGLOB 2
+	ISNULL
+	IFREF {
+		.inline c4_to_c7
+	}
+	.loc SwarmMultisigWallet.sol, 0
+	CALLREF {
+		.inline c7_to_c4
+	}
+}
+
+.fragment default_data_cell, {
+	PUSHINT 0
+	BLKPUSH 3, 0
+	NULL
+	BLKPUSH 2, 0
+	PUSHINT 0
+	DUP
+	NULL
+	DUP
+	NEWC
+	PUSHINT 321
+	STZEROES
+	XCPU S1, S0
+	ISNULL
+	PUSHCONT {
+		DROP
+		STZERO
+	}
+	PUSHCONT {
+		SWAP
+		STONE
+		STU 256
+	}
+	IFELSE
+	ROLLREV 10
+	NEWC
+	XCPU S1, S0
+	ISNULL
+	PUSHCONT {
+		DROP
+		STZERO
+	}
+	PUSHCONT {
+		SWAP
+		STONE
+		STSLICE
+	}
+	IFELSE
+	STU 256
+	ROLLREV 8
+	NEWC
+	STU 256
+	STDICT
+	STDICT
+	STDICT
+	STU 8
+	STU 8
+	STU 8
+	STU 256
+	STBREFR
+	STBREFR
+	ENDC
+}
+
+.fragment onTickTock, {
+}
+
+; The code below forms a value of the StateInit type.
+.blob x4_ ; split_depth = nothing
+.blob x4_ ; special = nothing
+.blob xc_ ; code = just
+.cell { ; code cell
+	PUSHREFCONT {
+		DICTPUSHCONST 32
+		DICTUGETJMPZ
+		THROW 78
+		.code-dict-cell 32, {
+			x7c2f1808 = onCodeUpgrade_0e89a1b9_internal,
+		}
+		.cell { ; version
+			.blob x736f6c20302e37392e33 ; sol 0.79.3
+		}
+	}
+	POPCTR c3
+	DUP
+	IFNOTJMPREF {
+		.inline main_internal
+	}
+	DUP
+	EQINT -1
+	IFJMPREF {
+		.inline main_external
+	}
+	DUP
+	EQINT -2
+	IFJMPREF {
+		.inline onTickTock
+	}
+	THROW 11
+}
+.blob xc_ ; data = just
+.cell { 
+	.inline-computed-cell default_data_cell, 0
+}
+.blob x4_ ; library = hme_empty
