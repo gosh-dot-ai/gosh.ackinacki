@@ -69,7 +69,7 @@ tvm_types = { git = "https://github.com/tvmlabs/tvm-sdk.git", tag = "v3.0.3-rc.a
 # DEX PrivateNote halo2 voucher pipeline. Optional so the lean chain client
 # does not compile the heavy proving graph unless a consumer explicitly mints
 # PrivateNotes in-process.
-halo2-proover = { git = "https://github.com/gosh-sh/dexdo-halo2-kit", branch = "codex/pin-tvm-sdk-303-rc-an", optional = true }
-dark_dex_halo2_private_witness_export_lib = { git = "https://github.com/gosh-sh/dexdo-halo2-kit", branch = "codex/pin-tvm-sdk-303-rc-an", optional = true }
-gosh-dark-dex-halo2-new-circuit = { git = "https://github.com/gosh-sh/dexdo-halo2-kit", branch = "codex/pin-tvm-sdk-303-rc-an", package = "dex-halo2-circuit", optional = true }
+halo2-proover = { git = "https://github.com/gosh-sh/dexdo-halo2-kit", rev = "e7944e9587a1f98ffe3e71f3cdae8e71df4de348", optional = true }
+dark_dex_halo2_private_witness_export_lib = { git = "https://github.com/gosh-sh/dexdo-halo2-kit", rev = "e7944e9587a1f98ffe3e71f3cdae8e71df4de348", optional = true }
+gosh-dark-dex-halo2-new-circuit = { git = "https://github.com/gosh-sh/dexdo-halo2-kit", rev = "e7944e9587a1f98ffe3e71f3cdae8e71df4de348", package = "dex-halo2-circuit", optional = true }
 halo2-base = { git = "https://github.com/gosh-sh/halo2-lib-zkevm-sha256-and-bls12-381", branch = "main", default-features = false, features = ["halo2-axiom", "test-utils"], optional = true }

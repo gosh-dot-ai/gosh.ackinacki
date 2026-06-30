@@ -2506,7 +2506,7 @@ dependencies = [
 [[package]]
 name = "dark_dex_halo2_private_witness_export_lib"
 version = "0.1.0"
-source = "git+https://github.com/gosh-sh/dexdo-halo2-kit?branch=codex%2Fpin-tvm-sdk-303-rc-an#0b8c38a2b7e2cab897a084915af8fa07e48855f9"
+source = "git+https://github.com/gosh-sh/dexdo-halo2-kit?rev=e7944e9587a1f98ffe3e71f3cdae8e71df4de348#e7944e9587a1f98ffe3e71f3cdae8e71df4de348"
 dependencies = [
  "anyhow",
  "clap 4.6.1",
@@ -2768,7 +2768,7 @@ dependencies = [
 [[package]]
 name = "dex-halo2-circuit"
 version = "0.1.0"
-source = "git+https://github.com/gosh-sh/dexdo-halo2-kit?branch=codex%2Fpin-tvm-sdk-303-rc-an#0b8c38a2b7e2cab897a084915af8fa07e48855f9"
+source = "git+https://github.com/gosh-sh/dexdo-halo2-kit?rev=e7944e9587a1f98ffe3e71f3cdae8e71df4de348#e7944e9587a1f98ffe3e71f3cdae8e71df4de348"
 dependencies = [
  "failure",
  "gosh-dense-balanced-tree",
@@ -3934,7 +3934,7 @@ dependencies = [
 [[package]]
 name = "halo2-proover"
 version = "0.3.0"
-source = "git+https://github.com/gosh-sh/dexdo-halo2-kit?branch=codex%2Fpin-tvm-sdk-303-rc-an#0b8c38a2b7e2cab897a084915af8fa07e48855f9"
+source = "git+https://github.com/gosh-sh/dexdo-halo2-kit?rev=e7944e9587a1f98ffe3e71f3cdae8e71df4de348#e7944e9587a1f98ffe3e71f3cdae8e71df4de348"
 dependencies = [
  "dex-halo2-circuit",
  "failure",
