@@ -834,7 +834,7 @@ dependencies = [
  "proc-macro2",
  "quote",
  "syn 2.0.118",
- "synstructure",
+ "synstructure 0.13.2",
 ]
 
 [[package]]
@@ -2504,6 +2504,26 @@ dependencies = [
 ]
 
 [[package]]
+name = "dark_dex_halo2_private_witness_export_lib"
+version = "0.1.0"
+source = "git+https://github.com/gosh-sh/dexdo-halo2-kit?branch=codex%2Fpin-tvm-sdk-303-rc-an#0b8c38a2b7e2cab897a084915af8fa07e48855f9"
+dependencies = [
+ "anyhow",
+ "clap 4.6.1",
+ "halo2-base 0.4.0",
+ "hex",
+ "pse-poseidon",
+ "reqwest 0.12.28",
+ "serde",
+ "serde_json",
+ "sha2 0.10.9",
+ "tokio",
+ "tracing",
+ "tracing-subscriber 0.3.23",
+ "typed-builder",
+]
+
+[[package]]
 name = "darling"
 version = "0.20.11"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2743,6 +2763,28 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ffdd80ce8ce993de27e9f063a444a4d53ce8e8db4c1f00cc03af5ad5a9867a1e"
 dependencies = [
  "cipher 0.4.4",
+]
+
+[[package]]
+name = "dex-halo2-circuit"
+version = "0.1.0"
+source = "git+https://github.com/gosh-sh/dexdo-halo2-kit?branch=codex%2Fpin-tvm-sdk-303-rc-an#0b8c38a2b7e2cab897a084915af8fa07e48855f9"
+dependencies = [
+ "failure",
+ "gosh-dense-balanced-tree",
+ "gosh-sha256-chip",
+ "halo2-base 0.4.0",
+ "halo2-ecc",
+ "hex",
+ "itertools 0.11.0",
+ "pse-poseidon",
+ "rand 0.8.6",
+ "rand_core 0.6.4",
+ "serde",
+ "serde_json",
+ "sha2 0.10.9",
+ "tvm_block",
+ "tvm_types",
 ]
 
 [[package]]
@@ -3075,6 +3117,28 @@ dependencies = [
  "tvm_block",
  "tvm_contracts",
  "tvm_types",
+]
+
+[[package]]
+name = "failure"
+version = "0.1.8"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "d32e9bd16cc02eae7db7ef620b392808b89f6a5e16bb3497d159c6b92a0f4f86"
+dependencies = [
+ "backtrace",
+ "failure_derive",
+]
+
+[[package]]
+name = "failure_derive"
+version = "0.1.8"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "aa4da3c766cd7a0db8242e326e9e4e081edd567072893ed320008189715366a4"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn 1.0.109",
+ "synstructure 0.12.6",
 ]
 
 [[package]]
@@ -3546,11 +3610,16 @@ dependencies = [
  "bytes",
  "chrono",
  "clap 4.6.1",
+ "dark_dex_halo2_private_witness_export_lib",
+ "dex-halo2-circuit",
  "ed25519-dalek",
  "futures-util",
+ "halo2-base 0.4.0",
+ "halo2-proover",
  "hex",
  "hkdf 0.13.0",
  "node",
+ "num-bigint 0.4.6",
  "parking_lot 0.12.5",
  "rand 0.8.6",
  "reqwest 0.12.28",
@@ -3569,6 +3638,25 @@ dependencies = [
  "uuid",
  "x25519-dalek",
  "zeroize",
+]
+
+[[package]]
+name = "gosh-dense-balanced-tree"
+version = "0.1.0"
+source = "git+https://github.com/gosh-sh/gosh-halo2-crypto-lib?branch=main#9a917fe0a6a5e04cd6b6affb3d93e19399ff5ae7"
+dependencies = [
+ "halo2-base 0.4.0",
+ "pse-poseidon",
+]
+
+[[package]]
+name = "gosh-sha256-chip"
+version = "0.1.0"
+source = "git+https://github.com/gosh-sh/gosh-halo2-crypto-lib?branch=main#9a917fe0a6a5e04cd6b6affb3d93e19399ff5ae7"
+dependencies = [
+ "halo2-base 0.4.0",
+ "halo2-ecc",
+ "sha2 0.10.9",
 ]
 
 [[package]]
@@ -3738,6 +3826,27 @@ dependencies = [
 
 [[package]]
 name = "halo2-axiom"
+version = "0.4.5"
+source = "git+https://github.com/gosh-sh/halo2-axiom?branch=main#1f28ded628dbf5be7d0478d46cbda0cb0b158a29"
+dependencies = [
+ "blake2b_simd",
+ "crossbeam 0.8.4",
+ "ff",
+ "group",
+ "halo2curves-axiom",
+ "itertools 0.11.0",
+ "maybe-rayon",
+ "pairing",
+ "rand 0.8.6",
+ "rand_core 0.6.4",
+ "rayon",
+ "rustc-hash 1.1.0",
+ "sha3",
+ "tracing",
+]
+
+[[package]]
+name = "halo2-axiom"
 version = "0.5.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "0aee3f8178b78275038e5ea0e2577140056d2c4c87fccaf6777dc0a8eebe455a"
@@ -3760,25 +3869,85 @@ dependencies = [
 
 [[package]]
 name = "halo2-base"
-version = "0.5.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ab57020fceb5657e837836ab89ee87a5e8d5f1e1662a353e23c00f2cde41446f"
+version = "0.4.0"
+source = "git+https://github.com/gosh-sh/halo2-lib-zkevm-sha256-and-bls12-381?branch=main#2b6576dea20639706b0c11464a565d36bcde367c"
 dependencies = [
  "ark-std 0.3.0",
  "getset",
- "halo2-axiom",
+ "halo2-axiom 0.4.5",
  "itertools 0.11.0",
  "log",
  "num-bigint 0.4.6",
  "num-integer",
  "num-traits",
- "poseidon-primitives",
+ "poseidon-primitives 0.1.1",
  "rand 0.8.6",
  "rand_chacha 0.3.1",
  "rayon",
  "rustc-hash 1.1.0",
  "serde",
  "serde_json",
+]
+
+[[package]]
+name = "halo2-base"
+version = "0.5.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ab57020fceb5657e837836ab89ee87a5e8d5f1e1662a353e23c00f2cde41446f"
+dependencies = [
+ "ark-std 0.3.0",
+ "getset",
+ "halo2-axiom 0.5.1",
+ "itertools 0.11.0",
+ "log",
+ "num-bigint 0.4.6",
+ "num-integer",
+ "num-traits",
+ "poseidon-primitives 0.2.0",
+ "rand 0.8.6",
+ "rand_chacha 0.3.1",
+ "rayon",
+ "rustc-hash 1.1.0",
+ "serde",
+ "serde_json",
+]
+
+[[package]]
+name = "halo2-ecc"
+version = "0.4.0"
+source = "git+https://github.com/gosh-sh/halo2-lib-zkevm-sha256-and-bls12-381?branch=main#2b6576dea20639706b0c11464a565d36bcde367c"
+dependencies = [
+ "halo2-base 0.4.0",
+ "itertools 0.10.5",
+ "num-bigint 0.4.6",
+ "num-integer",
+ "num-traits",
+ "rand 0.8.6",
+ "rand_chacha 0.3.1",
+ "rand_core 0.6.4",
+ "rayon",
+ "serde",
+ "serde_json",
+ "test-case",
+]
+
+[[package]]
+name = "halo2-proover"
+version = "0.3.0"
+source = "git+https://github.com/gosh-sh/dexdo-halo2-kit?branch=codex%2Fpin-tvm-sdk-303-rc-an#0b8c38a2b7e2cab897a084915af8fa07e48855f9"
+dependencies = [
+ "dex-halo2-circuit",
+ "failure",
+ "gosh-dense-balanced-tree",
+ "halo2-base 0.4.0",
+ "hex",
+ "pse-poseidon",
+ "serde",
+ "serde_json",
+ "sha2 0.10.9",
+ "thiserror 2.0.18",
+ "tvm_block",
+ "tvm_types",
 ]
 
 [[package]]
@@ -5863,6 +6032,20 @@ checksum = "c33a9471896f1c69cecef8d20cbe2f7accd12527ce60845ff44c153bb2a21b49"
 
 [[package]]
 name = "poseidon-primitives"
+version = "0.1.1"
+source = "git+https://github.com/gosh-sh/poseidon-primitives?branch=main#fb1450059deb4ae52b0dfdddcb9fdd6767ae1293"
+dependencies = [
+ "bitvec",
+ "ff",
+ "lazy_static",
+ "log",
+ "rand 0.8.6",
+ "rand_xorshift",
+ "thiserror 1.0.69",
+]
+
+[[package]]
+name = "poseidon-primitives"
 version = "0.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "6e4aaeda7a092e21165cc5f0cbc738e72a46f31c03c3cbd87b71ceae9d2d93bc"
@@ -7807,6 +7990,18 @@ dependencies = [
 
 [[package]]
 name = "synstructure"
+version = "0.12.6"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f36bdaa60a83aca3921b5259d5400cbf5e90fc51931376a9bd4a0eb79aa7210f"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn 1.0.109",
+ "unicode-xid",
+]
+
+[[package]]
+name = "synstructure"
 version = "0.13.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "728a70f3dbaf5bab7f0c4b1ac8d7ae5ea60a4b5549c8a5914361c99147a709d2"
@@ -7904,6 +8099,39 @@ name = "termtree"
 version = "0.5.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "8f50febec83f5ee1df3015341d8bd429f2d1cc62bcba7ea2076759d315084683"
+
+[[package]]
+name = "test-case"
+version = "3.3.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "eb2550dd13afcd286853192af8601920d959b14c401fcece38071d53bf0768a8"
+dependencies = [
+ "test-case-macros",
+]
+
+[[package]]
+name = "test-case-core"
+version = "3.3.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "adcb7fd841cd518e279be3d5a3eb0636409487998a4aff22f3de87b81e88384f"
+dependencies = [
+ "cfg-if 1.0.4",
+ "proc-macro2",
+ "quote",
+ "syn 2.0.118",
+]
+
+[[package]]
+name = "test-case-macros"
+version = "3.3.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "5c89e72a01ed4c579669add59014b9a524d609c0c88c6a585ce37485879f6ffb"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn 2.0.118",
+ "test-case-core",
+]
 
 [[package]]
 name = "textwrap"
@@ -8893,7 +9121,7 @@ dependencies = [
  "ed25519-dalek",
  "fastcrypto",
  "ff",
- "halo2-base",
+ "halo2-base 0.5.1",
  "hex",
  "itertools 0.13.0",
  "lazy_static",
@@ -10196,7 +10424,7 @@ dependencies = [
  "proc-macro2",
  "quote",
  "syn 2.0.118",
- "synstructure",
+ "synstructure 0.13.2",
 ]
 
 [[package]]
@@ -10237,7 +10465,7 @@ dependencies = [
  "proc-macro2",
  "quote",
  "syn 2.0.118",
- "synstructure",
+ "synstructure 0.13.2",
 ]
 
 [[package]]

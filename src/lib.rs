@@ -18,6 +18,8 @@ pub mod client;
 pub mod config;
 pub mod filter;
 pub mod mcp;
+#[cfg(feature = "private-note")]
+pub mod private_note;
 pub mod sdk;
 pub mod state;
 pub mod wallet;

@@ -19,6 +19,13 @@ path = "src/main.rs"
 [features]
 default = []
 block-stream = ["dep:node", "dep:transport-layer"]
+private-note = [
+    "dep:dark_dex_halo2_private_witness_export_lib",
+    "dep:gosh-dark-dex-halo2-new-circuit",
+    "dep:halo2-base",
+    "dep:halo2-proover",
+    "dep:num-bigint",
+]
 
 [dependencies]
 aes-gcm = "0.10"
@@ -46,6 +53,7 @@ tracing-subscriber = { version = "0.3.18", features = ["env-filter"] }
 uuid = { version = "1", features = ["v4"] }
 x25519-dalek = { version = "2", features = ["static_secrets"] }
 zeroize = "1"
+num-bigint = { version = "0.4", optional = true }
 
 # Acki Nacki node crates (the PUBLIC node, ackinacki/ackinacki) — only for the
 # `block-stream` feature (the QUIC firehose indexer). They pull MsQuic
@@ -57,3 +65,11 @@ tvm_abi = { git = "https://github.com/tvmlabs/tvm-sdk.git", tag = "v3.0.3-rc.an"
 tvm_block = { git = "https://github.com/tvmlabs/tvm-sdk.git", tag = "v3.0.3-rc.an" }
 tvm_client = { git = "https://github.com/tvmlabs/tvm-sdk.git", tag = "v3.0.3-rc.an", default-features = false, features = ["std", "rustls-tls-webpki-roots"] }
 tvm_types = { git = "https://github.com/tvmlabs/tvm-sdk.git", tag = "v3.0.3-rc.an" }
+
+# DEX PrivateNote halo2 voucher pipeline. Optional so the lean chain client
+# does not compile the heavy proving graph unless a consumer explicitly mints
+# PrivateNotes in-process.
+halo2-proover = { git = "https://github.com/gosh-sh/dexdo-halo2-kit", branch = "codex/pin-tvm-sdk-303-rc-an", optional = true }
+dark_dex_halo2_private_witness_export_lib = { git = "https://github.com/gosh-sh/dexdo-halo2-kit", branch = "codex/pin-tvm-sdk-303-rc-an", optional = true }
+gosh-dark-dex-halo2-new-circuit = { git = "https://github.com/gosh-sh/dexdo-halo2-kit", branch = "codex/pin-tvm-sdk-303-rc-an", package = "dex-halo2-circuit", optional = true }
+halo2-base = { git = "https://github.com/gosh-sh/halo2-lib-zkevm-sha256-and-bls12-381", branch = "main", default-features = false, features = ["halo2-axiom", "test-utils"], optional = true }
