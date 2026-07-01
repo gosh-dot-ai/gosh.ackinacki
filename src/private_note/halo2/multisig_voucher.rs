@@ -29,10 +29,46 @@ const SUBMIT_NATIVE_VALUE: u128 = 2_000_000_000;
 /// How long to wait for the indexer to surface our `VoucherGenerated` event.
 const VOUCHER_EVENT_RESOLVE_TIMEOUT_S: u64 = 480;
 
-/// The operational wallets deployed by dexdo/gosh.ackinacki are
-/// `UpdateCustodianMultisigWallet` contracts. Their `sendTransaction` ABI does
-/// not include the generic SDK multisig's trailing `dapp_id` argument.
-const OPERATIONAL_MULTISIG_ABI_JSON: &str = r#"{
+/// RootPN lives in the system DApp. The generic Multisig forwards this as the
+/// trailing wallet-call `dapp_id` argument.
+const ROOT_PN_DAPP_ID: &str = "0";
+
+/// ackinacki-kit v2.1.0 user/dashboard multisig.
+const GENERIC_MULTISIG_CODE_HASH: &str =
+    "3a7a53248ff39fde936a4274eab143b5fac94feac0d8e2e2748aac5e74538d5f";
+
+/// Historical gosh.ackinacki operational multisig.
+const UPDATE_CUSTODIAN_MULTISIG_CODE_HASH: &str =
+    "8470e1da28a2b4c742b5f7edefdd97db81c79e726f8a8b0be78d921adaf32414";
+
+/// Generic ackinacki-kit `Multisig`. Its `sendTransaction` ABI includes the
+/// trailing destination `dapp_id` argument.
+const GENERIC_MULTISIG_ABI_JSON: &str = r#"{
+  "ABI version": 2,
+  "version": "2.4",
+  "header": ["pubkey", "time", "expire"],
+  "functions": [
+    {
+      "name": "sendTransaction",
+      "inputs": [
+        { "name": "dest", "type": "address" },
+        { "name": "value", "type": "uint128" },
+        { "name": "cc", "type": "map(uint32,varuint32)" },
+        { "name": "bounce", "type": "bool" },
+        { "name": "flags", "type": "uint8" },
+        { "name": "payload", "type": "cell" },
+        { "name": "dapp_id", "type": "uint256" }
+      ],
+      "outputs": [{ "name": "value0", "type": "address" }]
+    }
+  ],
+  "events": [],
+  "data": []
+}"#;
+
+/// Historical `UpdateCustodianMultisigWallet`. Its `sendTransaction` ABI has no
+/// trailing `dapp_id` argument.
+const UPDATE_CUSTODIAN_MULTISIG_ABI_JSON: &str = r#"{
   "ABI version": 2,
   "version": "2.4",
   "header": ["pubkey", "time", "expire"],
@@ -53,6 +89,57 @@ const OPERATIONAL_MULTISIG_ABI_JSON: &str = r#"{
   "events": [],
   "data": []
 }"#;
+
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+enum MultisigForwardKind {
+    Generic,
+    UpdateCustodian,
+}
+
+impl MultisigForwardKind {
+    fn from_code_hash(code_hash: &str) -> Result<Self> {
+        let code_hash = code_hash
+            .trim()
+            .trim_start_matches("0x")
+            .to_ascii_lowercase();
+        match code_hash.as_str() {
+            GENERIC_MULTISIG_CODE_HASH => Ok(Self::Generic),
+            UPDATE_CUSTODIAN_MULTISIG_CODE_HASH => Ok(Self::UpdateCustodian),
+            other => Err(anyhow!(
+                "unsupported funding wallet code_hash {other}; supported generic Multisig \
+                 {GENERIC_MULTISIG_CODE_HASH} and UpdateCustodianMultisigWallet \
+                 {UPDATE_CUSTODIAN_MULTISIG_CODE_HASH}"
+            )),
+        }
+    }
+
+    fn abi_json(self) -> &'static str {
+        match self {
+            Self::Generic => GENERIC_MULTISIG_ABI_JSON,
+            Self::UpdateCustodian => UPDATE_CUSTODIAN_MULTISIG_ABI_JSON,
+        }
+    }
+
+    fn send_transaction_params(
+        self,
+        root_pn: &Address,
+        cc: serde_json::Map<String, Value>,
+        voucher_body: String,
+    ) -> Value {
+        let mut params = json!({
+            "dest": root_pn.with_workchain(),
+            "value": SUBMIT_NATIVE_VALUE.to_string(),
+            "cc": Value::Object(cc),
+            "bounce": true,
+            "flags": 1,
+            "payload": voucher_body,
+        });
+        if self == Self::Generic {
+            params["dapp_id"] = Value::String(ROOT_PN_DAPP_ID.to_string());
+        }
+        params
+    }
+}
 
 #[allow(clippy::too_many_arguments)]
 pub async fn mint_voucher_via_multisig(
@@ -94,26 +181,21 @@ pub async fn mint_voucher_via_multisig(
         voucher_token_type.to_string(),
         Value::String(voucher_value.to_string()),
     );
+    let http = reqwest::Client::new();
+    let wallet_code_hash = fetch_wallet_code_hash(&http, endpoint, multisig_address).await?;
+    let forward_kind = MultisigForwardKind::from_code_hash(&wallet_code_hash)?;
     let boc = encode_external_call(
         &ctx,
-        OPERATIONAL_MULTISIG_ABI_JSON,
+        forward_kind.abi_json(),
         &multisig_address.with_workchain(),
         "sendTransaction",
-        json!({
-            "dest": root_pn.with_workchain(),
-            "value": SUBMIT_NATIVE_VALUE.to_string(),
-            "cc": Value::Object(cc),
-            "bounce": true,
-            "flags": 1,
-            "payload": voucher_body,
-        }),
+        forward_kind.send_transaction_params(&root_pn, cc, voucher_body),
         multisig_owner_keys.public_hex(),
         multisig_owner_keys.secret_hex(),
     )
     .await
     .map_err(|e| anyhow!("encode Multisig.sendTransaction -> RootPN.generateVoucher: {e}"))?;
 
-    let http = reqwest::Client::new();
     send_message_routed(
         &http,
         endpoint,
@@ -151,6 +233,56 @@ pub async fn mint_voucher_via_multisig(
     .await
 }
 
+async fn fetch_wallet_code_hash(
+    http: &reqwest::Client,
+    endpoint: &str,
+    wallet: &Address,
+) -> Result<String> {
+    let bare = wallet.bare();
+    let query = format!(
+        "{{ blockchain {{ account(account_id: \"{bare}\", dapp_id: \"{bare}\") {{ info {{ acc_type_name code_hash }} }} }} }}"
+    );
+    let url = format!("{}/graphql", endpoint.trim_end_matches('/'));
+    let resp: Value = http
+        .post(url)
+        .json(&json!({ "query": query }))
+        .send()
+        .await
+        .map_err(|e| anyhow!("read funding wallet code_hash: {e}"))?
+        .error_for_status()
+        .map_err(|e| anyhow!("read funding wallet code_hash: {e}"))?
+        .json()
+        .await
+        .map_err(|e| anyhow!("decode funding wallet code_hash response: {e}"))?;
+    if let Some(errors) = resp.get("errors") {
+        return Err(anyhow!(
+            "read funding wallet code_hash GraphQL errors: {errors}"
+        ));
+    }
+    let info = resp
+        .pointer("/data/blockchain/account/info")
+        .ok_or_else(|| anyhow!("funding wallet {} not found", wallet.with_workchain()))?;
+    let acc_type = info
+        .get("acc_type_name")
+        .and_then(Value::as_str)
+        .unwrap_or("unknown");
+    if acc_type != "Active" {
+        return Err(anyhow!(
+            "funding wallet {} is not Active (acc_type={acc_type})",
+            wallet.with_workchain()
+        ));
+    }
+    info.get("code_hash")
+        .and_then(Value::as_str)
+        .map(ToOwned::to_owned)
+        .ok_or_else(|| {
+            anyhow!(
+                "funding wallet {} has no code_hash",
+                wallet.with_workchain()
+            )
+        })
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -170,5 +302,48 @@ mod tests {
         .await
         .expect("encode generateVoucher");
         assert!(!body.is_empty());
+    }
+
+    #[test]
+    fn classifies_supported_wallet_hashes() {
+        assert_eq!(
+            MultisigForwardKind::from_code_hash(GENERIC_MULTISIG_CODE_HASH).unwrap(),
+            MultisigForwardKind::Generic
+        );
+        assert_eq!(
+            MultisigForwardKind::from_code_hash(UPDATE_CUSTODIAN_MULTISIG_CODE_HASH).unwrap(),
+            MultisigForwardKind::UpdateCustodian
+        );
+        let err = MultisigForwardKind::from_code_hash("00").unwrap_err();
+        assert!(err
+            .to_string()
+            .contains("unsupported funding wallet code_hash"));
+    }
+
+    #[test]
+    fn generic_multisig_forward_adds_rootpn_dapp_id() {
+        let root_pn = Address::parse(ROOT_PN_ADDRESS).unwrap();
+        let params = MultisigForwardKind::Generic.send_transaction_params(
+            &root_pn,
+            serde_json::Map::new(),
+            "payload".to_string(),
+        );
+        assert_eq!(params["dapp_id"], ROOT_PN_DAPP_ID);
+
+        let legacy = MultisigForwardKind::UpdateCustodian.send_transaction_params(
+            &root_pn,
+            serde_json::Map::new(),
+            "payload".to_string(),
+        );
+        assert!(legacy.get("dapp_id").is_none());
+    }
+
+    #[test]
+    fn generic_multisig_abi_has_trailing_dapp_id() {
+        let abi: Value = serde_json::from_str(GENERIC_MULTISIG_ABI_JSON).unwrap();
+        let inputs = abi["functions"][0]["inputs"].as_array().unwrap();
+        let last = inputs.last().unwrap();
+        assert_eq!(last["name"], "dapp_id");
+        assert_eq!(last["type"], "uint256");
     }
 }
