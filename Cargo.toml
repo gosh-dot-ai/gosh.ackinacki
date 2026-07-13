@@ -1,0 +1,75 @@
+[package]
+name = "gosh-ackinacki"
+version = "0.6.0"
+edition = "2021"
+rust-version = "1.86.0"
+license = "MIT"
+
+[[bin]]
+name = "gosh-ackinacki"
+path = "src/main.rs"
+
+# Feature split (see docs/ARCHITECTURE.md):
+#   default (lean)  — thin chain client over the Block Manager GraphQL/HTTP API
+#                     (reads, getters, writes, airegistry, wallet, crypto). No
+#                     node, no transport-layer, no MsQuic/cmake build.
+#   block-stream    — full-agent indexer: QUIC firehose from Block Keeper nodes
+#                     (pulls `node` + `transport-layer` + MsQuic) → decode →
+#                     filter → facts → gosh.memory ingest.
+[features]
+default = []
+block-stream = ["dep:node", "dep:transport-layer"]
+private-note = [
+    "dep:dark_dex_halo2_private_witness_export_lib",
+    "dep:gosh-dark-dex-halo2-new-circuit",
+    "dep:halo2-base",
+    "dep:halo2-proover",
+    "dep:num-bigint",
+]
+
+[dependencies]
+aes-gcm = "0.10"
+anyhow = "1.0.97"
+axum = { version = "0.8", features = ["json"] }
+base64 = "0.22"
+bincode = "1.3.3"
+bytes = "1"
+chrono = "0.4"
+clap = { version = "4.5", features = ["derive", "env"] }
+ed25519-dalek = { version = "2.1", features = ["rand_core"] }
+hex = "0.4.3"
+hkdf = "0.13"
+rand = "0.8"
+parking_lot = "0.12"
+reqwest = { version = "0.12", default-features = false, features = ["json", "rustls-tls", "stream"] }
+serde = { version = "1.0.197", features = ["derive"] }
+serde_json = "1.0.114"
+sha2 = "0.11"
+futures-util = "0.3"
+tokio = { version = "1.44.2", features = ["full"] }
+tower-http = { version = "0.6", features = ["cors"] }
+tracing = "0.1.40"
+tracing-subscriber = { version = "0.3.18", features = ["env-filter"] }
+uuid = { version = "1", features = ["v4"] }
+x25519-dalek = { version = "2", features = ["static_secrets"] }
+zeroize = "1"
+num-bigint = { version = "0.4", optional = true }
+
+# Acki Nacki node crates (the PUBLIC node, ackinacki/ackinacki) — only for the
+# `block-stream` feature (the QUIC firehose indexer). They pull MsQuic
+# (cmake/quictls); kept optional so the lean default build / thin-client lib
+# never compiles them. Public so the indexer is buildable from the public mirror.
+node = { git = "https://github.com/ackinacki/ackinacki.git", branch = "main", optional = true }
+transport-layer = { git = "https://github.com/ackinacki/ackinacki.git", branch = "main", optional = true }
+tvm_abi = { git = "https://github.com/tvmlabs/tvm-sdk.git", tag = "v3.0.3-rc.an" }
+tvm_block = { git = "https://github.com/tvmlabs/tvm-sdk.git", tag = "v3.0.3-rc.an" }
+tvm_client = { git = "https://github.com/tvmlabs/tvm-sdk.git", tag = "v3.0.3-rc.an", default-features = false, features = ["std", "rustls-tls-webpki-roots"] }
+tvm_types = { git = "https://github.com/tvmlabs/tvm-sdk.git", tag = "v3.0.3-rc.an" }
+
+# DEX PrivateNote halo2 voucher pipeline (PUBLIC repos). Optional so the lean
+# chain client never compiles the heavy proving graph unless a consumer mints
+# PrivateNotes in-process via `--features private-note`.
+halo2-proover = { git = "https://github.com/gosh-sh/dexdo-halo2-kit", rev = "e7944e9587a1f98ffe3e71f3cdae8e71df4de348", optional = true }
+dark_dex_halo2_private_witness_export_lib = { git = "https://github.com/gosh-sh/dexdo-halo2-kit", rev = "e7944e9587a1f98ffe3e71f3cdae8e71df4de348", optional = true }
+gosh-dark-dex-halo2-new-circuit = { git = "https://github.com/gosh-sh/dexdo-halo2-kit", rev = "e7944e9587a1f98ffe3e71f3cdae8e71df4de348", package = "dex-halo2-circuit", optional = true }
+halo2-base = { git = "https://github.com/gosh-sh/halo2-lib-zkevm-sha256-and-bls12-381", branch = "main", default-features = false, features = ["halo2-axiom", "test-utils"], optional = true }
