@@ -1,0 +1,74 @@
+{
+	"ABI version": 2,
+	"version": "2.4",
+	"header": ["pubkey", "time", "expire"],
+	"functions": [
+		{
+			"name": "constructor",
+			"inputs": [
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "setWalletCode",
+			"inputs": [
+				{"name":"code","type":"cell"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "createDappConfig",
+			"inputs": [
+				{"name":"dappRoot","type":"address"},
+				{"name":"shellAmount","type":"uint128"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "deployWallet",
+			"inputs": [
+				{"name":"ownerPubkeys","type":"uint256[]"},
+				{"name":"ownerAddresses","type":"address[]"},
+				{"name":"reqConfirms","type":"uint8"},
+				{"name":"initialValue","type":"uint64"},
+				{"name":"walletPubkey","type":"uint256"}
+			],
+			"outputs": [
+				{"name":"walletAddress","type":"address"}
+			]
+		},
+		{
+			"name": "getWalletAddress",
+			"inputs": [
+				{"name":"walletIndex","type":"uint64"},
+				{"name":"walletPubkey","type":"uint256"}
+			],
+			"outputs": [
+				{"name":"value0","type":"address"}
+			]
+		},
+		{
+			"name": "getInfo",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"ver","type":"string"},
+				{"name":"walletCount","type":"uint64"},
+				{"name":"walletCodeSet","type":"bool"}
+			]
+		}
+	],
+	"events": [
+	],
+	"fields": [
+		{"init":true,"name":"_pubkey","type":"uint256"},
+		{"init":false,"name":"_timestamp","type":"uint64"},
+		{"init":false,"name":"_constructorFlag","type":"bool"},
+		{"init":false,"name":"_walletCode","type":"cell"},
+		{"init":false,"name":"_walletCodeSet","type":"bool"},
+		{"init":false,"name":"_walletCount","type":"uint64"}
+	]
+}
