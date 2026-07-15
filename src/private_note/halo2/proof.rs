@@ -78,7 +78,7 @@ pub fn generate_proof(cache: &impl ProverCacheStorage, fixture_json: &str) -> Re
         .unwrap_or(false);
 
     let t_init = std::time::Instant::now();
-    let mut prover = Prover::new(cache_dir.as_deref().map(Path::new))
+    let mut prover = Prover::new_with_srs_from_url(None, cache_dir.as_deref().map(Path::new))
         .map_err(|e| anyhow!("halo2 prover initialisation failed: {e}"))?;
     eprintln!(
         "[halo2-time] Prover::new ({}): {:.2}s",
