@@ -1,0 +1,9 @@
+/target
+/target-*
+.env
+.env.*
+*.key
+*.pem
+*.secret
+*.p12
+secrets/
