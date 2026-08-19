@@ -1,0 +1,286 @@
+{
+	"ABI version": 2,
+	"version": "2.4",
+	"header": ["pubkey", "time", "expire"],
+	"functions": [
+		{
+			"name": "constructor",
+			"inputs": [
+				{"name":"modelName","type":"string"},
+				{"name":"endpoint","type":"string"},
+				{"name":"totalTokensForSale","type":"uint128"},
+				{"name":"tickSize","type":"uint128"},
+				{"name":"burnFeeBps","type":"uint16"},
+				{"name":"maxReservedSessions","type":"uint8"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "buyTokens",
+			"inputs": [
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "withdrawShell",
+			"inputs": [
+				{"name":"amount","type":"uint128"},
+				{"name":"recipient","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "consumeSession",
+			"inputs": [
+				{"name":"sessions","type":"uint16"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "cancel",
+			"inputs": [
+				{"name":"payoutAddress","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "replenishTokensForSale",
+			"inputs": [
+				{"name":"amount","type":"uint128"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "reduceAvailable",
+			"inputs": [
+				{"name":"amount","type":"uint128"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "setEndpoint",
+			"inputs": [
+				{"name":"newEndpoint","type":"string"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "destroy",
+			"inputs": [
+				{"name":"payoutAddress","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "getDetails",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"modelName","type":"string"},
+				{"name":"endpoint","type":"string"},
+				{"name":"availableTokens","type":"uint128"},
+				{"name":"soldTokens","type":"uint128"},
+				{"name":"tickSize","type":"uint128"},
+				{"name":"burnFeeBps","type":"uint16"},
+				{"name":"maxReservedSessions","type":"uint8"},
+				{"name":"currentBuyer","type":"address"},
+				{"name":"reservedTokens","type":"uint128"},
+				{"name":"consumeCalls","type":"uint16"},
+				{"name":"sellerOwed","type":"uint128"},
+				{"name":"shellBalance","type":"uint128"}
+			]
+		},
+		{
+			"name": "getTotalTokensForSale",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"value0","type":"uint128"}
+			]
+		},
+		{
+			"name": "getCounters",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"availableTokens","type":"uint128"},
+				{"name":"soldTokens","type":"uint128"},
+				{"name":"reservedTokens","type":"uint128"},
+				{"name":"consumeCalls","type":"uint16"},
+				{"name":"sellerOwed","type":"uint128"}
+			]
+		},
+		{
+			"name": "getConfig",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"tickSize","type":"uint128"},
+				{"name":"burnFeeBps","type":"uint16"},
+				{"name":"maxReservedSessions","type":"uint8"}
+			]
+		},
+		{
+			"name": "getCurrentBuyer",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"value0","type":"address"}
+			]
+		},
+		{
+			"name": "getShellBalance",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"value0","type":"uint128"}
+			]
+		},
+		{
+			"name": "getModelName",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"value0","type":"string"}
+			]
+		},
+		{
+			"name": "getEndpoint",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"value0","type":"string"}
+			]
+		},
+		{
+			"name": "getSeller",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"sellerPubkey","type":"uint256"},
+				{"name":"rootModelAddress","type":"address"},
+				{"name":"nonce","type":"uint64"}
+			]
+		},
+		{
+			"name": "getVersion",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"value0","type":"string"},
+				{"name":"value1","type":"string"}
+			]
+		}
+	],
+	"events": [
+		{
+			"name": "ContractDeployed",
+			"inputs": [
+				{"name":"self","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "TokensPurchased",
+			"inputs": [
+				{"name":"buyer","type":"address"},
+				{"name":"amount","type":"uint128"},
+				{"name":"fee","type":"uint128"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "TokensConsumed",
+			"inputs": [
+				{"name":"buyer","type":"address"},
+				{"name":"amount","type":"uint128"},
+				{"name":"sessions","type":"uint16"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "FeeBurned",
+			"inputs": [
+				{"name":"amount","type":"uint128"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "TokensReplenished",
+			"inputs": [
+				{"name":"amount","type":"uint128"},
+				{"name":"availableTokens","type":"uint128"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "ContractDestroyed",
+			"inputs": [
+				{"name":"self","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "ShellWithdrawn",
+			"inputs": [
+				{"name":"recipient","type":"address"},
+				{"name":"amount","type":"uint128"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "ReservationCancelled",
+			"inputs": [
+				{"name":"buyer","type":"address"},
+				{"name":"refundedToBuyer","type":"uint128"},
+				{"name":"carriedSellerOwed","type":"uint128"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "AvailableReduced",
+			"inputs": [
+				{"name":"amount","type":"uint128"},
+				{"name":"availableTokens","type":"uint128"}
+			],
+			"outputs": [
+			]
+		}
+	],
+	"fields": [
+		{"init":true,"name":"_pubkey","type":"uint256"},
+		{"init":false,"name":"_timestamp","type":"uint64"},
+		{"init":false,"name":"_constructorFlag","type":"bool"},
+		{"init":true,"name":"_sellerPubkey","type":"uint256"},
+		{"init":true,"name":"_rootModelAddress","type":"address"},
+		{"init":true,"name":"_nonce","type":"uint64"},
+		{"init":false,"name":"_modelName","type":"string"},
+		{"init":false,"name":"_endpoint","type":"string"},
+		{"init":false,"name":"_availableTokens","type":"uint128"},
+		{"init":false,"name":"_soldTokens","type":"uint128"},
+		{"init":false,"name":"_tickSize","type":"uint128"},
+		{"init":false,"name":"_burnFeeBps","type":"uint16"},
+		{"init":false,"name":"_maxReservedSessions","type":"uint8"},
+		{"init":false,"name":"_currentBuyer","type":"address"},
+		{"init":false,"name":"_reservedTokens","type":"uint128"},
+		{"init":false,"name":"_consumeCalls","type":"uint16"},
+		{"init":false,"name":"_sellerOwed","type":"uint128"}
+	]
+}
