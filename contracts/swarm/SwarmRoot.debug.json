@@ -1,0 +1,2656 @@
+{
+  "0273e18e4dd467ca99881b0a61ae0bda671a5bcc822db1722b4d17c0f1d71157": {
+    "0": {
+      "filename": "./SwarmRoot.code",
+      "line": 849
+    },
+    "16": {
+      "filename": "./SwarmRoot.code",
+      "line": 850
+    },
+    "24": {
+      "filename": "./SwarmRoot.code",
+      "line": 851
+    },
+    "48": {
+      "filename": "./SwarmRoot.code",
+      "line": 852
+    },
+    "64": {
+      "filename": "./SwarmRoot.code",
+      "line": 853
+    },
+    "88": {
+      "filename": "./SwarmRoot.code",
+      "line": 854
+    },
+    "104": {
+      "filename": "./SwarmRoot.code",
+      "line": 855
+    },
+    "112": {
+      "filename": "./SwarmRoot.code",
+      "line": 856
+    },
+    "120": {
+      "filename": "./SwarmRoot.code",
+      "line": 857
+    },
+    "144": {
+      "filename": "./SwarmRoot.code",
+      "line": 858
+    },
+    "168": {
+      "filename": "./SwarmRoot.code",
+      "line": 859
+    },
+    "176": {
+      "filename": "./SwarmRoot.code",
+      "line": 860
+    },
+    "184": {
+      "filename": "./SwarmRoot.code",
+      "line": 861
+    },
+    "200": {
+      "filename": "./SwarmRoot.code",
+      "line": 862
+    },
+    "216": {
+      "filename": "./SwarmRoot.code",
+      "line": 866
+    },
+    "224": {
+      "filename": "./SwarmRoot.code",
+      "line": 867
+    },
+    "248": {
+      "filename": "./SwarmRoot.code",
+      "line": 868
+    },
+    "264": {
+      "filename": "./SwarmRoot.code",
+      "line": 869
+    },
+    "272": {
+      "filename": "./SwarmRoot.code",
+      "line": 870
+    },
+    "288": {
+      "filename": "./SwarmRoot.code",
+      "line": 874
+    },
+    "296": {
+      "filename": "./SwarmRoot.code",
+      "line": 875
+    },
+    "312": {
+      "filename": "./SwarmRoot.code",
+      "line": 878
+    }
+  },
+  "13b440571259f526a9c9e3b46027af16481e30534382e70490b03d6791ceedb1": {
+    "0": {
+      "filename": "./SwarmRoot.code",
+      "line": 473
+    },
+    "8": {
+      "filename": "./SwarmRoot.code",
+      "line": 474
+    },
+    "24": {
+      "filename": "./SwarmRoot.code",
+      "line": 475
+    },
+    "48": {
+      "filename": "./SwarmRoot.code",
+      "line": 476
+    },
+    "64": {
+      "filename": "./SwarmRoot.code",
+      "line": 477
+    },
+    "72": {
+      "filename": "./SwarmRoot.code",
+      "line": 478
+    },
+    "88": {
+      "filename": "SwarmRoot.sol",
+      "line": 88
+    },
+    "96": {
+      "filename": "SwarmRoot.sol",
+      "line": 88
+    },
+    "104": {
+      "filename": "SwarmRoot.sol",
+      "line": 88
+    },
+    "120": {
+      "filename": "SwarmRoot.sol",
+      "line": 88
+    },
+    "136": {
+      "filename": "SwarmRoot.sol",
+      "line": 88
+    },
+    "144": {
+      "filename": "SwarmRoot.sol",
+      "line": 88
+    },
+    "160": {
+      "filename": "SwarmRoot.sol",
+      "line": 88
+    },
+    "168": {
+      "filename": "SwarmRoot.sol",
+      "line": 88
+    },
+    "176": {
+      "filename": "SwarmRoot.sol",
+      "line": 88
+    },
+    "184": {
+      "filename": "SwarmRoot.sol",
+      "line": 88
+    },
+    "192": {
+      "filename": "SwarmRoot.sol",
+      "line": 88
+    },
+    "200": {
+      "filename": "SwarmRoot.sol",
+      "line": 88
+    },
+    "216": {
+      "filename": "SwarmRoot.sol",
+      "line": 88
+    },
+    "232": {
+      "filename": "SwarmRoot.sol",
+      "line": 88
+    },
+    "240": {
+      "filename": "SwarmRoot.sol",
+      "line": 88
+    },
+    "256": {
+      "filename": "SwarmRoot.sol",
+      "line": 88
+    },
+    "264": {
+      "filename": "SwarmRoot.sol",
+      "line": 88
+    },
+    "272": {
+      "filename": "SwarmRoot.sol",
+      "line": 88
+    },
+    "288": {
+      "filename": "SwarmRoot.sol",
+      "line": 88
+    },
+    "304": {
+      "filename": "SwarmRoot.sol",
+      "line": 88
+    },
+    "312": {
+      "filename": "SwarmRoot.sol",
+      "line": 88
+    },
+    "328": {
+      "filename": "SwarmRoot.sol",
+      "line": 88
+    },
+    "336": {
+      "filename": "SwarmRoot.sol",
+      "line": 88
+    },
+    "352": {
+      "filename": "SwarmRoot.sol",
+      "line": 88
+    },
+    "368": {
+      "filename": "SwarmRoot.sol",
+      "line": 88
+    },
+    "384": {
+      "filename": "SwarmRoot.sol",
+      "line": 88
+    },
+    "392": {
+      "filename": "./SwarmRoot.code",
+      "line": 511
+    },
+    "408": {
+      "filename": "./SwarmRoot.code",
+      "line": 514
+    },
+    "416": {
+      "filename": "./SwarmRoot.code",
+      "line": 515
+    },
+    "432": {
+      "filename": "./SwarmRoot.code",
+      "line": 516
+    },
+    "440": {
+      "filename": "./SwarmRoot.code",
+      "line": 517
+    },
+    "448": {
+      "filename": "./SwarmRoot.code",
+      "line": 518
+    },
+    "464": {
+      "filename": "./SwarmRoot.code",
+      "line": 519
+    },
+    "480": {
+      "filename": "./SwarmRoot.code",
+      "line": 520
+    },
+    "488": {
+      "filename": "./SwarmRoot.code",
+      "line": 521
+    },
+    "496": {
+      "filename": "./SwarmRoot.code",
+      "line": 522
+    },
+    "504": {
+      "filename": "./SwarmRoot.code",
+      "line": 523
+    },
+    "528": {
+      "filename": "./SwarmRoot.code",
+      "line": 524
+    },
+    "536": {
+      "filename": "./SwarmRoot.code",
+      "line": 525
+    },
+    "544": {
+      "filename": "./SwarmRoot.code",
+      "line": 526
+    },
+    "568": {
+      "filename": "./SwarmRoot.code",
+      "line": 527
+    },
+    "576": {
+      "filename": "./SwarmRoot.code",
+      "line": 528
+    },
+    "584": {
+      "filename": "./SwarmRoot.code",
+      "line": 529
+    },
+    "632": {
+      "filename": "./SwarmRoot.code",
+      "line": 530
+    },
+    "640": {
+      "filename": "./SwarmRoot.code",
+      "line": 531
+    },
+    "648": {
+      "filename": "./SwarmRoot.code",
+      "line": 532
+    },
+    "656": {
+      "filename": "./SwarmRoot.code",
+      "line": 533
+    },
+    "664": {
+      "filename": "./SwarmRoot.code",
+      "line": 534
+    },
+    "680": {
+      "filename": "./SwarmRoot.code",
+      "line": 536
+    },
+    "688": {
+      "filename": "./SwarmRoot.code",
+      "line": 537
+    },
+    "696": {
+      "filename": "./SwarmRoot.code",
+      "line": 539
+    },
+    "704": {
+      "filename": "./SwarmRoot.code",
+      "line": 540
+    },
+    "720": {
+      "filename": "./SwarmRoot.code",
+      "line": 543
+    }
+  },
+  "167cbcddb50e29cce7c28a14df73bae947a561cc10d9c38c298a1e02278eb4e6": {
+    "0": {
+      "filename": "SwarmRoot.sol",
+      "line": 107
+    },
+    "8": {
+      "filename": "SwarmRoot.sol",
+      "line": 107
+    },
+    "24": {
+      "filename": "SwarmRoot.sol",
+      "line": 107
+    },
+    "32": {
+      "filename": "SwarmRoot.sol",
+      "line": 107
+    },
+    "40": {
+      "filename": "SwarmRoot.sol",
+      "line": 107
+    },
+    "56": {
+      "filename": "SwarmRoot.sol",
+      "line": 107
+    },
+    "64": {
+      "filename": "SwarmRoot.sol",
+      "line": 107
+    },
+    "72": {
+      "filename": "SwarmRoot.sol",
+      "line": 107
+    },
+    "88": {
+      "filename": "SwarmRoot.sol",
+      "line": 107
+    },
+    "96": {
+      "filename": "SwarmRoot.sol",
+      "line": 107
+    },
+    "104": {
+      "filename": "SwarmRoot.sol",
+      "line": 107
+    },
+    "120": {
+      "filename": "SwarmRoot.sol",
+      "line": 107
+    },
+    "128": {
+      "filename": "SwarmRoot.sol",
+      "line": 107
+    },
+    "136": {
+      "filename": "SwarmRoot.sol",
+      "line": 107
+    },
+    "152": {
+      "filename": "SwarmRoot.sol",
+      "line": 107
+    },
+    "168": {
+      "filename": "SwarmRoot.sol",
+      "line": 107
+    },
+    "184": {
+      "filename": "SwarmRoot.sol",
+      "line": 107
+    },
+    "192": {
+      "filename": "SwarmRoot.sol",
+      "line": 107
+    }
+  },
+  "19e8a32e5ab1ca5c83502fdf10d5290fd083eeda9ee46976388c664af5088f43": {
+    "0": {
+      "filename": "SwarmRoot.sol",
+      "line": 138
+    }
+  },
+  "2100c92948f60a1e5a214408424b276ac3b150baa9730b4b93ad68bdd59393c2": {
+    "0": {
+      "filename": "SwarmRoot.sol",
+      "line": 139
+    },
+    "8": {
+      "filename": "SwarmRoot.sol",
+      "line": 139
+    },
+    "40": {
+      "filename": "SwarmRoot.sol",
+      "line": 139
+    },
+    "56": {
+      "filename": "SwarmRoot.sol",
+      "line": 139
+    },
+    "72": {
+      "filename": "SwarmRoot.sol",
+      "line": 139
+    },
+    "88": {
+      "filename": "SwarmRoot.sol",
+      "line": 139
+    },
+    "96": {
+      "filename": "SwarmRoot.sol",
+      "line": 139
+    },
+    "104": {
+      "filename": "SwarmRoot.sol",
+      "line": 139
+    },
+    "120": {
+      "filename": "SwarmRoot.sol",
+      "line": 139
+    },
+    "128": {
+      "filename": "SwarmRoot.sol",
+      "line": 139
+    },
+    "136": {
+      "filename": "SwarmRoot.sol",
+      "line": 139
+    },
+    "152": {
+      "filename": "SwarmRoot.sol",
+      "line": 139
+    },
+    "160": {
+      "filename": "SwarmRoot.sol",
+      "line": 139
+    },
+    "168": {
+      "filename": "SwarmRoot.sol",
+      "line": 139
+    },
+    "176": {
+      "filename": "SwarmRoot.sol",
+      "line": 139
+    },
+    "232": {
+      "filename": "SwarmRoot.sol",
+      "line": 139
+    },
+    "248": {
+      "filename": "SwarmRoot.sol",
+      "line": 139
+    },
+    "256": {
+      "filename": "SwarmRoot.sol",
+      "line": 139
+    },
+    "264": {
+      "filename": "SwarmRoot.sol",
+      "line": 139
+    },
+    "272": {
+      "filename": "SwarmRoot.sol",
+      "line": 139
+    },
+    "304": {
+      "filename": "SwarmRoot.sol",
+      "line": 139
+    },
+    "320": {
+      "filename": "SwarmRoot.sol",
+      "line": 139
+    },
+    "336": {
+      "filename": "SwarmRoot.sol",
+      "line": 139
+    },
+    "360": {
+      "filename": "SwarmRoot.sol",
+      "line": 139
+    },
+    "416": {
+      "filename": "SwarmRoot.sol",
+      "line": 139
+    },
+    "424": {
+      "filename": "SwarmRoot.sol",
+      "line": 139
+    },
+    "432": {
+      "filename": "SwarmRoot.sol",
+      "line": 139
+    },
+    "440": {
+      "filename": "SwarmRoot.sol",
+      "line": 139
+    },
+    "448": {
+      "filename": "SwarmRoot.sol",
+      "line": 139
+    },
+    "464": {
+      "filename": "SwarmRoot.sol",
+      "line": 139
+    }
+  },
+  "246640fb8f8f6d4f393f171b866f88462ecce4e0c7fabc133a008775c761185e": {
+    "0": {
+      "filename": "./SwarmRoot.code",
+      "line": 191
+    },
+    "16": {
+      "filename": "./SwarmRoot.code",
+      "line": 192
+    },
+    "24": {
+      "filename": "./SwarmRoot.code",
+      "line": 193
+    },
+    "40": {
+      "filename": "./SwarmRoot.code",
+      "line": 194
+    },
+    "56": {
+      "filename": "./SwarmRoot.code",
+      "line": 195
+    },
+    "72": {
+      "filename": "./SwarmRoot.code",
+      "line": 196
+    },
+    "80": {
+      "filename": "./SwarmRoot.code",
+      "line": 197
+    },
+    "96": {
+      "filename": "./SwarmRoot.code",
+      "line": 198
+    },
+    "112": {
+      "filename": "./SwarmRoot.code",
+      "line": 199
+    },
+    "120": {
+      "filename": "./SwarmRoot.code",
+      "line": 200
+    },
+    "136": {
+      "filename": "./SwarmRoot.code",
+      "line": 201
+    },
+    "152": {
+      "filename": "./SwarmRoot.code",
+      "line": 202
+    },
+    "168": {
+      "filename": "./SwarmRoot.code",
+      "line": 203
+    },
+    "184": {
+      "filename": "./SwarmRoot.code",
+      "line": 204
+    },
+    "200": {
+      "filename": "./SwarmRoot.code",
+      "line": 205
+    }
+  },
+  "26e67393341a4b5c42ea39573ae95185307f8f5a13d5987e6e5805e859cf5f37": {},
+  "2e8df06be5eba50c6139f111d3e14c82eda57b6e728aaf17e178004d02203021": {
+    "0": {
+      "filename": "./SwarmRoot.code",
+      "line": 226
+    },
+    "8": {
+      "filename": "./SwarmRoot.code",
+      "line": 227
+    },
+    "24": {
+      "filename": "./SwarmRoot.code",
+      "line": 228
+    },
+    "32": {
+      "filename": "./SwarmRoot.code",
+      "line": 229
+    },
+    "48": {
+      "filename": "./SwarmRoot.code",
+      "line": 232
+    },
+    "64": {
+      "filename": "./SwarmRoot.code",
+      "line": 233
+    },
+    "80": {
+      "filename": "./SwarmRoot.code",
+      "line": 234
+    },
+    "88": {
+      "filename": "SwarmRoot.sol",
+      "line": 49
+    },
+    "104": {
+      "filename": "SwarmRoot.sol",
+      "line": 49
+    },
+    "112": {
+      "filename": "SwarmRoot.sol",
+      "line": 49
+    },
+    "120": {
+      "filename": "SwarmRoot.sol",
+      "line": 49
+    },
+    "128": {
+      "filename": "SwarmRoot.sol",
+      "line": 49
+    },
+    "136": {
+      "filename": "SwarmRoot.sol",
+      "line": 49
+    },
+    "144": {
+      "filename": "SwarmRoot.sol",
+      "line": 49
+    },
+    "152": {
+      "filename": "SwarmRoot.sol",
+      "line": 49
+    },
+    "168": {
+      "filename": "SwarmRoot.sol",
+      "line": 49
+    },
+    "176": {
+      "filename": "SwarmRoot.sol",
+      "line": 49
+    },
+    "200": {
+      "filename": "SwarmRoot.sol",
+      "line": 50
+    },
+    "216": {
+      "filename": "SwarmRoot.sol",
+      "line": 51
+    },
+    "224": {
+      "filename": "SwarmRoot.sol",
+      "line": 51
+    },
+    "240": {
+      "filename": "SwarmRoot.sol",
+      "line": 52
+    },
+    "248": {
+      "filename": "SwarmRoot.sol",
+      "line": 52
+    },
+    "264": {
+      "filename": "./SwarmRoot.code",
+      "line": 256
+    },
+    "280": {
+      "filename": "./SwarmRoot.code",
+      "line": 259
+    }
+  },
+  "48820466dd5d3be5b70fbf471bdde53ce6a16a60fd9ad5c6180fee83858d1f96": {
+    "0": {
+      "filename": "SwarmRoot.sol",
+      "line": 57
+    },
+    "16": {
+      "filename": "SwarmRoot.sol",
+      "line": 57
+    },
+    "32": {
+      "filename": "SwarmRoot.sol",
+      "line": 57
+    },
+    "80": {
+      "filename": "SwarmRoot.sol",
+      "line": 57
+    },
+    "88": {
+      "filename": "SwarmRoot.sol",
+      "line": 57
+    },
+    "96": {
+      "filename": "SwarmRoot.sol",
+      "line": 58
+    },
+    "144": {
+      "filename": "SwarmRoot.sol",
+      "line": 58
+    }
+  },
+  "501e07865840bb85d6852b9292411d7598521641d2750d3687061672e4bfcc78": {
+    "0": {
+      "filename": "./SwarmRoot.code",
+      "line": 573
+    },
+    "8": {
+      "filename": "./SwarmRoot.code",
+      "line": 574
+    },
+    "24": {
+      "filename": "./SwarmRoot.code",
+      "line": 575
+    },
+    "48": {
+      "filename": "./SwarmRoot.code",
+      "line": 576
+    },
+    "64": {
+      "filename": "./SwarmRoot.code",
+      "line": 577
+    },
+    "72": {
+      "filename": "./SwarmRoot.code",
+      "line": 578
+    },
+    "88": {
+      "filename": "SwarmRoot.sol",
+      "line": 126
+    },
+    "96": {
+      "filename": "./SwarmRoot.code",
+      "line": 584
+    },
+    "112": {
+      "filename": "./SwarmRoot.code",
+      "line": 587
+    },
+    "120": {
+      "filename": "./SwarmRoot.code",
+      "line": 588
+    },
+    "136": {
+      "filename": "./SwarmRoot.code",
+      "line": 589
+    },
+    "144": {
+      "filename": "./SwarmRoot.code",
+      "line": 590
+    },
+    "152": {
+      "filename": "./SwarmRoot.code",
+      "line": 591
+    },
+    "168": {
+      "filename": "./SwarmRoot.code",
+      "line": 592
+    },
+    "184": {
+      "filename": "./SwarmRoot.code",
+      "line": 593
+    },
+    "192": {
+      "filename": "./SwarmRoot.code",
+      "line": 594
+    },
+    "200": {
+      "filename": "./SwarmRoot.code",
+      "line": 595
+    },
+    "208": {
+      "filename": "./SwarmRoot.code",
+      "line": 596
+    },
+    "232": {
+      "filename": "./SwarmRoot.code",
+      "line": 597
+    },
+    "240": {
+      "filename": "./SwarmRoot.code",
+      "line": 598
+    },
+    "256": {
+      "filename": "./SwarmRoot.code",
+      "line": 599
+    },
+    "272": {
+      "filename": "./SwarmRoot.code",
+      "line": 600
+    },
+    "280": {
+      "filename": "./SwarmRoot.code",
+      "line": 601
+    },
+    "328": {
+      "filename": "./SwarmRoot.code",
+      "line": 602
+    },
+    "336": {
+      "filename": "./SwarmRoot.code",
+      "line": 603
+    },
+    "352": {
+      "filename": "./SwarmRoot.code",
+      "line": 604
+    },
+    "368": {
+      "filename": "./SwarmRoot.code",
+      "line": 605
+    },
+    "376": {
+      "filename": "./SwarmRoot.code",
+      "line": 606
+    },
+    "384": {
+      "filename": "./SwarmRoot.code",
+      "line": 607
+    },
+    "400": {
+      "filename": "./SwarmRoot.code",
+      "line": 609
+    },
+    "408": {
+      "filename": "./SwarmRoot.code",
+      "line": 610
+    },
+    "424": {
+      "filename": "./SwarmRoot.code",
+      "line": 612
+    },
+    "432": {
+      "filename": "./SwarmRoot.code",
+      "line": 613
+    },
+    "448": {
+      "filename": "./SwarmRoot.code",
+      "line": 616
+    }
+  },
+  "5fab25e585afe5088efbc26c478780dcdf5b32819d5d91a24db6bf86144e22e7": {
+    "0": {
+      "filename": "SwarmRoot.sol",
+      "line": 44
+    },
+    "16": {
+      "filename": "SwarmRoot.sol",
+      "line": 44
+    },
+    "24": {
+      "filename": "SwarmRoot.sol",
+      "line": 44
+    },
+    "32": {
+      "filename": "SwarmRoot.sol",
+      "line": 44
+    },
+    "40": {
+      "filename": "SwarmRoot.sol",
+      "line": 44
+    },
+    "48": {
+      "filename": "SwarmRoot.sol",
+      "line": 44
+    },
+    "56": {
+      "filename": "SwarmRoot.sol",
+      "line": 44
+    },
+    "64": {
+      "filename": "SwarmRoot.sol",
+      "line": 44
+    },
+    "80": {
+      "filename": "SwarmRoot.sol",
+      "line": 44
+    },
+    "88": {
+      "filename": "SwarmRoot.sol",
+      "line": 44
+    },
+    "112": {
+      "filename": "SwarmRoot.sol",
+      "line": 73
+    },
+    "128": {
+      "filename": "SwarmRoot.sol",
+      "line": 74
+    },
+    "144": {
+      "filename": "SwarmRoot.sol",
+      "line": 76
+    },
+    "152": {
+      "filename": "SwarmRoot.sol",
+      "line": 76
+    },
+    "160": {
+      "filename": "SwarmRoot.sol",
+      "line": 76
+    },
+    "168": {
+      "filename": "SwarmRoot.sol",
+      "line": 76
+    },
+    "184": {
+      "filename": "SwarmRoot.sol",
+      "line": 76
+    },
+    "200": {
+      "filename": "SwarmRoot.sol",
+      "line": 76
+    },
+    "208": {
+      "filename": "SwarmRoot.sol",
+      "line": 76
+    },
+    "224": {
+      "filename": "SwarmRoot.sol",
+      "line": 76
+    },
+    "240": {
+      "filename": "SwarmRoot.sol",
+      "line": 78
+    },
+    "248": {
+      "filename": "SwarmRoot.sol",
+      "line": 78
+    },
+    "256": {
+      "filename": "SwarmRoot.sol",
+      "line": 78
+    },
+    "280": {
+      "filename": "SwarmRoot.sol",
+      "line": 78
+    },
+    "288": {
+      "filename": "SwarmRoot.sol",
+      "line": 78
+    },
+    "344": {
+      "filename": "SwarmRoot.sol",
+      "line": 78
+    },
+    "360": {
+      "filename": "SwarmRoot.sol",
+      "line": 78
+    },
+    "368": {
+      "filename": "SwarmRoot.sol",
+      "line": 78
+    },
+    "392": {
+      "filename": "SwarmRoot.sol",
+      "line": 78
+    },
+    "400": {
+      "filename": "SwarmRoot.sol",
+      "line": 78
+    },
+    "408": {
+      "filename": "SwarmRoot.sol",
+      "line": 78
+    },
+    "456": {
+      "filename": "SwarmRoot.sol",
+      "line": 78
+    },
+    "472": {
+      "filename": "SwarmRoot.sol",
+      "line": 78
+    },
+    "480": {
+      "filename": "SwarmRoot.sol",
+      "line": 78
+    },
+    "488": {
+      "filename": "SwarmRoot.sol",
+      "line": 78
+    },
+    "496": {
+      "filename": "SwarmRoot.sol",
+      "line": 78
+    },
+    "512": {
+      "filename": "SwarmRoot.sol",
+      "line": 78
+    },
+    "520": {
+      "filename": "SwarmRoot.sol",
+      "line": 78
+    },
+    "528": {
+      "filename": "SwarmRoot.sol",
+      "line": 78
+    },
+    "544": {
+      "filename": "SwarmRoot.sol",
+      "line": 78
+    },
+    "552": {
+      "filename": "SwarmRoot.sol",
+      "line": 78
+    },
+    "560": {
+      "filename": "SwarmRoot.sol",
+      "line": 78
+    },
+    "568": {
+      "filename": "SwarmRoot.sol",
+      "line": 78
+    },
+    "576": {
+      "filename": "SwarmRoot.sol",
+      "line": 78
+    },
+    "584": {
+      "filename": "SwarmRoot.sol",
+      "line": 78
+    }
+  },
+  "610af4910915127e22b6fa2349b55bf64193ec97eaf1efe14d221c86d69ebe5c": {
+    "0": {
+      "filename": "SwarmRoot.sol",
+      "line": 143
+    },
+    "8": {
+      "filename": "SwarmRoot.sol",
+      "line": 143
+    },
+    "24": {
+      "filename": "SwarmRoot.sol",
+      "line": 143
+    },
+    "32": {
+      "filename": "SwarmRoot.sol",
+      "line": 143
+    },
+    "48": {
+      "filename": "SwarmRoot.sol",
+      "line": 143
+    },
+    "56": {
+      "filename": "SwarmRoot.sol",
+      "line": 143
+    },
+    "64": {
+      "filename": "SwarmRoot.sol",
+      "line": 143
+    },
+    "72": {
+      "filename": "SwarmRoot.sol",
+      "line": 143
+    },
+    "80": {
+      "filename": "SwarmRoot.sol",
+      "line": 143
+    },
+    "88": {
+      "filename": "SwarmRoot.sol",
+      "line": 143
+    },
+    "104": {
+      "filename": "SwarmRoot.sol",
+      "line": 143
+    },
+    "112": {
+      "filename": "SwarmRoot.sol",
+      "line": 143
+    },
+    "128": {
+      "filename": "SwarmRoot.sol",
+      "line": 143
+    },
+    "144": {
+      "filename": "SwarmRoot.sol",
+      "line": 143
+    },
+    "160": {
+      "filename": "SwarmRoot.sol",
+      "line": 143
+    },
+    "176": {
+      "filename": "SwarmRoot.sol",
+      "line": 143
+    },
+    "184": {
+      "filename": "SwarmRoot.sol",
+      "line": 143
+    },
+    "192": {
+      "filename": "SwarmRoot.sol",
+      "line": 143
+    },
+    "200": {
+      "filename": "SwarmRoot.sol",
+      "line": 143
+    },
+    "216": {
+      "filename": "SwarmRoot.sol",
+      "line": 143
+    },
+    "224": {
+      "filename": "SwarmRoot.sol",
+      "line": 143
+    },
+    "232": {
+      "filename": "SwarmRoot.sol",
+      "line": 143
+    },
+    "248": {
+      "filename": "SwarmRoot.sol",
+      "line": 143
+    },
+    "264": {
+      "filename": "SwarmRoot.sol",
+      "line": 143
+    },
+    "272": {
+      "filename": "SwarmRoot.sol",
+      "line": 143
+    },
+    "288": {
+      "filename": "SwarmRoot.sol",
+      "line": 143
+    },
+    "296": {
+      "filename": "SwarmRoot.sol",
+      "line": 143
+    },
+    "312": {
+      "filename": "SwarmRoot.sol",
+      "line": 143
+    },
+    "320": {
+      "filename": "SwarmRoot.sol",
+      "line": 143
+    },
+    "328": {
+      "filename": "SwarmRoot.sol",
+      "line": 143
+    },
+    "336": {
+      "filename": "SwarmRoot.sol",
+      "line": 143
+    },
+    "352": {
+      "filename": "SwarmRoot.sol",
+      "line": 143
+    },
+    "360": {
+      "filename": "SwarmRoot.sol",
+      "line": 143
+    },
+    "368": {
+      "filename": "SwarmRoot.sol",
+      "line": 143
+    },
+    "384": {
+      "filename": "SwarmRoot.sol",
+      "line": 143
+    },
+    "392": {
+      "filename": "SwarmRoot.sol",
+      "line": 143
+    },
+    "400": {
+      "filename": "SwarmRoot.sol",
+      "line": 143
+    },
+    "416": {
+      "filename": "SwarmRoot.sol",
+      "line": 143
+    },
+    "432": {
+      "filename": "SwarmRoot.sol",
+      "line": 143
+    },
+    "440": {
+      "filename": "SwarmRoot.sol",
+      "line": 143
+    },
+    "456": {
+      "filename": "SwarmRoot.sol",
+      "line": 143
+    },
+    "472": {
+      "filename": "SwarmRoot.sol",
+      "line": 143
+    },
+    "488": {
+      "filename": "SwarmRoot.sol",
+      "line": 143
+    },
+    "504": {
+      "filename": "SwarmRoot.sol",
+      "line": 143
+    },
+    "520": {
+      "filename": "SwarmRoot.sol",
+      "line": 143
+    },
+    "536": {
+      "filename": "SwarmRoot.sol",
+      "line": 143
+    },
+    "552": {
+      "filename": "SwarmRoot.sol",
+      "line": 143
+    },
+    "568": {
+      "filename": "SwarmRoot.sol",
+      "line": 143
+    },
+    "576": {
+      "filename": "SwarmRoot.sol",
+      "line": 143
+    },
+    "584": {
+      "filename": "SwarmRoot.sol",
+      "line": 143
+    },
+    "592": {
+      "filename": "SwarmRoot.sol",
+      "line": 143
+    },
+    "600": {
+      "filename": "SwarmRoot.sol",
+      "line": 143
+    },
+    "608": {
+      "filename": "SwarmRoot.sol",
+      "line": 143
+    },
+    "632": {
+      "filename": "SwarmRoot.sol",
+      "line": 143
+    },
+    "648": {
+      "filename": "SwarmRoot.sol",
+      "line": 143
+    },
+    "664": {
+      "filename": "SwarmRoot.sol",
+      "line": 143
+    },
+    "680": {
+      "filename": "SwarmRoot.sol",
+      "line": 143
+    }
+  },
+  "6160966ef16b2afa0efe7887c2e14955bbe5c97abf5c68bbb34bc800419ccee3": {
+    "0": {
+      "filename": "./SwarmRoot.code",
+      "line": 793
+    },
+    "8": {
+      "filename": "./SwarmRoot.code",
+      "line": 794
+    },
+    "24": {
+      "filename": "./SwarmRoot.code",
+      "line": 797
+    },
+    "40": {
+      "filename": "./SwarmRoot.code",
+      "line": 798
+    },
+    "48": {
+      "filename": "./SwarmRoot.code",
+      "line": 799
+    },
+    "64": {
+      "filename": "./SwarmRoot.code",
+      "line": 800
+    },
+    "80": {
+      "filename": "./SwarmRoot.code",
+      "line": 801
+    },
+    "96": {
+      "filename": "./SwarmRoot.code",
+      "line": 802
+    },
+    "104": {
+      "filename": "./SwarmRoot.code",
+      "line": 803
+    },
+    "120": {
+      "filename": "./SwarmRoot.code",
+      "line": 804
+    },
+    "128": {
+      "filename": "./SwarmRoot.code",
+      "line": 805
+    },
+    "136": {
+      "filename": "./SwarmRoot.code",
+      "line": 806
+    },
+    "144": {
+      "filename": "./SwarmRoot.code",
+      "line": 807
+    },
+    "152": {
+      "filename": "./SwarmRoot.code",
+      "line": 808
+    },
+    "168": {
+      "filename": "./SwarmRoot.code",
+      "line": 809
+    },
+    "176": {
+      "filename": "./SwarmRoot.code",
+      "line": 810
+    },
+    "192": {
+      "filename": "./SwarmRoot.code",
+      "line": 811
+    },
+    "200": {
+      "filename": "./SwarmRoot.code",
+      "line": 812
+    },
+    "208": {
+      "filename": "./SwarmRoot.code",
+      "line": 813
+    },
+    "224": {
+      "filename": "./SwarmRoot.code",
+      "line": 814
+    },
+    "240": {
+      "filename": "./SwarmRoot.code",
+      "line": 816
+    },
+    "248": {
+      "filename": "./SwarmRoot.code",
+      "line": 817
+    },
+    "256": {
+      "filename": "./SwarmRoot.code",
+      "line": 818
+    },
+    "272": {
+      "filename": "./SwarmRoot.code",
+      "line": 820
+    },
+    "280": {
+      "filename": "./SwarmRoot.code",
+      "line": 821
+    },
+    "288": {
+      "filename": "./SwarmRoot.code",
+      "line": 822
+    },
+    "304": {
+      "filename": "./SwarmRoot.code",
+      "line": 823
+    },
+    "320": {
+      "filename": "./SwarmRoot.code",
+      "line": 824
+    },
+    "336": {
+      "filename": "./SwarmRoot.code",
+      "line": 826
+    },
+    "344": {
+      "filename": "./SwarmRoot.code",
+      "line": 827
+    },
+    "360": {
+      "filename": "./SwarmRoot.code",
+      "line": 828
+    },
+    "368": {
+      "filename": "./SwarmRoot.code",
+      "line": 829
+    },
+    "384": {
+      "filename": "./SwarmRoot.code",
+      "line": 831
+    },
+    "392": {
+      "filename": "./SwarmRoot.code",
+      "line": 832
+    },
+    "408": {
+      "filename": "./SwarmRoot.code",
+      "line": 833
+    },
+    "416": {
+      "filename": "stdlib.sol",
+      "line": 22
+    },
+    "432": {
+      "filename": "stdlib.sol",
+      "line": 22
+    },
+    "440": {
+      "filename": "stdlib.sol",
+      "line": 22
+    },
+    "448": {
+      "filename": "stdlib.sol",
+      "line": 22
+    },
+    "464": {
+      "filename": "stdlib.sol",
+      "line": 23
+    },
+    "472": {
+      "filename": "stdlib.sol",
+      "line": 23
+    },
+    "488": {
+      "filename": "stdlib.sol",
+      "line": 23
+    },
+    "512": {
+      "filename": "stdlib.sol",
+      "line": 23
+    },
+    "520": {
+      "filename": "stdlib.sol",
+      "line": 23
+    },
+    "560": {
+      "filename": "stdlib.sol",
+      "line": 23
+    },
+    "568": {
+      "filename": "stdlib.sol",
+      "line": 23
+    },
+    "576": {
+      "filename": "stdlib.sol",
+      "line": 23
+    },
+    "592": {
+      "filename": "stdlib.sol",
+      "line": 24
+    },
+    "608": {
+      "filename": "./SwarmRoot.code",
+      "line": 835
+    },
+    "624": {
+      "filename": "./SwarmRoot.code",
+      "line": 836
+    },
+    "632": {
+      "filename": "./SwarmRoot.code",
+      "line": 837
+    },
+    "648": {
+      "filename": "./SwarmRoot.code",
+      "line": 838
+    },
+    "656": {
+      "filename": "./SwarmRoot.code",
+      "line": 839
+    },
+    "672": {
+      "filename": "./SwarmRoot.code",
+      "line": 840
+    },
+    "688": {
+      "filename": "./SwarmRoot.code",
+      "line": 841
+    },
+    "696": {
+      "filename": "./SwarmRoot.code",
+      "line": 842
+    },
+    "712": {
+      "filename": "./SwarmRoot.code",
+      "line": 845
+    }
+  },
+  "6ef8416d29d2c96150186c4bc309e9151aac61a03b961c097d4497de8b20b4f9": {
+    "0": {
+      "filename": "./SwarmRoot.code",
+      "line": 209
+    },
+    "16": {
+      "filename": "./SwarmRoot.code",
+      "line": 210
+    },
+    "32": {
+      "filename": "./SwarmRoot.code",
+      "line": 211
+    },
+    "48": {
+      "filename": "./SwarmRoot.code",
+      "line": 212
+    },
+    "64": {
+      "filename": "./SwarmRoot.code",
+      "line": 213
+    },
+    "80": {
+      "filename": "./SwarmRoot.code",
+      "line": 214
+    },
+    "88": {
+      "filename": "./SwarmRoot.code",
+      "line": 215
+    },
+    "104": {
+      "filename": "./SwarmRoot.code",
+      "line": 216
+    },
+    "120": {
+      "filename": "./SwarmRoot.code",
+      "line": 217
+    },
+    "136": {
+      "filename": "./SwarmRoot.code",
+      "line": 218
+    },
+    "144": {
+      "filename": "./SwarmRoot.code",
+      "line": 219
+    },
+    "160": {
+      "filename": "./SwarmRoot.code",
+      "line": 220
+    },
+    "176": {
+      "filename": "./SwarmRoot.code",
+      "line": 221
+    },
+    "184": {
+      "filename": "./SwarmRoot.code",
+      "line": 222
+    }
+  },
+  "720291c3d6d7bb716a95dab239f9eed0b009310c931e49d28db3ae09d145bde9": {
+    "0": {
+      "filename": "SwarmRoot.sol",
+      "line": 44
+    },
+    "16": {
+      "filename": "SwarmRoot.sol",
+      "line": 44
+    },
+    "24": {
+      "filename": "SwarmRoot.sol",
+      "line": 44
+    },
+    "32": {
+      "filename": "SwarmRoot.sol",
+      "line": 44
+    },
+    "40": {
+      "filename": "SwarmRoot.sol",
+      "line": 44
+    },
+    "48": {
+      "filename": "SwarmRoot.sol",
+      "line": 44
+    },
+    "56": {
+      "filename": "SwarmRoot.sol",
+      "line": 44
+    },
+    "64": {
+      "filename": "SwarmRoot.sol",
+      "line": 44
+    },
+    "80": {
+      "filename": "SwarmRoot.sol",
+      "line": 44
+    },
+    "88": {
+      "filename": "SwarmRoot.sol",
+      "line": 44
+    },
+    "112": {
+      "filename": "SwarmRoot.sol",
+      "line": 63
+    },
+    "128": {
+      "filename": "SwarmRoot.sol",
+      "line": 64
+    },
+    "144": {
+      "filename": "SwarmRoot.sol",
+      "line": 65
+    },
+    "160": {
+      "filename": "SwarmRoot.sol",
+      "line": 66
+    },
+    "168": {
+      "filename": "SwarmRoot.sol",
+      "line": 66
+    }
+  },
+  "8361d525bfc2557e7bddf63385e791ca28d5d90878b59e3e353a9410c06b51c2": {
+    "0": {
+      "filename": "SwarmRoot.sol",
+      "line": 139
+    },
+    "8": {
+      "filename": "SwarmRoot.sol",
+      "line": 139
+    },
+    "48": {
+      "filename": "SwarmRoot.sol",
+      "line": 139
+    },
+    "64": {
+      "filename": "SwarmRoot.sol",
+      "line": 139
+    },
+    "72": {
+      "filename": "SwarmRoot.sol",
+      "line": 139
+    },
+    "80": {
+      "filename": "SwarmRoot.sol",
+      "line": 139
+    }
+  },
+  "91ea842f198d8ed8fcf70640416a1fd93be3bb05ac0b66b9cc269c94a9ffe64d": {
+    "0": {
+      "filename": "./SwarmRoot.code",
+      "line": 335
+    },
+    "8": {
+      "filename": "./SwarmRoot.code",
+      "line": 336
+    },
+    "24": {
+      "filename": "./SwarmRoot.code",
+      "line": 337
+    },
+    "48": {
+      "filename": "./SwarmRoot.code",
+      "line": 338
+    },
+    "64": {
+      "filename": "./SwarmRoot.code",
+      "line": 339
+    },
+    "72": {
+      "filename": "./SwarmRoot.code",
+      "line": 340
+    },
+    "88": {
+      "filename": "SwarmRoot.sol",
+      "line": 72
+    },
+    "96": {
+      "filename": "SwarmRoot.sol",
+      "line": 72
+    },
+    "104": {
+      "filename": "SwarmRoot.sol",
+      "line": 72
+    },
+    "112": {
+      "filename": "SwarmRoot.sol",
+      "line": 72
+    },
+    "120": {
+      "filename": "SwarmRoot.sol",
+      "line": 72
+    },
+    "128": {
+      "filename": "SwarmRoot.sol",
+      "line": 72
+    },
+    "136": {
+      "filename": "SwarmRoot.sol",
+      "line": 72
+    },
+    "152": {
+      "filename": "SwarmRoot.sol",
+      "line": 72
+    },
+    "168": {
+      "filename": "SwarmRoot.sol",
+      "line": 72
+    },
+    "176": {
+      "filename": "./SwarmRoot.code",
+      "line": 355
+    },
+    "192": {
+      "filename": "./SwarmRoot.code",
+      "line": 358
+    },
+    "208": {
+      "filename": "./SwarmRoot.code",
+      "line": 361
+    }
+  },
+  "95392c35e19fa022eec1977ef1a9bf1874ad09cff10ff9b30d5ee346be591d5b": {
+    "0": {
+      "filename": "./SwarmRoot.code",
+      "line": 728
+    },
+    "8": {
+      "filename": "./SwarmRoot.code",
+      "line": 729
+    },
+    "24": {
+      "filename": "./SwarmRoot.code",
+      "line": 730
+    },
+    "48": {
+      "filename": "./SwarmRoot.code",
+      "line": 731
+    },
+    "64": {
+      "filename": "./SwarmRoot.code",
+      "line": 732
+    },
+    "72": {
+      "filename": "./SwarmRoot.code",
+      "line": 733
+    },
+    "88": {
+      "filename": "SwarmRoot.sol",
+      "line": 62
+    },
+    "96": {
+      "filename": "SwarmRoot.sol",
+      "line": 62
+    },
+    "104": {
+      "filename": "./SwarmRoot.code",
+      "line": 740
+    },
+    "120": {
+      "filename": "./SwarmRoot.code",
+      "line": 743
+    },
+    "136": {
+      "filename": "./SwarmRoot.code",
+      "line": 746
+    }
+  },
+  "9628bb427b34dbcd557b36f040e76915a69ce4e6e8a00a63483f49ade78e32ac": {
+    "0": {
+      "filename": "SwarmRoot.sol",
+      "line": 131
+    },
+    "8": {
+      "filename": "SwarmRoot.sol",
+      "line": 131
+    },
+    "24": {
+      "filename": "SwarmRoot.sol",
+      "line": 131
+    }
+  },
+  "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7": {},
+  "a1a3ad9e783c1387b2f7bf142144eb763ab54a2f4efb3801e039a21f5a8035e3": {
+    "0": {
+      "filename": "SwarmRoot.sol",
+      "line": 138
+    },
+    "16": {
+      "filename": "SwarmRoot.sol",
+      "line": 138
+    },
+    "24": {
+      "filename": "SwarmRoot.sol",
+      "line": 138
+    },
+    "32": {
+      "filename": "SwarmRoot.sol",
+      "line": 138
+    },
+    "40": {
+      "filename": "SwarmRoot.sol",
+      "line": 138
+    },
+    "48": {
+      "filename": "SwarmRoot.sol",
+      "line": 138
+    },
+    "64": {
+      "filename": "SwarmRoot.sol",
+      "line": 138
+    },
+    "72": {
+      "filename": "SwarmRoot.sol",
+      "line": 139
+    },
+    "80": {
+      "filename": "SwarmRoot.sol",
+      "line": 139
+    },
+    "88": {
+      "filename": "SwarmRoot.sol",
+      "line": 139
+    },
+    "96": {
+      "filename": "SwarmRoot.sol",
+      "line": 139
+    }
+  },
+  "a3c660d92b7878ae301731bd5b9726d48e9c68bb41e10a73c78980e38b3d585c": {
+    "0": {
+      "filename": "./SwarmRoot.code",
+      "line": 754
+    },
+    "8": {
+      "filename": "./SwarmRoot.code",
+      "line": 755
+    },
+    "24": {
+      "filename": "./SwarmRoot.code",
+      "line": 756
+    },
+    "40": {
+      "filename": "./SwarmRoot.code",
+      "line": 759
+    },
+    "48": {
+      "filename": "./SwarmRoot.code",
+      "line": 760
+    },
+    "96": {
+      "filename": "./SwarmRoot.code",
+      "line": 761
+    },
+    "104": {
+      "filename": "./SwarmRoot.code",
+      "line": 762
+    },
+    "120": {
+      "filename": "./SwarmRoot.code",
+      "line": 765
+    },
+    "128": {
+      "filename": "./SwarmRoot.code",
+      "line": 766
+    },
+    "176": {
+      "filename": "./SwarmRoot.code",
+      "line": 767
+    },
+    "184": {
+      "filename": "./SwarmRoot.code",
+      "line": 768
+    }
+  },
+  "a8706c6358fecfba3c31d885dcf337fed67609c22ebf972396a9aca8faf7a108": {
+    "0": {
+      "filename": "./SwarmRoot.code",
+      "line": 910
+    }
+  },
+  "a8e7f34878fac3fb6296a9beb3a2f989214b3d508ed1c4cd28ae45078c3d265d": {
+    "0": {
+      "filename": "./SwarmRoot.code",
+      "line": 645
+    },
+    "8": {
+      "filename": "./SwarmRoot.code",
+      "line": 646
+    },
+    "24": {
+      "filename": "./SwarmRoot.code",
+      "line": 647
+    },
+    "48": {
+      "filename": "./SwarmRoot.code",
+      "line": 648
+    },
+    "64": {
+      "filename": "./SwarmRoot.code",
+      "line": 649
+    },
+    "72": {
+      "filename": "./SwarmRoot.code",
+      "line": 650
+    },
+    "88": {
+      "filename": "SwarmRoot.sol",
+      "line": 118
+    },
+    "96": {
+      "filename": "SwarmRoot.sol",
+      "line": 118
+    },
+    "104": {
+      "filename": "SwarmRoot.sol",
+      "line": 118
+    },
+    "112": {
+      "filename": "SwarmRoot.sol",
+      "line": 118
+    },
+    "120": {
+      "filename": "SwarmRoot.sol",
+      "line": 118
+    },
+    "128": {
+      "filename": "SwarmRoot.sol",
+      "line": 118
+    },
+    "136": {
+      "filename": "SwarmRoot.sol",
+      "line": 118
+    },
+    "152": {
+      "filename": "SwarmRoot.sol",
+      "line": 118
+    },
+    "168": {
+      "filename": "SwarmRoot.sol",
+      "line": 118
+    },
+    "176": {
+      "filename": "./SwarmRoot.code",
+      "line": 665
+    },
+    "192": {
+      "filename": "./SwarmRoot.code",
+      "line": 668
+    },
+    "200": {
+      "filename": "./SwarmRoot.code",
+      "line": 669
+    },
+    "216": {
+      "filename": "./SwarmRoot.code",
+      "line": 670
+    },
+    "224": {
+      "filename": "./SwarmRoot.code",
+      "line": 671
+    },
+    "232": {
+      "filename": "./SwarmRoot.code",
+      "line": 672
+    },
+    "248": {
+      "filename": "./SwarmRoot.code",
+      "line": 673
+    },
+    "264": {
+      "filename": "./SwarmRoot.code",
+      "line": 674
+    },
+    "272": {
+      "filename": "./SwarmRoot.code",
+      "line": 675
+    },
+    "280": {
+      "filename": "./SwarmRoot.code",
+      "line": 676
+    },
+    "288": {
+      "filename": "./SwarmRoot.code",
+      "line": 677
+    },
+    "312": {
+      "filename": "./SwarmRoot.code",
+      "line": 678
+    },
+    "320": {
+      "filename": "./SwarmRoot.code",
+      "line": 679
+    },
+    "328": {
+      "filename": "./SwarmRoot.code",
+      "line": 680
+    },
+    "352": {
+      "filename": "./SwarmRoot.code",
+      "line": 681
+    },
+    "360": {
+      "filename": "./SwarmRoot.code",
+      "line": 682
+    },
+    "368": {
+      "filename": "./SwarmRoot.code",
+      "line": 683
+    },
+    "416": {
+      "filename": "./SwarmRoot.code",
+      "line": 684
+    },
+    "424": {
+      "filename": "./SwarmRoot.code",
+      "line": 685
+    },
+    "432": {
+      "filename": "./SwarmRoot.code",
+      "line": 686
+    },
+    "440": {
+      "filename": "./SwarmRoot.code",
+      "line": 687
+    },
+    "448": {
+      "filename": "./SwarmRoot.code",
+      "line": 688
+    },
+    "464": {
+      "filename": "./SwarmRoot.code",
+      "line": 690
+    },
+    "472": {
+      "filename": "./SwarmRoot.code",
+      "line": 691
+    },
+    "480": {
+      "filename": "./SwarmRoot.code",
+      "line": 693
+    },
+    "488": {
+      "filename": "./SwarmRoot.code",
+      "line": 694
+    },
+    "504": {
+      "filename": "./SwarmRoot.code",
+      "line": 697
+    }
+  },
+  "b74663fa4c8f9f982f793b28863d97ff8993843670be8dbbfb787e94569e0f64": {
+    "0": {
+      "filename": "./SwarmRoot.code",
+      "line": 750
+    },
+    "8": {
+      "filename": "./SwarmRoot.code",
+      "line": 751
+    },
+    "56": {
+      "filename": "./SwarmRoot.code",
+      "line": 752
+    },
+    "64": {
+      "filename": "./SwarmRoot.code",
+      "line": 753
+    },
+    "80": {
+      "filename": "./SwarmRoot.code",
+      "line": 772
+    },
+    "88": {
+      "filename": "./SwarmRoot.code",
+      "line": 773
+    },
+    "136": {
+      "filename": "./SwarmRoot.code",
+      "line": 774
+    },
+    "144": {
+      "filename": "./SwarmRoot.code",
+      "line": 775
+    },
+    "160": {
+      "filename": "./SwarmRoot.code",
+      "line": 778
+    },
+    "168": {
+      "filename": "./SwarmRoot.code",
+      "line": 779
+    },
+    "216": {
+      "filename": "./SwarmRoot.code",
+      "line": 780
+    },
+    "224": {
+      "filename": "./SwarmRoot.code",
+      "line": 781
+    },
+    "240": {
+      "filename": "./SwarmRoot.code",
+      "line": 784
+    },
+    "248": {
+      "filename": "./SwarmRoot.code",
+      "line": 785
+    },
+    "296": {
+      "filename": "./SwarmRoot.code",
+      "line": 786
+    },
+    "304": {
+      "filename": "./SwarmRoot.code",
+      "line": 787
+    }
+  },
+  "c4c8700ea0a01e1853463ee6e3f1df65a864fe5badcf01ca86ccbcd3b8a2087a": {
+    "0": {
+      "filename": "SwarmRoot.sol",
+      "line": 44
+    },
+    "16": {
+      "filename": "SwarmRoot.sol",
+      "line": 44
+    },
+    "24": {
+      "filename": "SwarmRoot.sol",
+      "line": 44
+    },
+    "32": {
+      "filename": "SwarmRoot.sol",
+      "line": 44
+    },
+    "40": {
+      "filename": "SwarmRoot.sol",
+      "line": 44
+    },
+    "48": {
+      "filename": "SwarmRoot.sol",
+      "line": 44
+    },
+    "56": {
+      "filename": "SwarmRoot.sol",
+      "line": 44
+    },
+    "64": {
+      "filename": "SwarmRoot.sol",
+      "line": 44
+    },
+    "80": {
+      "filename": "SwarmRoot.sol",
+      "line": 44
+    },
+    "88": {
+      "filename": "SwarmRoot.sol",
+      "line": 44
+    },
+    "112": {
+      "filename": "SwarmRoot.sol",
+      "line": 95
+    },
+    "128": {
+      "filename": "SwarmRoot.sol",
+      "line": 96
+    },
+    "144": {
+      "filename": "SwarmRoot.sol",
+      "line": 97
+    },
+    "160": {
+      "filename": "SwarmRoot.sol",
+      "line": 97
+    },
+    "184": {
+      "filename": "SwarmRoot.sol",
+      "line": 100
+    },
+    "200": {
+      "filename": "SwarmRoot.sol",
+      "line": 100
+    },
+    "216": {
+      "filename": "SwarmRoot.sol",
+      "line": 100
+    },
+    "232": {
+      "filename": "SwarmRoot.sol",
+      "line": 101
+    },
+    "240": {
+      "filename": "SwarmRoot.sol",
+      "line": 101
+    },
+    "256": {
+      "filename": "SwarmRoot.sol",
+      "line": 104
+    },
+    "264": {
+      "filename": "SwarmRoot.sol",
+      "line": 104
+    },
+    "280": {
+      "filename": "SwarmRoot.sol",
+      "line": 104
+    },
+    "288": {
+      "filename": "SwarmRoot.sol",
+      "line": 104
+    },
+    "320": {
+      "filename": "SwarmRoot.sol",
+      "line": 104
+    },
+    "336": {
+      "filename": "SwarmRoot.sol",
+      "line": 104
+    },
+    "344": {
+      "filename": "SwarmRoot.sol",
+      "line": 104
+    },
+    "352": {
+      "filename": "SwarmRoot.sol",
+      "line": 104
+    },
+    "376": {
+      "filename": "SwarmRoot.sol",
+      "line": 104
+    },
+    "392": {
+      "filename": "SwarmRoot.sol",
+      "line": 107
+    },
+    "400": {
+      "filename": "SwarmRoot.sol",
+      "line": 107
+    },
+    "416": {
+      "filename": "SwarmRoot.sol",
+      "line": 107
+    },
+    "424": {
+      "filename": "SwarmRoot.sol",
+      "line": 107
+    },
+    "456": {
+      "filename": "SwarmRoot.sol",
+      "line": 107
+    },
+    "472": {
+      "filename": "SwarmRoot.sol",
+      "line": 107
+    },
+    "488": {
+      "filename": "SwarmRoot.sol",
+      "line": 107
+    },
+    "536": {
+      "filename": "SwarmRoot.sol",
+      "line": 107
+    },
+    "552": {
+      "filename": "SwarmRoot.sol",
+      "line": 107
+    },
+    "560": {
+      "filename": "SwarmRoot.sol",
+      "line": 107
+    },
+    "584": {
+      "filename": "SwarmRoot.sol",
+      "line": 107
+    },
+    "600": {
+      "filename": "SwarmRoot.sol",
+      "line": 107
+    },
+    "608": {
+      "filename": "SwarmRoot.sol",
+      "line": 107
+    },
+    "624": {
+      "filename": "SwarmRoot.sol",
+      "line": 107
+    },
+    "632": {
+      "filename": "SwarmRoot.sol",
+      "line": 107
+    },
+    "656": {
+      "filename": "SwarmRoot.sol",
+      "line": 107
+    },
+    "664": {
+      "filename": "SwarmRoot.sol",
+      "line": 107
+    },
+    "680": {
+      "filename": "SwarmRoot.sol",
+      "line": 107
+    },
+    "688": {
+      "filename": "SwarmRoot.sol",
+      "line": 107
+    },
+    "736": {
+      "filename": "SwarmRoot.sol",
+      "line": 107
+    },
+    "744": {
+      "filename": "SwarmRoot.sol",
+      "line": 107
+    },
+    "760": {
+      "filename": "SwarmRoot.sol",
+      "line": 107
+    },
+    "768": {
+      "filename": "SwarmRoot.sol",
+      "line": 107
+    },
+    "784": {
+      "filename": "SwarmRoot.sol",
+      "line": 107
+    },
+    "800": {
+      "filename": "SwarmRoot.sol",
+      "line": 107
+    },
+    "808": {
+      "filename": "SwarmRoot.sol",
+      "line": 107
+    },
+    "824": {
+      "filename": "SwarmRoot.sol",
+      "line": 107
+    },
+    "832": {
+      "filename": "SwarmRoot.sol",
+      "line": 107
+    },
+    "848": {
+      "filename": "SwarmRoot.sol",
+      "line": 107
+    },
+    "864": {
+      "filename": "SwarmRoot.sol",
+      "line": 107
+    },
+    "880": {
+      "filename": "SwarmRoot.sol",
+      "line": 107
+    },
+    "896": {
+      "filename": "SwarmRoot.sol",
+      "line": 107
+    },
+    "912": {
+      "filename": "SwarmRoot.sol",
+      "line": 107
+    },
+    "920": {
+      "filename": "SwarmRoot.sol",
+      "line": 107
+    },
+    "928": {
+      "filename": "SwarmRoot.sol",
+      "line": 107
+    },
+    "944": {
+      "filename": "SwarmRoot.sol",
+      "line": 114
+    },
+    "960": {
+      "filename": "SwarmRoot.sol",
+      "line": 114
+    },
+    "968": {
+      "filename": "SwarmRoot.sol",
+      "line": 114
+    },
+    "984": {
+      "filename": "SwarmRoot.sol",
+      "line": 114
+    }
+  },
+  "cea0563d720c2dea536ee506db98a153793c20aecf01dcf79c35b6d1a4979481": {
+    "0": {
+      "filename": "./SwarmRoot.code",
+      "line": 899
+    },
+    "1": {
+      "filename": "./SwarmRoot.code",
+      "line": 900
+    },
+    "2": {
+      "filename": "./SwarmRoot.code",
+      "line": 901
+    },
+    "3": {
+      "filename": "./SwarmRoot.code",
+      "line": 930
+    },
+    "4": {
+      "filename": "./SwarmRoot.code",
+      "line": 934
+    }
+  },
+  "dcb176f34c55f2b72c77f4232d05023c241102e9adc3653bf5a5e14c1184ee57": {
+    "0": {
+      "filename": "SwarmRoot.sol",
+      "line": 139
+    },
+    "8": {
+      "filename": "SwarmRoot.sol",
+      "line": 139
+    },
+    "16": {
+      "filename": "SwarmRoot.sol",
+      "line": 139
+    },
+    "24": {
+      "filename": "SwarmRoot.sol",
+      "line": 139
+    },
+    "32": {
+      "filename": "SwarmRoot.sol",
+      "line": 139
+    },
+    "40": {
+      "filename": "SwarmRoot.sol",
+      "line": 139
+    },
+    "48": {
+      "filename": "SwarmRoot.sol",
+      "line": 139
+    },
+    "64": {
+      "filename": "SwarmRoot.sol",
+      "line": 139
+    },
+    "72": {
+      "filename": "SwarmRoot.sol",
+      "line": 139
+    },
+    "112": {
+      "filename": "SwarmRoot.sol",
+      "line": 139
+    },
+    "120": {
+      "filename": "SwarmRoot.sol",
+      "line": 139
+    },
+    "128": {
+      "filename": "SwarmRoot.sol",
+      "line": 139
+    },
+    "144": {
+      "filename": "SwarmRoot.sol",
+      "line": 139
+    }
+  },
+  "df2b028a13eb774bd2e5accb5ad4a501ba5d919c0ca2d4a67184d4ede4ee319d": {
+    "0": {
+      "filename": "./SwarmRoot.code",
+      "line": 903
+    },
+    "8": {
+      "filename": "./SwarmRoot.code",
+      "line": 913
+    },
+    "24": {
+      "filename": "./SwarmRoot.code",
+      "line": 914
+    },
+    "32": {
+      "filename": "./SwarmRoot.code",
+      "line": 915
+    },
+    "48": {
+      "filename": "./SwarmRoot.code",
+      "line": 918
+    },
+    "56": {
+      "filename": "./SwarmRoot.code",
+      "line": 919
+    },
+    "72": {
+      "filename": "./SwarmRoot.code",
+      "line": 920
+    },
+    "88": {
+      "filename": "./SwarmRoot.code",
+      "line": 923
+    },
+    "96": {
+      "filename": "./SwarmRoot.code",
+      "line": 924
+    },
+    "112": {
+      "filename": "./SwarmRoot.code",
+      "line": 925
+    },
+    "128": {
+      "filename": "./SwarmRoot.code",
+      "line": 928
+    }
+  },
+  "e6516dc1ac05a2f68628ae1408d34c391c4d967ad985cbeddebab38177df4252": {
+    "0": {
+      "filename": "SwarmRoot.sol",
+      "line": 119
+    },
+    "16": {
+      "filename": "SwarmRoot.sol",
+      "line": 119
+    },
+    "40": {
+      "filename": "SwarmRoot.sol",
+      "line": 120
+    },
+    "56": {
+      "filename": "SwarmRoot.sol",
+      "line": 120
+    },
+    "64": {
+      "filename": "SwarmRoot.sol",
+      "line": 120
+    },
+    "80": {
+      "filename": "SwarmRoot.sol",
+      "line": 121
+    },
+    "88": {
+      "filename": "SwarmRoot.sol",
+      "line": 121
+    },
+    "104": {
+      "filename": "SwarmRoot.sol",
+      "line": 122
+    },
+    "120": {
+      "filename": "SwarmRoot.sol",
+      "line": 122
+    },
+    "128": {
+      "filename": "SwarmRoot.sol",
+      "line": 122
+    },
+    "160": {
+      "filename": "SwarmRoot.sol",
+      "line": 122
+    },
+    "176": {
+      "filename": "SwarmRoot.sol",
+      "line": 122
+    },
+    "184": {
+      "filename": "SwarmRoot.sol",
+      "line": 122
+    }
+  },
+  "e6936e8f0e7b8fe98c2ca66eee9d4e9dafcfc747defef9cb795288fabb1b7ef3": {
+    "0": {
+      "filename": "./SwarmRoot.code",
+      "line": 557
+    },
+    "16": {
+      "filename": "./SwarmRoot.code",
+      "line": 558
+    },
+    "24": {
+      "filename": "./SwarmRoot.code",
+      "line": 559
+    },
+    "40": {
+      "filename": "./SwarmRoot.code",
+      "line": 560
+    },
+    "56": {
+      "filename": "./SwarmRoot.code",
+      "line": 561
+    },
+    "64": {
+      "filename": "./SwarmRoot.code",
+      "line": 562
+    },
+    "80": {
+      "filename": "./SwarmRoot.code",
+      "line": 563
+    },
+    "88": {
+      "filename": "./SwarmRoot.code",
+      "line": 564
+    },
+    "96": {
+      "filename": "./SwarmRoot.code",
+      "line": 565
+    },
+    "112": {
+      "filename": "./SwarmRoot.code",
+      "line": 566
+    },
+    "128": {
+      "filename": "./SwarmRoot.code",
+      "line": 567
+    },
+    "136": {
+      "filename": "./SwarmRoot.code",
+      "line": 568
+    },
+    "144": {
+      "filename": "./SwarmRoot.code",
+      "line": 569
+    }
+  },
+  "e9e5b08e673e611d8c08a9e26ee041127b0214182769f41d2f307b6369752fb3": {
+    "0": {
+      "filename": "./SwarmRoot.code",
+      "line": 904
+    },
+    "24": {
+      "filename": "./SwarmRoot.code",
+      "line": 905
+    },
+    "40": {
+      "filename": "./SwarmRoot.code",
+      "line": 906
+    }
+  },
+  "f24e1e7aa04d89aad2945816b6e9b921f2b3892da9ba53e2383c148351b96d0c": {
+    "0": {
+      "filename": "./SwarmRoot.code",
+      "line": 863
+    },
+    "16": {
+      "filename": "./SwarmRoot.code",
+      "line": 864
+    }
+  },
+  "f695d70c2403bf0acef312097f698ace084e4fb281c6e96969de56d8cfde5b2c": {
+    "0": {
+      "filename": "SwarmRoot.sol",
+      "line": 139
+    },
+    "8": {
+      "filename": "SwarmRoot.sol",
+      "line": 139
+    },
+    "24": {
+      "filename": "SwarmRoot.sol",
+      "line": 139
+    }
+  }
+}

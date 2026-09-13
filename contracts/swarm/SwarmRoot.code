@@ -1,0 +1,934 @@
+.fragment _buildWalletCode_42a57c0e_internal, {
+	.loc SwarmRoot.sol, 138
+	MYADDR
+	PUSHREF {
+		.blob x312e302e30
+	}
+	NEWC
+	STREF
+	STSLICE
+	STU 64
+	ENDC
+	.loc SwarmRoot.sol, 139
+	SWAP
+	CTOS
+	SWAP
+	
+	CALLREF {
+		PUSH S1
+		PUSHSLICE x8adb35
+		SDEQ
+		PUSHREFCONT {
+			SWAP      ; salt sliceCode
+			LDREF
+			LDREF
+			DROP         ; salt selfCallCode usualSelector
+			XCHG S1, S2  ; selfCallCode salt usualSelector
+			CTOS         ; selfCallCode salt usualSelector
+			CALLREF {
+				
+				LDREFRTOS  ; selfCallCode salt restUsualSelector intSelector
+	
+				PUSHSLICE xF4A4_
+				SDBEGINSX
+				LDDICT     ; selfCallCode salt restUsualSelector dict intSelector
+				LDU 10
+				NIP
+				DUP
+				SREFS      ; selfCallCode salt restUsualSelector dict intSelector refs
+				PUSHCONT {
+					LDREF
+				}
+				PUSHCONT {
+					PUSHREF {
+					}
+					SWAP
+				}
+				IFELSE
+							; selfCallCode salt restUsualSelector dict version intSelector
+				PUSHSLICE xF4BDF2C04E
+				SDBEGINSX
+				DROP
+							; selfCallCode salt restUsualSelector dict version
+				SWAP        ; selfCallCode salt restUsualSelector version dict
+				NEWC        ; selfCallCode salt restUsualSelector version dict builder
+				STSLICECONST xF4A4_ ; DICTPUSHCONST
+				STDICT
+				PUSHINT 32
+				STUR 10
+				STSLICECONST xF4BDF2C04E ; DICTUGETJMPZ THROW 78
+				STREF       ; selfCallCode salt restUsualSelector builder
+				XCHG S1, S2 ; selfCallCode restUsualSelector salt builder
+				STREF       ; selfCallCode restUsualSelector builder
+				NEWC        ; selfCallCode restUsualSelector builder usualBuilder
+				STBREF      ; selfCallCode restUsualSelector usualBuilder
+				STSLICE     ; selfCallCode usualBuilder
+	
+			}
+			NEWC        ; selfCallCode usualBuilder mainBuilder
+			STSLICECONST x8adb35
+			XCHG S1, S2 ; usualBuilder selfCallCode mainBuilder
+			STREF
+			STBREF
+			ENDC
+		}
+		PUSHREFCONT {
+			SWAP
+			CALLREF {
+				
+				LDREFRTOS  ; selfCallCode salt restUsualSelector intSelector
+	
+				PUSHSLICE xF4A4_
+				SDBEGINSX
+				LDDICT     ; selfCallCode salt restUsualSelector dict intSelector
+				LDU 10
+				NIP
+				DUP
+				SREFS      ; selfCallCode salt restUsualSelector dict intSelector refs
+				PUSHCONT {
+					LDREF
+				}
+				PUSHCONT {
+					PUSHREF {
+					}
+					SWAP
+				}
+				IFELSE
+							; selfCallCode salt restUsualSelector dict version intSelector
+				PUSHSLICE xF4BDF2C04E
+				SDBEGINSX
+				DROP
+							; selfCallCode salt restUsualSelector dict version
+				SWAP        ; selfCallCode salt restUsualSelector version dict
+				NEWC        ; selfCallCode salt restUsualSelector version dict builder
+				STSLICECONST xF4A4_ ; DICTPUSHCONST
+				STDICT
+				PUSHINT 32
+				STUR 10
+				STSLICECONST xF4BDF2C04E ; DICTUGETJMPZ THROW 78
+				STREF       ; selfCallCode salt restUsualSelector builder
+				XCHG S1, S2 ; selfCallCode restUsualSelector salt builder
+				STREF       ; selfCallCode restUsualSelector builder
+				NEWC        ; selfCallCode restUsualSelector builder usualBuilder
+				STBREF      ; selfCallCode restUsualSelector usualBuilder
+				STSLICE     ; selfCallCode usualBuilder
+	
+			}
+			ENDC
+		}
+		IFELSE
+	}
+	.loc SwarmRoot.sol, 0
+}
+
+.fragment _composeWalletStateInit_6b62908d_internal, {
+	.loc SwarmRoot.sol, 143
+	PUSHINT 0
+	BLKPUSH 3, 0
+	NULL
+	BLKPUSH 2, 0
+	PUSHINT 0
+	DUP
+	NULL
+	DUP
+	PUSHINT 0
+	ROLL 12
+	NEWC
+	STU 256
+	STU 64
+	STZERO
+	XCPU S1, S0
+	ISNULL
+	PUSHCONT {
+		DROP
+		STZERO
+	}
+	PUSHCONT {
+		SWAP
+		STONE
+		STU 256
+	}
+	IFELSE
+	ROLLREV 10
+	NEWC
+	XCPU S1, S0
+	ISNULL
+	PUSHCONT {
+		DROP
+		STZERO
+	}
+	PUSHCONT {
+		SWAP
+		STONE
+		STSLICE
+	}
+	IFELSE
+	STU 256
+	ROLLREV 8
+	NEWC
+	STU 256
+	STDICT
+	STDICT
+	STDICT
+	STU 8
+	STU 8
+	STU 8
+	STU 256
+	STBREFR
+	STBREFR
+	ENDC
+	SWAP
+	NEWC
+	STSLICECONST x2_
+	STDICT
+	STDICT
+	STZERO
+	ENDC
+	.loc SwarmRoot.sol, 0
+}
+
+.fragment c4_to_c7, {
+	PUSHROOT
+	CTOS
+	LDU 256 ; pubkey c4
+	LDU 64 ; pubkey timestamp c4
+	LDU 1 ; ctor flag
+	LDREF
+	LDI 1
+	LDU 64
+	ENDS
+	SETGLOB 12
+	SETGLOB 11
+	SETGLOB 10
+	SETGLOB 6
+	SETGLOB 3
+	SETGLOB 2
+}
+
+.fragment c7_to_c4, {
+	GETGLOB 12
+	GETGLOB 11
+	GETGLOB 10
+	GETGLOB 3
+	GETGLOB 2
+	NEWC
+	STU 256
+	STU 64
+	STONE
+	STREF
+	STI 1
+	STU 64
+	ENDC
+	POPROOT
+}
+
+.fragment constructor, {
+	DROP
+	GETGLOB 2
+	ISNULL
+	IFREF {
+		.inline c4_to_c7
+	}
+	GETGLOB 6
+	THROWIF 51
+	ENDS
+	.loc SwarmRoot.sol, 49
+	GETGLOB 5
+	DUP
+	ISNULL
+	PUSHCONT {
+		DROP
+		PUSHINT 0
+	}
+	IF
+	GETGLOB 2
+	EQUAL
+	THROWIFNOT 100
+	.loc SwarmRoot.sol, 50
+	ACCEPT
+	.loc SwarmRoot.sol, 51
+	FALSE
+	SETGLOB 11
+	.loc SwarmRoot.sol, 52
+	PUSHINT 0
+	SETGLOB 12
+	.loc SwarmRoot.sol, 0
+	CALLREF {
+		.inline c7_to_c4
+	}
+	THROW 0
+}
+
+.fragment ensureBalance_90188926_internal, {
+	.loc SwarmRoot.sol, 57
+	GETPARAM 7
+	FIRST
+	PUSHINT 5000000000
+	GREATER
+	IFRET
+	.loc SwarmRoot.sol, 58
+	PUSHINT 10000000000
+	MINTSHELL
+	.loc SwarmRoot.sol, 0
+}
+
+.fragment createDappConfig_117f6c8f_internal, {
+	.loc SwarmRoot.sol, 44
+	GETGLOB 5
+	DUP
+	ISNULL
+	PUSHCONT {
+		DROP
+		PUSHINT 0
+	}
+	IF
+	GETGLOB 2
+	EQUAL
+	THROWIFNOT 100
+	.loc SwarmRoot.sol, 73
+	ACCEPT
+	.loc SwarmRoot.sol, 74
+	CALLREF {
+		.inline ensureBalance_90188926_internal
+	}
+	.loc SwarmRoot.sol, 76
+	PUSHINT 2
+	NULL
+	NEWC
+	ROLL 3
+	STVARUINT32
+	ROTREV
+	PUSHINT 32
+	DICTUSETB
+	.loc SwarmRoot.sol, 78
+	SWAP
+	NEWC
+	STSLICECONST x62_
+	STSLICE
+	STSLICECONST x43b9aca00
+	STDICT
+	PUSHINT 1
+	STUR 110
+	NULL
+	NEWC
+	STSLICECONST x5ba63813
+	XCPU S1, S0
+	ISNULL
+	PUSHCONT {
+		DROP
+		STZERO
+	}
+	PUSHCONT {
+		SWAP
+		STONE
+		STSLICE
+	}
+	IFELSE
+	STBREFR
+	ENDC
+	PUSHINT 1
+	SENDRAWMSG
+	.loc SwarmRoot.sol, 0
+}
+
+.fragment createDappConfig, {
+	DROP
+	GETGLOB 6
+	THROWIFNOT 76
+	GETGLOB 2
+	ISNULL
+	IFREF {
+		.inline c4_to_c7
+	}
+	.loc SwarmRoot.sol, 72
+	OVER
+	PUSHCONT {
+		LDREF
+		ENDS
+		CTOS
+	}
+	IF
+	LDMSGADDR
+	LDU 128
+	ENDS
+	.loc SwarmRoot.sol, 0
+	CALLREF {
+		.inline createDappConfig_117f6c8f_internal
+	}
+	CALLREF {
+		.inline c7_to_c4
+	}
+	THROW 0
+}
+
+.fragment deployWallet_8078a25d_internal, {
+	.loc SwarmRoot.sol, 44
+	GETGLOB 5
+	DUP
+	ISNULL
+	PUSHCONT {
+		DROP
+		PUSHINT 0
+	}
+	IF
+	GETGLOB 2
+	EQUAL
+	THROWIFNOT 100
+	.loc SwarmRoot.sol, 95
+	ACCEPT
+	.loc SwarmRoot.sol, 96
+	CALLREF {
+		.inline ensureBalance_90188926_internal
+	}
+	.loc SwarmRoot.sol, 97
+	GETGLOB 11
+	THROWIFNOT 101
+	.loc SwarmRoot.sol, 100
+	GETGLOB 10
+	GETGLOB 12
+	CALLREF {
+		.inline _buildWalletCode_42a57c0e_internal
+	}
+	.loc SwarmRoot.sol, 101
+	SWAP
+	CALLREF {
+		.inline _composeWalletStateInit_6b62908d_internal
+	}
+	.loc SwarmRoot.sol, 104
+	DUP
+	HASHCU
+	NEWC
+	STSLICECONST x801_
+	STU 256
+	ENDC
+	CTOS
+	XC2PU S2, S0, S3
+	XCHG3 S5, S6, S3
+	.loc SwarmRoot.sol, 107
+	DUP
+	HASHCU
+	NEWC
+	STSLICECONST x801_
+	STU 256
+	ROLLREV 6
+	PUSHINT 2000000000
+	ROLL 7
+	NEWC
+	STSLICECONST x62_
+	STB
+	SWAP
+	STGRAMS
+	PUSHINT 3
+	STUR 111
+	OVER
+	CALLREF {
+		CTOS
+		LDI 1
+		SWAP
+		PUSHCONT {
+			LDI 5
+			NIP
+		}
+		IF
+		LDI 1
+		SWAP
+		PUSHCONT {
+			LDI 2
+			NIP
+		}
+		IF
+		LDDICT
+		LDDICT
+		LDDICT
+		ENDS
+		BLKDROP 3
+	}
+	STREF
+	STSLICECONST x00000000c_
+	SWAP
+	UNPAIR
+	XCHG S2
+	STU 32
+	STDICT
+	SWAP
+	UNPAIR
+	XCHG S2
+	STU 32
+	STDICT
+	STU 8
+	STU 8
+	STU 64
+	ENDC
+	PUSHINT 1
+	SENDRAWMSG
+	.loc SwarmRoot.sol, 114
+	GETGLOB 12
+	INC
+	UFITS 64
+	SETGLOB 12
+	.loc SwarmRoot.sol, 0
+}
+
+.fragment deployWallet, {
+	DROP
+	GETGLOB 6
+	THROWIFNOT 76
+	GETGLOB 2
+	ISNULL
+	IFREF {
+		.inline c4_to_c7
+	}
+	.loc SwarmRoot.sol, 88
+	OVER
+	PUSHCONT {
+		LDU 32
+		LDDICT
+		ROTREV
+		PAIR
+		SWAP
+		LDREF
+		ENDS
+		CTOS
+	}
+	PUSHCONT {
+		LDU 32
+		LDDICT
+		ROTREV
+		PAIR
+		SWAP
+	}
+	IFELSE
+	LDU 32
+	LDDICT
+	ROTREV
+	PAIR
+	SWAP
+	LDU 8
+	LDU 64
+	LDU 256
+	ENDS
+	.loc SwarmRoot.sol, 0
+	CALLREF {
+		.inline deployWallet_8078a25d_internal
+	}
+	OVER
+	PUSHCONT {
+		PUSH S3
+		CTOS
+		LDU 2
+		LDMSGADDR
+		DROP
+		NIP
+		NEWC
+		STSLICECONST xc
+		STSLICE
+		PUSHINT 1
+		STUR 98
+		SWAP
+		NEWC
+		STSLICECONST xf53888c6
+		STSLICE
+		STBREFR
+		ENDC
+		PUSHINT 0
+		SENDRAWMSG
+	}
+	PUSHCONT {
+		DROP
+	}
+	IFELSE
+	CALLREF {
+		.inline c7_to_c4
+	}
+	THROW 0
+}
+
+.fragment getInfo_5a9b0b89_internal, {
+	.loc SwarmRoot.sol, 131
+	PUSHREF {
+		.blob x312e302e30
+	}
+	GETGLOB 12
+	GETGLOB 11
+	.loc SwarmRoot.sol, 0
+}
+
+.fragment upd_only_time_in_c4, {
+	PUSHROOT
+	CTOS
+	LDU 256
+	LDU 64
+	NIP
+	GETGLOB 3
+	ROT
+	NEWC
+	STU 256
+	STU 64
+	STSLICE
+	ENDC
+	POPROOT
+}
+
+.fragment getInfo, {
+	DROP
+	GETGLOB 6
+	THROWIFNOT 76
+	GETGLOB 2
+	ISNULL
+	IFREF {
+		.inline c4_to_c7
+	}
+	.loc SwarmRoot.sol, 126
+	ENDS
+	.loc SwarmRoot.sol, 0
+	CALLREF {
+		.inline getInfo_5a9b0b89_internal
+	}
+	PUSH S3
+	PUSHCONT {
+		PUSH S5
+		CTOS
+		LDU 2
+		LDMSGADDR
+		DROP
+		NIP
+		NEWC
+		STSLICECONST xc
+		STSLICE
+		PUSHINT 98
+		STZEROES
+		XCHG S1, S3
+		STSLICECONST xa934c21a
+		STREF
+		STU 64
+		STI 1
+		ENDC
+		PUSHINT 0
+		SENDRAWMSG
+	}
+	PUSHCONT {
+		BLKDROP 3
+	}
+	IFELSE
+	IFREF {
+		.inline upd_only_time_in_c4
+	}
+	THROW 0
+}
+
+.fragment getWalletAddress_e486045d_internal, {
+	.loc SwarmRoot.sol, 119
+	GETGLOB 11
+	THROWIFNOT 101
+	.loc SwarmRoot.sol, 120
+	GETGLOB 10
+	ROT
+	CALLREF {
+		.inline _buildWalletCode_42a57c0e_internal
+	}
+	.loc SwarmRoot.sol, 121
+	SWAP
+	CALLREF {
+		.inline _composeWalletStateInit_6b62908d_internal
+	}
+	.loc SwarmRoot.sol, 122
+	HASHCU
+	NEWC
+	STSLICECONST x801_
+	STU 256
+	ENDC
+	CTOS
+	.loc SwarmRoot.sol, 0
+}
+
+.fragment getWalletAddress, {
+	DROP
+	GETGLOB 6
+	THROWIFNOT 76
+	GETGLOB 2
+	ISNULL
+	IFREF {
+		.inline c4_to_c7
+	}
+	.loc SwarmRoot.sol, 118
+	OVER
+	PUSHCONT {
+		LDREF
+		ENDS
+		CTOS
+	}
+	IF
+	LDU 64
+	LDU 256
+	ENDS
+	.loc SwarmRoot.sol, 0
+	CALLREF {
+		.inline getWalletAddress_e486045d_internal
+	}
+	OVER
+	PUSHCONT {
+		PUSH S3
+		CTOS
+		LDU 2
+		LDMSGADDR
+		DROP
+		NIP
+		NEWC
+		STSLICECONST xc
+		STSLICE
+		PUSHINT 1
+		STUR 98
+		SWAP
+		NEWC
+		STSLICECONST x9ea56077
+		STSLICE
+		STBREFR
+		ENDC
+		PUSHINT 0
+		SENDRAWMSG
+	}
+	PUSHCONT {
+		DROP
+	}
+	IFELSE
+	IFREF {
+		.inline upd_only_time_in_c4
+	}
+	THROW 0
+}
+
+.fragment setWalletCode_fe914c81_internal, {
+	.loc SwarmRoot.sol, 44
+	GETGLOB 5
+	DUP
+	ISNULL
+	PUSHCONT {
+		DROP
+		PUSHINT 0
+	}
+	IF
+	GETGLOB 2
+	EQUAL
+	THROWIFNOT 100
+	.loc SwarmRoot.sol, 63
+	ACCEPT
+	.loc SwarmRoot.sol, 64
+	CALLREF {
+		.inline ensureBalance_90188926_internal
+	}
+	.loc SwarmRoot.sol, 65
+	SETGLOB 10
+	.loc SwarmRoot.sol, 66
+	TRUE
+	SETGLOB 11
+	.loc SwarmRoot.sol, 0
+}
+
+.fragment setWalletCode, {
+	DROP
+	GETGLOB 6
+	THROWIFNOT 76
+	GETGLOB 2
+	ISNULL
+	IFREF {
+		.inline c4_to_c7
+	}
+	.loc SwarmRoot.sol, 62
+	LDREF
+	ENDS
+	.loc SwarmRoot.sol, 0
+	CALLREF {
+		.inline setWalletCode_fe914c81_internal
+	}
+	CALLREF {
+		.inline c7_to_c4
+	}
+	THROW 0
+}
+
+.fragment public_function_selector, {
+	DUP
+	PUSHINT 691323418
+	LEQ
+	IFJMPREF {
+		DUP
+		EQINT 1
+		IFJMPREF {
+			.inline constructor
+		}
+		DUP
+		PUSHINT 514154615
+		EQUAL
+		IFJMPREF {
+			.inline getWalletAddress
+		}
+		DUP
+		PUSHINT 691323418
+		EQUAL
+		IFJMPREF {
+			.inline getInfo
+		}
+	}
+	DUP
+	PUSHINT 843242320
+	EQUAL
+	IFJMPREF {
+		.inline createDappConfig
+	}
+	DUP
+	PUSHINT 1911415692
+	EQUAL
+	IFJMPREF {
+		.inline setWalletCode
+	}
+	DUP
+	PUSHINT 1966639302
+	EQUAL
+	IFJMPREF {
+		.inline deployWallet
+	}
+}
+
+.fragment main_external, {
+	OVER
+	CALLREF {
+		.inline c4_to_c7
+	}
+	LDU 1 ; haveSign msgSlice
+	SWAP
+	PUSHCONT {
+		PUSHPOW2 9
+		LDSLICEX
+		DUP
+		MYADDR
+		NEWC
+		STSLICE
+		STSLICE
+		ENDC
+		HASHCU
+		SWAP
+		LDU 1 ; signatureSlice hashMsgSlice hasPubkey msgSlice
+		SWAP
+		PUSHCONT {
+			LDU 256 ; signatureSlice hashMsgSlice pubkey msgSlice
+			XCHG2 S3, S3
+		}
+		PUSHCONT {
+			XCHG S2
+			GETGLOB 2
+		}
+		IFELSE
+		DUP
+		SETGLOB 5
+		CHKSIGNU
+		THROWIFNOT 40
+	}
+	PUSHCONT {
+		LDU 1 ; hasPubkey msgSlice
+		SWAP
+		THROWIF 58
+	}
+	IFELSE
+	LDU 64 ; timestamp msgSlice
+	SWAP
+	.inline __replayProtection
+	LDU 32 ; expireAt msgSlice
+	SWAP
+	NOW ; msgSlice expireAt now
+	GREATER ; msgSlice expireAt>now
+	THROWIFNOT 57
+	LDU 32 ; funcId body
+	SWAP
+	CALLREF {
+		.inline public_function_selector
+	}
+	THROW 60
+}
+
+.fragment main_internal, {
+	PUSHROOT
+	CTOS
+	PUSHINT 320
+	SDSKIPFIRST
+	PLDI 1
+	SETGLOB 6
+	PUSH S2
+	CTOS
+	PLDU 4
+	MODPOW2 1
+	IFRET
+	OVER
+	SEMPTY ; isEmpty
+	IFJMPREF {
+		GETGLOB 6
+		THROWIFNOT 76
+	}
+	OVER
+	LDUQ 32  ; [funcId] body' ok
+	THROWIFNOT 60
+	OVER
+	IFNOTJMPREF {
+		GETGLOB 6
+		THROWIFNOT 76
+	}
+	SWAP
+	CALLREF {
+		.inline public_function_selector
+	}
+	THROW 60
+}
+
+.fragment default_data_cell, {
+	PUSHINT 0
+	DUP
+	PUSHREF {
+	}
+	NEWC
+	PUSHINT 321
+	STZEROES
+	STREF
+	STI 1
+	STU 64
+	ENDC
+}
+
+.fragment onTickTock, {
+}
+
+; The code below forms a value of the StateInit type.
+.blob x4_ ; split_depth = nothing
+.blob x4_ ; special = nothing
+.blob xc_ ; code = just
+.cell { ; code cell
+	PUSHREFCONT {
+		DICTPUSHCONST 32
+		DICTUGETJMPZ
+		THROW 78
+		.code-dict-cell 32, {
+		}
+		.cell { ; version
+			.blob x736f6c20302e37392e33 ; sol 0.79.3
+		}
+	}
+	POPCTR c3
+	DUP
+	IFNOTJMPREF {
+		.inline main_internal
+	}
+	DUP
+	EQINT -1
+	IFJMPREF {
+		.inline main_external
+	}
+	DUP
+	EQINT -2
+	IFJMPREF {
+		.inline onTickTock
+	}
+	THROW 11
+}
+.blob xc_ ; data = just
+.cell { 
+	.inline-computed-cell default_data_cell, 0
+}
+.blob x4_ ; library = hme_empty
