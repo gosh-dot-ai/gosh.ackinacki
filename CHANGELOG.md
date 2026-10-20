@@ -8,6 +8,23 @@ All notable changes to `gosh-ackinacki` are recorded here. The format follows
 (pre-1.0: a `0.MINOR.0` bump may break the API, a `0.x.PATCH` bump is
 backward-compatible). Release process: see [RELEASING.md](RELEASING.md).
 
+## [0.11.0] - 2026-10-20
+
+### Fixed
+- **`private-note`: the voucher witness is built from the right event.** The
+  `dexdo-halo2-kit` crates (`dark_dex_halo2_private_witness_export_lib`,
+  `halo2-proover`, `dex-halo2-circuit`) move from rev `89e9346` to the
+  `dark_dex_halo2_private_witness_export_lib-v0.2.0` tag. The exporter now picks the
+  tracked external message whose hash matches `event_boc`; before, it always took the
+  first tracked message in the block, so a block holding several vouchers could yield
+  a fixture mixing routing and Merkle path from another event.
+
+### Changed
+- **BREAKING (behavior), `private-note`: an unusable `event_boc` is now an error.** If `event_boc` is not
+  valid base64, not a valid BOC, or not among the block's tracked `ext_out_messages`,
+  witness export fails and no fixture is written. A caller that passed an empty or
+  stale event body used to get a (possibly wrong) fixture.
+
 ## [0.10.1] - 2026-08-19
 
 ### Fixed

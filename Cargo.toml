@@ -1,6 +1,6 @@
 [package]
 name = "gosh-ackinacki"
-version = "0.10.1"
+version = "0.11.0"
 edition = "2021"
 rust-version = "1.86.0"
 license = "MIT"
@@ -77,9 +77,9 @@ tvm_types = { git = "https://github.com/tvmlabs/tvm-sdk.git", tag = "v3.0.4-rc.a
 # `halo2-base` dep tracks `main` (the branch this kit rev builds against); the
 # kit's transitive halo2/axiom graph still needs the stable-Rust `[patch]` block
 # below. Keep the rev in lockstep with the v0.4.x release.
-halo2-proover = { git = "https://github.com/gosh-sh/dexdo-halo2-kit", rev = "89e93466637334c195fa0640ece74ec4eb549de7", optional = true }
-dark_dex_halo2_private_witness_export_lib = { git = "https://github.com/gosh-sh/dexdo-halo2-kit", rev = "89e93466637334c195fa0640ece74ec4eb549de7", optional = true }
-gosh-dark-dex-halo2-new-circuit = { git = "https://github.com/gosh-sh/dexdo-halo2-kit", rev = "89e93466637334c195fa0640ece74ec4eb549de7", package = "dex-halo2-circuit", optional = true }
+halo2-proover = { git = "https://github.com/gosh-sh/dexdo-halo2-kit", tag = "dark_dex_halo2_private_witness_export_lib-v0.2.0", optional = true }
+dark_dex_halo2_private_witness_export_lib = { git = "https://github.com/gosh-sh/dexdo-halo2-kit", tag = "dark_dex_halo2_private_witness_export_lib-v0.2.0", optional = true }
+gosh-dark-dex-halo2-new-circuit = { git = "https://github.com/gosh-sh/dexdo-halo2-kit", tag = "dark_dex_halo2_private_witness_export_lib-v0.2.0", package = "dex-halo2-circuit", optional = true }
 halo2-base = { git = "https://github.com/gosh-sh/halo2-lib-zkevm-sha256-and-bls12-381", branch = "main", default-features = false, features = ["halo2-axiom", "test-utils"], optional = true }
 
 # Stable-Rust compatibility patches. They redirect the nightly-gated crates

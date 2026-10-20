@@ -2624,8 +2624,8 @@ dependencies = [
 
 [[package]]
 name = "dark_dex_halo2_private_witness_export_lib"
-version = "0.1.0"
-source = "git+https://github.com/gosh-sh/dexdo-halo2-kit?rev=89e93466637334c195fa0640ece74ec4eb549de7#89e93466637334c195fa0640ece74ec4eb549de7"
+version = "0.2.0"
+source = "git+https://github.com/gosh-sh/dexdo-halo2-kit?tag=dark_dex_halo2_private_witness_export_lib-v0.2.0#965d462a6c8497f936b6d9cbee5ef0a703d48c8f"
 dependencies = [
  "anyhow",
  "clap 4.6.1",
@@ -2639,6 +2639,7 @@ dependencies = [
  "tokio",
  "tracing",
  "tracing-subscriber 0.3.23",
+ "tvm_types 3.1.0",
  "typed-builder",
 ]
 
@@ -2764,11 +2765,11 @@ dependencies = [
 [[package]]
 name = "dense-balanced-tree"
 version = "0.1.0"
-source = "git+https://github.com/gosh-sh/dense-balanced-tree#51e7386f4383b925b7f34e213b9ea38819ae0fa7"
+source = "git+https://github.com/gosh-sh/dense-balanced-tree#2747147cc3f2533880369c7b4278e36510e28aa9"
 dependencies = [
  "hex",
  "monotree",
- "tvm_vm 3.0.4 (git+https://github.com/tvmlabs/tvm-sdk.git?branch=main)",
+ "tvm_vm 3.0.6",
 ]
 
 [[package]]
@@ -2917,7 +2918,7 @@ dependencies = [
 [[package]]
 name = "dex-halo2-circuit"
 version = "0.1.0"
-source = "git+https://github.com/gosh-sh/dexdo-halo2-kit?rev=89e93466637334c195fa0640ece74ec4eb549de7#89e93466637334c195fa0640ece74ec4eb549de7"
+source = "git+https://github.com/gosh-sh/dexdo-halo2-kit?tag=dark_dex_halo2_private_witness_export_lib-v0.2.0#965d462a6c8497f936b6d9cbee5ef0a703d48c8f"
 dependencies = [
  "clap 4.6.1",
  "dense-balanced-tree",
@@ -2936,8 +2937,8 @@ dependencies = [
  "serde",
  "serde_json",
  "sha2 0.10.9",
- "tvm_block 3.0.4 (git+https://github.com/tvmlabs/tvm-sdk)",
- "tvm_types 3.0.4 (git+https://github.com/tvmlabs/tvm-sdk)",
+ "tvm_block 3.1.0",
+ "tvm_types 3.1.0",
 ]
 
 [[package]]
@@ -3864,7 +3865,7 @@ checksum = "0cc23270f6e1808e30a928bdc84dea0b9b4136a8bc82338574f23baf47bbd280"
 
 [[package]]
 name = "gosh-ackinacki"
-version = "0.10.1"
+version = "0.11.0"
 dependencies = [
  "aes-gcm",
  "anyhow",
@@ -3895,10 +3896,10 @@ dependencies = [
  "tracing",
  "tracing-subscriber 0.3.23",
  "transport-layer",
- "tvm_abi 3.0.4 (git+https://github.com/tvmlabs/tvm-sdk.git?tag=v3.0.4-rc.an)",
- "tvm_block 3.0.4 (git+https://github.com/tvmlabs/tvm-sdk.git?tag=v3.0.4-rc.an)",
+ "tvm_abi 3.0.4",
+ "tvm_block 3.0.4",
  "tvm_client 3.0.4",
- "tvm_types 3.0.4 (git+https://github.com/tvmlabs/tvm-sdk.git?tag=v3.0.4-rc.an)",
+ "tvm_types 3.0.4",
  "uuid",
  "x25519-dalek",
  "zeroize",
@@ -3907,7 +3908,7 @@ dependencies = [
 [[package]]
 name = "gosh-dense-balanced-tree"
 version = "0.1.0"
-source = "git+https://github.com/gosh-sh/gosh-halo2-crypto-lib?branch=bump-halo2-lib-v0.4.1#a79a0c71e80d307a99dd47f713b4342ea4b9cbd6"
+source = "git+https://github.com/gosh-sh/gosh-halo2-crypto-lib?branch=bump-halo2-lib-v0.4.1#4aa56cc8e27d678c30cd581d338bd4a9d88d0801"
 dependencies = [
  "halo2-base 0.4.1",
  "pse-poseidon",
@@ -3916,7 +3917,7 @@ dependencies = [
 [[package]]
 name = "gosh-sha256-chip"
 version = "0.1.0"
-source = "git+https://github.com/gosh-sh/gosh-halo2-crypto-lib?branch=bump-halo2-lib-v0.4.1#a79a0c71e80d307a99dd47f713b4342ea4b9cbd6"
+source = "git+https://github.com/gosh-sh/gosh-halo2-crypto-lib?branch=bump-halo2-lib-v0.4.1#4aa56cc8e27d678c30cd581d338bd4a9d88d0801"
 dependencies = [
  "halo2-base 0.4.1",
  "halo2-ecc",
@@ -4260,7 +4261,7 @@ dependencies = [
 [[package]]
 name = "halo2-proover"
 version = "0.3.0"
-source = "git+https://github.com/gosh-sh/dexdo-halo2-kit?rev=89e93466637334c195fa0640ece74ec4eb549de7#89e93466637334c195fa0640ece74ec4eb549de7"
+source = "git+https://github.com/gosh-sh/dexdo-halo2-kit?tag=dark_dex_halo2_private_witness_export_lib-v0.2.0#965d462a6c8497f936b6d9cbee5ef0a703d48c8f"
 dependencies = [
  "clap 4.6.1",
  "dex-halo2-circuit",
@@ -4275,8 +4276,8 @@ dependencies = [
  "serde_json",
  "sha2 0.10.9",
  "thiserror 2.0.18",
- "tvm_block 3.0.4 (git+https://github.com/tvmlabs/tvm-sdk)",
- "tvm_types 3.0.4 (git+https://github.com/tvmlabs/tvm-sdk)",
+ "tvm_block 3.1.0",
+ "tvm_types 3.1.0",
 ]
 
 [[package]]
@@ -4720,7 +4721,7 @@ dependencies = [
  "libc",
  "percent-encoding",
  "pin-project-lite",
- "socket2 0.6.4",
+ "socket2 0.5.10",
  "system-configuration",
  "tokio",
  "tower-service",
@@ -4989,7 +4990,7 @@ checksum = "3640c1c38b8e4e43584d8df18be5fc6b0aa314ce6ebf51b53313d4306cca8e46"
 dependencies = [
  "hermit-abi 0.5.2",
  "libc",
- "windows-sys 0.52.0",
+ "windows-sys 0.61.2",
 ]
 
 [[package]]
@@ -6868,7 +6869,7 @@ dependencies = [
  "quinn-udp",
  "rustc-hash 2.1.2",
  "rustls",
- "socket2 0.6.4",
+ "socket2 0.5.10",
  "thiserror 2.0.18",
  "tokio",
  "tracing",
@@ -6906,7 +6907,7 @@ dependencies = [
  "cfg_aliases",
  "libc",
  "once_cell",
- "socket2 0.6.4",
+ "socket2 0.5.10",
  "tracing",
  "windows-sys 0.60.2",
 ]
@@ -9572,14 +9573,14 @@ dependencies = [
  "serde",
  "serde_json",
  "thiserror 2.0.18",
- "tvm_block 3.0.4 (git+https://github.com/tvmlabs/tvm-sdk.git?tag=v3.0.4-rc.an)",
- "tvm_types 3.0.4 (git+https://github.com/tvmlabs/tvm-sdk.git?tag=v3.0.4-rc.an)",
+ "tvm_block 3.0.4",
+ "tvm_types 3.0.4",
 ]
 
 [[package]]
 name = "tvm_abi"
-version = "3.0.4"
-source = "git+https://github.com/tvmlabs/tvm-sdk.git?branch=main#7d52241c6599c8f5af48593542c8b534b72a95db"
+version = "3.0.6"
+source = "git+https://github.com/tvmlabs/tvm-sdk.git?tag=v3.0.6.an#9d69be2a6158e805659995b131f2332b2081155e"
 dependencies = [
  "anyhow",
  "chrono",
@@ -9589,8 +9590,8 @@ dependencies = [
  "serde",
  "serde_json",
  "thiserror 2.0.18",
- "tvm_block 3.0.4 (git+https://github.com/tvmlabs/tvm-sdk.git?branch=main)",
- "tvm_types 3.0.4 (git+https://github.com/tvmlabs/tvm-sdk.git?branch=main)",
+ "tvm_block 3.0.6",
+ "tvm_types 3.0.6",
 ]
 
 [[package]]
@@ -9628,13 +9629,13 @@ dependencies = [
  "num-traits",
  "sha2 0.10.9",
  "thiserror 2.0.18",
- "tvm_types 3.0.4 (git+https://github.com/tvmlabs/tvm-sdk.git?tag=v3.0.4-rc.an)",
+ "tvm_types 3.0.4",
 ]
 
 [[package]]
 name = "tvm_block"
-version = "3.0.4"
-source = "git+https://github.com/tvmlabs/tvm-sdk.git?branch=main#7d52241c6599c8f5af48593542c8b534b72a95db"
+version = "3.0.6"
+source = "git+https://github.com/tvmlabs/tvm-sdk.git?tag=v3.0.6.an#9d69be2a6158e805659995b131f2332b2081155e"
 dependencies = [
  "anyhow",
  "base64 0.22.1",
@@ -9647,13 +9648,13 @@ dependencies = [
  "num-traits",
  "sha2 0.10.9",
  "thiserror 2.0.18",
- "tvm_types 3.0.4 (git+https://github.com/tvmlabs/tvm-sdk.git?branch=main)",
+ "tvm_types 3.0.6",
 ]
 
 [[package]]
 name = "tvm_block"
-version = "3.0.4"
-source = "git+https://github.com/tvmlabs/tvm-sdk#7d52241c6599c8f5af48593542c8b534b72a95db"
+version = "3.1.0"
+source = "git+https://github.com/tvmlabs/tvm-sdk#fd76a8a928f6affcfc1aeddb7cc42f6cd11297a2"
 dependencies = [
  "anyhow",
  "base64 0.22.1",
@@ -9666,7 +9667,7 @@ dependencies = [
  "num-traits",
  "sha2 0.10.9",
  "thiserror 2.0.18",
- "tvm_types 3.0.4 (git+https://github.com/tvmlabs/tvm-sdk)",
+ "tvm_types 3.1.0",
 ]
 
 [[package]]
@@ -9705,8 +9706,8 @@ dependencies = [
  "serde_derive",
  "serde_json",
  "thiserror 2.0.18",
- "tvm_block 3.0.4 (git+https://github.com/tvmlabs/tvm-sdk.git?tag=v3.0.4-rc.an)",
- "tvm_types 3.0.4 (git+https://github.com/tvmlabs/tvm-sdk.git?tag=v3.0.4-rc.an)",
+ "tvm_block 3.0.4",
+ "tvm_types 3.0.4",
 ]
 
 [[package]]
@@ -9819,15 +9820,15 @@ dependencies = [
  "tokio",
  "tokio-stream",
  "tokio-tungstenite 0.28.0",
- "tvm_abi 3.0.4 (git+https://github.com/tvmlabs/tvm-sdk.git?tag=v3.0.4-rc.an)",
- "tvm_block 3.0.4 (git+https://github.com/tvmlabs/tvm-sdk.git?tag=v3.0.4-rc.an)",
+ "tvm_abi 3.0.4",
+ "tvm_block 3.0.4",
  "tvm_block_json 3.0.4",
  "tvm_client_processing 3.0.4",
  "tvm_executor 3.0.4",
  "tvm_sdk 3.0.4",
  "tvm_struct 3.0.4",
- "tvm_types 3.0.4 (git+https://github.com/tvmlabs/tvm-sdk.git?tag=v3.0.4-rc.an)",
- "tvm_vm 3.0.4 (git+https://github.com/tvmlabs/tvm-sdk.git?tag=v3.0.4-rc.an)",
+ "tvm_types 3.0.4",
+ "tvm_vm 3.0.4",
  "url",
  "zeroize",
  "zstd",
@@ -9869,8 +9870,8 @@ dependencies = [
  "serde_json",
  "serde_repr",
  "tokio",
- "tvm_block 3.0.4 (git+https://github.com/tvmlabs/tvm-sdk.git?tag=v3.0.4-rc.an)",
- "tvm_types 3.0.4 (git+https://github.com/tvmlabs/tvm-sdk.git?tag=v3.0.4-rc.an)",
+ "tvm_block 3.0.4",
+ "tvm_types 3.0.4",
 ]
 
 [[package]]
@@ -9919,9 +9920,9 @@ dependencies = [
  "log",
  "semver 1.0.28",
  "thiserror 2.0.18",
- "tvm_block 3.0.4 (git+https://github.com/tvmlabs/tvm-sdk.git?tag=v3.0.4-rc.an)",
- "tvm_types 3.0.4 (git+https://github.com/tvmlabs/tvm-sdk.git?tag=v3.0.4-rc.an)",
- "tvm_vm 3.0.4 (git+https://github.com/tvmlabs/tvm-sdk.git?tag=v3.0.4-rc.an)",
+ "tvm_block 3.0.4",
+ "tvm_types 3.0.4",
+ "tvm_vm 3.0.4",
  "wasmtime",
 ]
 
@@ -9970,9 +9971,9 @@ dependencies = [
  "serde_json",
  "sha2 0.10.9",
  "thiserror 2.0.18",
- "tvm_abi 3.0.4 (git+https://github.com/tvmlabs/tvm-sdk.git?tag=v3.0.4-rc.an)",
- "tvm_block 3.0.4 (git+https://github.com/tvmlabs/tvm-sdk.git?tag=v3.0.4-rc.an)",
- "tvm_types 3.0.4 (git+https://github.com/tvmlabs/tvm-sdk.git?tag=v3.0.4-rc.an)",
+ "tvm_abi 3.0.4",
+ "tvm_block 3.0.4",
+ "tvm_types 3.0.4",
 ]
 
 [[package]]
@@ -9991,8 +9992,8 @@ version = "3.0.4"
 source = "git+https://github.com/tvmlabs/tvm-sdk.git?tag=v3.0.4-rc.an#88d50d3883c5bef619e29db8534002eb5e65eb4b"
 dependencies = [
  "thiserror 2.0.18",
- "tvm_block 3.0.4 (git+https://github.com/tvmlabs/tvm-sdk.git?tag=v3.0.4-rc.an)",
- "tvm_types 3.0.4 (git+https://github.com/tvmlabs/tvm-sdk.git?tag=v3.0.4-rc.an)",
+ "tvm_block 3.0.4",
+ "tvm_types 3.0.4",
 ]
 
 [[package]]
@@ -10059,8 +10060,8 @@ dependencies = [
 
 [[package]]
 name = "tvm_types"
-version = "3.0.4"
-source = "git+https://github.com/tvmlabs/tvm-sdk.git?branch=main#7d52241c6599c8f5af48593542c8b534b72a95db"
+version = "3.0.6"
+source = "git+https://github.com/tvmlabs/tvm-sdk.git?tag=v3.0.6.an#9d69be2a6158e805659995b131f2332b2081155e"
 dependencies = [
  "aes",
  "anyhow",
@@ -10090,8 +10091,8 @@ dependencies = [
 
 [[package]]
 name = "tvm_types"
-version = "3.0.4"
-source = "git+https://github.com/tvmlabs/tvm-sdk#7d52241c6599c8f5af48593542c8b534b72a95db"
+version = "3.1.0"
+source = "git+https://github.com/tvmlabs/tvm-sdk#fd76a8a928f6affcfc1aeddb7cc42f6cd11297a2"
 dependencies = [
  "aes",
  "anyhow",
@@ -10233,9 +10234,9 @@ dependencies = [
  "thiserror 2.0.18",
  "tokio",
  "tracing",
- "tvm_abi 3.0.4 (git+https://github.com/tvmlabs/tvm-sdk.git?tag=v3.0.4-rc.an)",
- "tvm_block 3.0.4 (git+https://github.com/tvmlabs/tvm-sdk.git?tag=v3.0.4-rc.an)",
- "tvm_types 3.0.4 (git+https://github.com/tvmlabs/tvm-sdk.git?tag=v3.0.4-rc.an)",
+ "tvm_abi 3.0.4",
+ "tvm_block 3.0.4",
+ "tvm_types 3.0.4",
  "typenum",
  "wasmtime",
  "wasmtime-wasi",
@@ -10245,8 +10246,8 @@ dependencies = [
 
 [[package]]
 name = "tvm_vm"
-version = "3.0.4"
-source = "git+https://github.com/tvmlabs/tvm-sdk.git?branch=main#7d52241c6599c8f5af48593542c8b534b72a95db"
+version = "3.0.6"
+source = "git+https://github.com/tvmlabs/tvm-sdk.git?tag=v3.0.6.an#9d69be2a6158e805659995b131f2332b2081155e"
 dependencies = [
  "anyhow",
  "ark-bls12-381",
@@ -10296,9 +10297,9 @@ dependencies = [
  "thiserror 2.0.18",
  "tokio",
  "tracing",
- "tvm_abi 3.0.4 (git+https://github.com/tvmlabs/tvm-sdk.git?branch=main)",
- "tvm_block 3.0.4 (git+https://github.com/tvmlabs/tvm-sdk.git?branch=main)",
- "tvm_types 3.0.4 (git+https://github.com/tvmlabs/tvm-sdk.git?branch=main)",
+ "tvm_abi 3.0.6",
+ "tvm_block 3.0.6",
+ "tvm_types 3.0.6",
  "typenum",
  "zstd",
 ]
